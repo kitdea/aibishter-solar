@@ -13,7 +13,7 @@ const fadeUpVariant: Variants = {
 export default function Home() {
   return (
     <div className="bg-slate-50 min-h-screen overflow-hidden">
-      
+
       {/* 1. Ultra-Modern Hero Section */}
       <section className="relative h-[90vh] md:h-[100vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-[2rem] md:rounded-[3rem] overflow-hidden">
         <Image
@@ -24,7 +24,7 @@ export default function Home() {
           className="object-cover object-bottom scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-        
+
         {/* Massive Typography Overlay */}
         <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-24 px-6 md:px-12 z-10">
           <motion.div
@@ -33,9 +33,9 @@ export default function Home() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <h1 className="text-[12vw] md:text-[min(10rem,12vw)] font-bold text-white leading-[0.85] tracking-tighter mix-blend-overlay opacity-90 font-poppins">
-              AIBISHTER<br/><span className="text-[10vw] md:text-[min(8rem,10vw)] text-white/90">SOLAR</span>
+              AIBISHTER<br /><span className="text-[10vw] md:text-[min(8rem,10vw)] text-white/70">SOLAR</span>
             </h1>
-            
+
             <div className="flex flex-col md:flex-row md:items-end justify-between mt-8 gap-6 md:gap-0">
               <div className="flex gap-4">
                 <span className="text-white/60 uppercase tracking-widest text-xs font-bold font-sans flex items-center gap-2">
@@ -54,7 +54,7 @@ export default function Home() {
       </section>
 
       {/* 2. GWENCY-style Transparent Text Reveal Section */}
-      <motion.section 
+      <motion.section
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
@@ -71,10 +71,10 @@ export default function Home() {
               <div className="w-6 h-6 rounded-full bg-accent-yellow border border-white"></div>
               <div className="w-6 h-6 rounded-full bg-slate-400 border border-white"></div>
             </div>
-            <span className="text-[10px] uppercase font-bold tracking-wider ml-2">Meet Our Experts</span>
+            <span className="text-[10px] uppercase font-bold tracking-wider ml-2 text-slate-400">Meet Our Experts</span>
           </div>
         </div>
-        
+
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight text-slate-900 max-w-5xl">
           From high-efficiency residential arrays to robust commercial grids, <span className="text-slate-400">innovating the transition to sustainable and reliable energy.</span>
         </h2>
@@ -82,12 +82,12 @@ export default function Home() {
 
       {/* 3. Bento Box UI - Core Metrics & Features */}
       <section className="px-6 md:px-12 max-w-7xl mx-auto pb-24">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-12">Eco-friendly solutions <span className="text-slate-400 font-normal">for a smarter home</span></h2>
-        
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-12 text-accent-blue">Eco-friendly solutions <span className="text-slate-400 font-normal">for a smarter home</span></h2>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px] md:auto-rows-[400px]">
-          
+
           {/* Card 1: Blue Metric */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -110,7 +110,7 @@ export default function Home() {
           </motion.div>
 
           {/* Card 2: Interactive Image */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -120,6 +120,7 @@ export default function Home() {
             <div className="absolute top-6 left-6 z-10 flex items-center gap-2 text-xs font-bold text-accent-blue uppercase tracking-widest bg-white/80 backdrop-blur px-3 py-1 rounded-full">
               <Sun size={14} className="text-accent-yellow" /> Solar Irradiation
             </div>
+
             <Image
               src="https://images.unsplash.com/photo-1542339031-a0680fd7a496?q=80&w=2070&auto=format&fit=crop"
               alt="Solar Detail"
@@ -129,7 +130,7 @@ export default function Home() {
           </motion.div>
 
           {/* Card 3: Feature Metric */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -144,7 +145,7 @@ export default function Home() {
               <h3 className="text-3xl font-bold leading-tight">Up to <span className="text-accent-blue">25 Years</span></h3>
               <p className="text-slate-600 mt-2 text-sm leading-relaxed">Comprehensive warranty covering panels, inverters, and roofing labor.</p>
             </div>
-            
+
             <button className="self-start text-xs font-bold uppercase tracking-widest bg-white border border-slate-200 px-4 py-2 rounded-full hover:bg-slate-50 transition-colors">
               Read Terms
             </button>
@@ -153,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* 4. High-Converting Interactive Lead Capture Section */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -163,22 +164,22 @@ export default function Home() {
         <div className="bg-slate-900 rounded-[3rem] overflow-hidden relative shadow-2xl flex flex-col lg:flex-row">
           {/* Background Decorative */}
           <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-10 blur-3xl rounded-full w-[800px] h-[800px] bg-accent-yellow pointer-events-none"></div>
-          
+
           {/* Left Text/Value Prop */}
           <div className="lg:w-1/2 p-12 md:p-20 relative z-10 flex flex-col justify-center">
-            <h2 className="text-white text-4xl md:text-6xl font-bold tracking-tight mb-6">Take control of<br/>your power bill.</h2>
+            <h2 className="text-white text-4xl md:text-6xl font-bold tracking-tight mb-6">Take control of<br />your power bill.</h2>
             <p className="text-slate-400 text-lg md:text-xl mb-12 max-w-md font-sans leading-relaxed">
               We give homeowners and businesses a comprehensive view of their energy usage, enabling unparalleled efficiency and savings.
             </p>
-            
+
             <div className="grid grid-cols-2 gap-8 text-white">
               <div className="space-y-2">
-                <div className="text-accent-yellow"><Zap size={24}/></div>
+                <div className="text-accent-yellow"><Zap size={24} /></div>
                 <h4 className="font-bold">Instant Savings</h4>
                 <p className="text-sm text-slate-400">Lock in your rates against inflation.</p>
               </div>
               <div className="space-y-2">
-                <div className="text-accent-blue"><ThermometerSun size={24}/></div>
+                <div className="text-accent-blue"><ThermometerSun size={24} /></div>
                 <h4 className="font-bold">Tax Incentives</h4>
                 <p className="text-sm text-slate-400">Utilize federal and local rebates.</p>
               </div>
@@ -204,7 +205,7 @@ export default function Home() {
                   <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-accent-yellow transition-all shadow-sm" placeholder="Doe" />
                 </div>
               </div>
-              
+
               <div className="space-y-1">
                 <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Email Address</label>
                 <input type="email" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-accent-yellow transition-all shadow-sm" placeholder="john@example.com" data-lpignore="true" />
@@ -221,7 +222,7 @@ export default function Home() {
               <button className="w-full bg-accent-blue hover:bg-blue-800 text-white font-bold text-lg rounded-xl px-4 py-4 mt-4 transition-all hover:shadow-lg flex items-center justify-center gap-2 group">
                 Get My Estimate <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </button>
-              
+
               <p className="text-center text-xs text-slate-400 mt-4">By submitting this form, you agree to our <Link href="#" className="underline hover:text-slate-600">Privacy Policy</Link>.</p>
             </form>
           </div>
@@ -231,12 +232,12 @@ export default function Home() {
       {/* 5. Minimal Image Carousel / Bottom Teaser */}
       <section className="px-6 md:px-12 max-w-7xl mx-auto pb-32">
         <div className="flex justify-between items-end border-b border-slate-200 pb-6 mb-8">
-          <h3 className="text-2xl font-bold tracking-tight">Our Recent Work</h3>
+          <h3 className="text-2xl font-bold tracking-tight text-slate-900">Our Recent Work</h3>
           <Link href="/projects" className="text-sm font-bold uppercase tracking-widest text-accent-blue flex items-center gap-1 hover:text-accent-yellow transition-colors">
             View Gallery <ArrowRight size={16} />
           </Link>
         </div>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop",
@@ -244,7 +245,7 @@ export default function Home() {
             "https://images.unsplash.com/photo-1588631522858-e4b78bb280cd?q=80&w=2072&auto=format&fit=crop",
             "https://plus.unsplash.com/premium_photo-1678852331610-1c3906be7316?q=80&w=2030&auto=format&fit=crop"
           ].map((src, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
