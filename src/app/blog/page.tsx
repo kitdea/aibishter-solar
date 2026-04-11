@@ -36,7 +36,7 @@ const blogPosts = [
 
 export default function BlogPage() {
   return (
-    <div className="bg-slate-50 min-h-screen pt-32 pb-24 overflow-hidden">
+    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
       
       {/* Inner Page Hero Banner */}
       <section className="relative min-h-[500px] h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-[2rem] md:rounded-[3rem] overflow-hidden mb-24">
@@ -76,10 +76,10 @@ export default function BlogPage() {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeUpVariant}
-              className="group cursor-pointer border-t border-slate-200 pt-12 flex flex-col md:flex-row gap-8 items-start hover:border-accent-blue transition-colors duration-500"
+              className="group cursor-pointer border-t border-slate-200 dark:border-slate-700 pt-12 flex flex-col md:flex-row gap-8 items-start hover:border-accent-blue transition-colors duration-500"
             >
               {/* Meta information aligned left like GWENCY design */}
-              <div className="md:w-1/6 flex flex-col gap-2 font-mono text-xs uppercase tracking-widest text-slate-400">
+              <div className="md:w-1/6 flex flex-col gap-2 font-mono text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500">
                 <span className="text-accent-blue font-bold">{post.category}</span>
                 <span>{post.date}</span>
               </div>
@@ -87,14 +87,14 @@ export default function BlogPage() {
               {/* Massive Title & Excerpt */}
               <div className="md:w-1/2 flex flex-col gap-6 pr-8">
                 <Link href="#" className="flex-grow">
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 group-hover:text-accent-blue transition-colors duration-300 leading-tight">
+                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white group-hover:text-accent-blue transition-colors duration-300 leading-tight">
                     {post.title}
                   </h2>
                 </Link>
-                <p className="text-lg text-slate-500 font-sans leading-relaxed">
+                <p className="text-lg text-slate-500 dark:text-slate-400 dark:text-slate-500 font-sans leading-relaxed">
                   {post.excerpt}
                 </p>
-                <div className="mt-4 flex items-center text-xs font-bold tracking-widest uppercase text-slate-400 group-hover:text-accent-blue transition-colors gap-2">
+                <div className="mt-4 flex items-center text-xs font-bold tracking-widest uppercase text-slate-400 dark:text-slate-500 group-hover:text-accent-blue transition-colors gap-2">
                   Read Article <ArrowUpRight size={16} />
                 </div>
               </div>

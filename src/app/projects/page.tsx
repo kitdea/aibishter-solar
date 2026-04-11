@@ -51,7 +51,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="bg-slate-50 min-h-screen pt-32 pb-24 overflow-hidden">
+    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
       
       {/* Inner Page Hero Banner */}
       <section className="relative min-h-[500px] h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-[2rem] md:rounded-[3rem] overflow-hidden mb-24">
@@ -103,25 +103,25 @@ export default function ProjectsPage() {
                 
                 {/* Floating Tag */}
                 <div className="absolute top-6 right-6">
-                  <div className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest text-slate-900 shadow-sm">
+                  <div className="bg-white dark:bg-slate-800/90 backdrop-blur-md px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest text-slate-900 dark:text-white shadow-sm">
                     {project.systemSize}
                   </div>
                 </div>
                 
                 {/* Interactive View Button */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-500 shadow-xl">
-                    <ArrowUpRight size={24} className="text-slate-900" />
+                  <div className="w-16 h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-500 shadow-xl">
+                    <ArrowUpRight size={24} className="text-slate-900 dark:text-white" />
                   </div>
                 </div>
               </div>
               
               <div className="flex justify-between items-start pl-4 md:pl-8 border-l border-slate-300 group-hover:border-accent-blue transition-colors duration-500">
                 <div>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-2 leading-tight group-hover:text-accent-blue transition-colors">{project.title}</h3>
-                  <p className="font-sans text-slate-500 font-medium">{project.type}</p>
+                  <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 leading-tight group-hover:text-accent-blue transition-colors">{project.title}</h3>
+                  <p className="font-sans text-slate-500 dark:text-slate-400 dark:text-slate-500 font-medium">{project.type}</p>
                 </div>
-                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">
                   {new Date().getFullYear()}
                 </div>
               </div>
