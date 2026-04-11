@@ -36,7 +36,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="bg-slate-50 min-h-screen pt-32 pb-24 overflow-hidden">
+    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
       
       {/* Inner Page Hero Banner */}
       <section className="relative min-h-[500px] h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-[2rem] md:rounded-[3rem] overflow-hidden mb-24">
@@ -89,25 +89,25 @@ export default function ServicesPage() {
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
               />
-              <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-6 py-3 rounded-full flex items-center gap-3">
+              <div className="absolute top-6 left-6 bg-white dark:bg-slate-800/90 backdrop-blur-md px-6 py-3 rounded-full flex items-center gap-3">
                 <service.icon size={20} className="text-accent-blue" />
-                <span className="text-sm font-bold tracking-widest uppercase text-slate-900">{service.title}</span>
+                <span className="text-sm font-bold tracking-widest uppercase text-slate-900 dark:text-white">{service.title}</span>
               </div>
             </div>
 
             {/* Content */}
             <div className="lg:w-1/2 flex flex-col justify-center space-y-8 pr-12">
               <div className="text-accent-blue font-mono font-bold text-lg opacity-40 mb-[-1rem]">0{index + 1}</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
-                {service.title.split(' ')[0]} <span className="text-slate-400">{service.title.split(' ')[1]}</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight">
+                {service.title.split(' ')[0]} <span className="text-slate-400 dark:text-slate-500">{service.title.split(' ')[1]}</span>
               </h2>
-              <p className="text-xl text-slate-500 font-sans leading-relaxed">
+              <p className="text-xl text-slate-500 dark:text-slate-400 dark:text-slate-500 font-sans leading-relaxed">
                 {service.description}
               </p>
               
-              <ul className="space-y-4 pt-4 border-t border-slate-200">
+              <ul className="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-700">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-4 text-slate-700 font-sans font-semibold">
+                  <li key={idx} className="flex items-center gap-4 text-slate-700 dark:text-slate-300 font-sans font-semibold">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center">
                       <Check className="text-accent-blue" size={16} />
                     </div>

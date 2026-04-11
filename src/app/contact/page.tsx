@@ -11,7 +11,7 @@ const fadeUpVariant: Variants = {
 
 export default function ContactPage() {
   return (
-    <div className="bg-slate-50 min-h-screen pt-32 pb-24 overflow-hidden">
+    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
 
       {/* Inner Page Hero Banner */}
       <section className="relative min-h-[500px] h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-[2rem] md:rounded-[3rem] overflow-hidden mb-24">
@@ -54,8 +54,8 @@ export default function ContactPage() {
           className="lg:w-1/3 flex flex-col gap-12"
         >
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Start your journey to zero bills.</h2>
-            <p className="text-lg text-slate-500 font-sans leading-relaxed">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Start your journey to zero bills.</h2>
+            <p className="text-lg text-slate-500 dark:text-slate-400 dark:text-slate-500 font-sans leading-relaxed">
               We guide homeowners and businesses to utilize their roof space for unparalleled energy efficiency. Reach out.
             </p>
           </div>
@@ -64,32 +64,32 @@ export default function ContactPage() {
             <div className="flex gap-4">
               <div className="text-accent-blue mt-1"><MapPin size={24} /></div>
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Headquarters</h3>
-                <p className="text-lg font-bold text-slate-900 font-poppins leading-tight">123 Solar Way<br/>Eco City, EC 90210</p>
+                <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">Headquarters</h3>
+                <p className="text-lg font-bold text-slate-900 dark:text-white font-poppins leading-tight">123 Solar Way<br/>Eco City, EC 90210</p>
               </div>
             </div>
 
             <div className="flex gap-4">
               <div className="text-accent-yellow mt-1"><Phone size={24} /></div>
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Direct Lines</h3>
-                <p className="text-lg font-bold text-slate-900 font-poppins leading-tight">+1 (800) 123-4567<br/>+1 (555) 987-6543</p>
+                <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">Direct Lines</h3>
+                <p className="text-lg font-bold text-slate-900 dark:text-white font-poppins leading-tight">+1 (800) 123-4567<br/>+1 (555) 987-6543</p>
               </div>
             </div>
 
             <div className="flex gap-4">
               <div className="text-accent-blue mt-1"><Mail size={24} /></div>
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Digital</h3>
-                <p className="text-lg font-bold text-slate-900 font-poppins leading-tight">info@aibishter.com<br/>support@aibishter.com</p>
+                <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">Digital</h3>
+                <p className="text-lg font-bold text-slate-900 dark:text-white font-poppins leading-tight">info@aibishter.com<br/>support@aibishter.com</p>
               </div>
             </div>
             
             <div className="flex gap-4">
               <div className="text-accent-yellow mt-1"><Clock size={24} /></div>
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Hours</h3>
-                <p className="text-lg font-bold text-slate-900 font-poppins leading-tight">Mon - Fri: 8AM - 6PM<br/>Sat & Sun: Closed</p>
+                <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">Hours</h3>
+                <p className="text-lg font-bold text-slate-900 dark:text-white font-poppins leading-tight">Mon - Fri: 8AM - 6PM<br/>Sat & Sun: Closed</p>
               </div>
             </div>
           </div>
@@ -104,39 +104,39 @@ export default function ContactPage() {
             hidden: { opacity: 0, scale: 0.95 },
             visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } }
           }}
-          className="lg:w-2/3 bg-white p-10 md:p-16 rounded-[3rem] shadow-2xl shadow-black/5 border border-slate-100"
+          className="lg:w-2/3 bg-white dark:bg-slate-800 p-10 md:p-16 rounded-[3rem] shadow-2xl shadow-black/5 border border-slate-100 dark:border-slate-800"
         >
           <div className="mb-12">
-            <h3 className="text-4xl font-bold text-slate-900 tracking-tight mb-2 font-poppins">Send a Message.</h3>
-            <p className="text-slate-500 font-sans">Our engineering consultants usually respond immediately during office hours.</p>
+            <h3 className="text-4xl font-bold text-slate-900 dark:text-white tracking-tight mb-2 font-poppins">Send a Message.</h3>
+            <p className="text-slate-500 dark:text-slate-400 dark:text-slate-500 font-sans">Our engineering consultants usually respond immediately during office hours.</p>
           </div>
           
           <form className="space-y-8 font-sans" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">First Name</label>
-                <input type="text" className="w-full bg-slate-50 border-b-2 border-slate-200 focus:border-accent-yellow px-4 py-3 text-slate-900 focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="Jane" />
+                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-widest">First Name</label>
+                <input type="text" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="Jane" />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">Last Name</label>
-                <input type="text" className="w-full bg-slate-50 border-b-2 border-slate-200 focus:border-accent-yellow px-4 py-3 text-slate-900 focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="Doe" />
+                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-widest">Last Name</label>
+                <input type="text" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="Doe" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">Email Address</label>
-                <input type="email" className="w-full bg-slate-50 border-b-2 border-slate-200 focus:border-accent-yellow px-4 py-3 text-slate-900 focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="jane@example.com" data-lpignore="true" />
+                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-widest">Email Address</label>
+                <input type="email" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="jane@example.com" data-lpignore="true" />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">Phone Number</label>
-                <input type="tel" className="w-full bg-slate-50 border-b-2 border-slate-200 focus:border-accent-yellow px-4 py-3 text-slate-900 focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="(555) 123-4567" />
+                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-widest">Phone Number</label>
+                <input type="tel" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="(555) 123-4567" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">Interested Service</label>
-              <select className="w-full bg-slate-50 border-b-2 border-slate-200 focus:border-accent-yellow px-4 py-3 text-slate-900 focus:outline-none transition-all rounded-tl-xl rounded-tr-xl appearance-none">
+              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-widest">Interested Service</label>
+              <select className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl appearance-none">
                 <option value="residential">Residential Setup</option>
                 <option value="commercial">Commercial Arrays</option>
                 <option value="storage">Battery Storage</option>
@@ -145,8 +145,8 @@ export default function ContactPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">Message context</label>
-              <textarea rows={4} className="w-full bg-slate-50 border-b-2 border-slate-200 focus:border-accent-yellow px-4 py-3 text-slate-900 focus:outline-none transition-all rounded-tl-xl rounded-tr-xl resize-none" placeholder="Provide any specifications or details..."></textarea>
+              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-widest">Message context</label>
+              <textarea rows={4} className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl resize-none" placeholder="Provide any specifications or details..."></textarea>
             </div>
 
             <button className="w-full bg-accent-blue hover:bg-slate-900 text-white font-bold text-lg rounded-full px-4 py-5 mt-4 transition-colors flex items-center justify-center gap-3 group shadow-xl">
