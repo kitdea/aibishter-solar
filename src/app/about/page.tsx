@@ -55,7 +55,7 @@ export default function AboutPage() {
           <h2 className="text-4xl pr-8 font-bold text-slate-900 dark:text-white mb-8 leading-tight">
             Building a Brighter Tomorrow with Tomorrow&apos;s Technology.
           </h2>
-          <p className="text-lg text-slate-500 dark:text-slate-400 dark:text-slate-500 leading-relaxed mb-6 font-sans">
+          <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed mb-6 font-sans">
             Founded on the principle that clean energy should be highly accessible and affordable, Aibishter Engineering Services has grown into a leading solar provider. Over the past decade, we have empowered thousands of homes and businesses to take complete control of their energy structures while protecting the environment.
           </p>
           <div className="grid grid-cols-2 gap-6 mt-12">

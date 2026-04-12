@@ -91,7 +91,7 @@ export default function BlogPage() {
                     {post.title}
                   </h2>
                 </Link>
-                <p className="text-lg text-slate-500 dark:text-slate-400 dark:text-slate-500 font-sans leading-relaxed">
+                <p className="text-lg text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
                   {post.excerpt}
                 </p>
                 <div className="mt-4 flex items-center text-xs font-bold tracking-widest uppercase text-slate-400 dark:text-slate-500 group-hover:text-accent-blue transition-colors gap-2">

@@ -101,7 +101,7 @@ export default function ServicesPage() {
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight">
                 {service.title.split(' ')[0]} <span className="text-slate-400 dark:text-slate-500">{service.title.split(' ')[1]}</span>
               </h2>
-              <p className="text-xl text-slate-500 dark:text-slate-400 dark:text-slate-500 font-sans leading-relaxed">
+              <p className="text-xl text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
                 {service.description}
               </p>
               

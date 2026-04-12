@@ -55,7 +55,7 @@ export default function ContactPage() {
         >
           <div>
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Start your journey to zero bills.</h2>
-            <p className="text-lg text-slate-500 dark:text-slate-400 dark:text-slate-500 font-sans leading-relaxed">
+            <p className="text-lg text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
               We guide homeowners and businesses to utilize their roof space for unparalleled energy efficiency. Reach out.
             </p>
           </div>
@@ -108,34 +108,34 @@ export default function ContactPage() {
         >
           <div className="mb-12">
             <h3 className="text-4xl font-bold text-slate-900 dark:text-white tracking-tight mb-2 font-poppins">Send a Message.</h3>
-            <p className="text-slate-500 dark:text-slate-400 dark:text-slate-500 font-sans">Our engineering consultants usually respond immediately during office hours.</p>
+            <p className="text-slate-500 dark:text-slate-400 font-sans">Our engineering consultants usually respond immediately during office hours.</p>
           </div>
           
           <form className="space-y-8 font-sans" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-widest">First Name</label>
+                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">First Name</label>
                 <input type="text" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="Jane" />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-widest">Last Name</label>
+                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Last Name</label>
                 <input type="text" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="Doe" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-widest">Email Address</label>
+                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Email Address</label>
                 <input type="email" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="jane@example.com" data-lpignore="true" />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-widest">Phone Number</label>
+                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Phone Number</label>
                 <input type="tel" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="(555) 123-4567" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-widest">Interested Service</label>
+              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Interested Service</label>
               <select className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl appearance-none">
                 <option value="residential">Residential Setup</option>
                 <option value="commercial">Commercial Arrays</option>
@@ -145,7 +145,7 @@ export default function ContactPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-widest">Message context</label>
+              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Message context</label>
               <textarea rows={4} className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl resize-none" placeholder="Provide any specifications or details..."></textarea>
             </div>
 

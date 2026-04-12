@@ -76,7 +76,7 @@ export default function Home() {
         </div>
 
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight text-slate-900 dark:text-slate-50 max-w-5xl">
-          From high-efficiency residential arrays to robust commercial grids, <span className="text-slate-400 dark:text-slate-400 dark:text-slate-500/80">innovating the transition to sustainable and reliable energy.</span>
+          From high-efficiency residential arrays to robust commercial grids, <span className="text-slate-400 dark:text-slate-400/80">innovating the transition to sustainable and reliable energy.</span>
         </h2>
       </motion.section>
 
@@ -122,7 +122,7 @@ export default function Home() {
             </div>
 
             <Image
-              src="https://images.unsplash.com/photo-1542339031-a0680fd7a496?q=80&w=2070&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop"
               alt="Solar Detail"
               fill
               className="object-cover group-hover:scale-110 transition-transform duration-1000"
@@ -141,9 +141,9 @@ export default function Home() {
               <div className="w-10 h-10 bg-white dark:bg-slate-700 rounded-full flex items-center justify-center mb-6 shadow-sm">
                 <ShieldCheck size={20} className="text-accent-blue dark:text-white" />
               </div>
-              <p className="text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 dark:text-slate-500 font-bold mb-2">For every application</p>
+              <p className="text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 font-bold mb-2">For every application</p>
               <h3 className="text-3xl font-bold leading-tight">Up to <span className="text-accent-blue">25 Years</span></h3>
-              <p className="text-slate-600 dark:text-slate-400 dark:text-slate-500 mt-2 text-sm leading-relaxed">Comprehensive warranty covering panels, inverters, and roofing labor.</p>
+              <p className="text-slate-600 dark:text-slate-400 mt-2 text-sm leading-relaxed">Comprehensive warranty covering panels, inverters, and roofing labor.</p>
             </div>
 
             <button className="self-start text-xs font-bold uppercase tracking-widest bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 px-4 py-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors">
@@ -191,7 +191,7 @@ export default function Home() {
             <div className="mb-8">
               <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-widest mb-4 inline-block">Free Consultation</span>
               <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Request an Estimate</h3>
-              <p className="text-slate-500 dark:text-slate-400 dark:text-slate-500 text-sm">Fill out the quick form below. Our energy consultants respond within 24 hours.</p>
+              <p className="text-slate-500 dark:text-slate-400 text-sm">Fill out the quick form below. Our energy consultants respond within 24 hours.</p>
             </div>
 
             <form className="space-y-5 font-sans" onSubmit={(e) => e.preventDefault()}>
@@ -223,7 +223,7 @@ export default function Home() {
                 Get My Estimate <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </button>
 
-              <p className="text-center text-xs text-slate-400 dark:text-slate-500 mt-4">By submitting this form, you agree to our <Link href="#" className="underline hover:text-slate-600 dark:text-slate-400 dark:text-slate-500">Privacy Policy</Link>.</p>
+              <p className="text-center text-xs text-slate-400 dark:text-slate-500 mt-4">By submitting this form, you agree to our <Link href="#" className="underline hover:text-slate-600 dark:text-slate-400">Privacy Policy</Link>.</p>
             </form>
           </div>
         </div>

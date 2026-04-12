@@ -27,7 +27,7 @@ const projects = [
     title: "Sunridge Farms",
     type: "Agriculture Mount",
     systemSize: "1.2 MW",
-    image: "https://images.unsplash.com/photo-1542339031-a0680fd7a496?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop"
   },
   {
     title: "Sunrise Suburbs",
@@ -119,7 +119,7 @@ export default function ProjectsPage() {
               <div className="flex justify-between items-start pl-4 md:pl-8 border-l border-slate-300 group-hover:border-accent-blue transition-colors duration-500">
                 <div>
                   <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 leading-tight group-hover:text-accent-blue transition-colors">{project.title}</h3>
-                  <p className="font-sans text-slate-500 dark:text-slate-400 dark:text-slate-500 font-medium">{project.type}</p>
+                  <p className="font-sans text-slate-500 dark:text-slate-400 font-medium">{project.type}</p>
                 </div>
                 <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">
                   {new Date().getFullYear()}

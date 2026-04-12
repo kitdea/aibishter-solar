@@ -35,18 +35,18 @@ export default function Footer() {
             <Sun size={48} className="text-accent-blue" strokeWidth={1.5} />
             <div className="flex flex-col leading-none">
               <span className="text-4xl md:text-5xl font-bold tracking-tighter uppercase font-poppins text-slate-900 dark:text-white">Aibishter</span>
-              <span className="text-xs md:text-sm tracking-[0.3em] font-bold uppercase text-slate-500 dark:text-slate-400 dark:text-slate-500 mt-1">Engineering Services</span>
+              <span className="text-xs md:text-sm tracking-[0.3em] font-bold uppercase text-slate-500 dark:text-slate-400 mt-1">Engineering Services</span>
             </div>
           </div>
         </div>
 
         {/* Thick divider */}
-        <div className="h-[2px] w-full bg-slate-900 dark:bg-slate-100 dark:bg-slate-900 mb-16"></div>
+        <div className="h-[2px] w-full bg-slate-900 dark:bg-slate-100 mb-16"></div>
 
         {/* Links Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24 font-sans">
           <div className="flex flex-col space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 mb-4">Platform</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Platform</h4>
             {["Home", "Services", "Projects", "About Us"].map((link, i) => (
               <Link key={i} href={`/${link.toLowerCase().replace(' ', '') === 'home' ? '' : link.toLowerCase().replace(' ', '')}`} className="text-slate-700 dark:text-slate-300 font-medium hover:text-accent-blue dark:hover:text-accent-blue hover:translate-x-1 transition-all">
                 {link}
@@ -54,7 +54,7 @@ export default function Footer() {
             ))}
           </div>
           <div className="flex flex-col space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 mb-4">Resources</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Resources</h4>
             {["Blog & News", "Case Studies", "Energy Calculator", "FAQ"].map((link, i) => (
               <Link key={i} href="#" className="text-slate-700 dark:text-slate-300 font-medium hover:text-accent-blue dark:hover:text-accent-blue hover:translate-x-1 transition-all">
                 {link}
@@ -62,7 +62,7 @@ export default function Footer() {
             ))}
           </div>
           <div className="flex flex-col space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 mb-4">Legal</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Legal</h4>
             {["Privacy Policy", "Terms of Service", "Cookie Policy", "Sitemap"].map((link, i) => (
               <Link key={i} href="#" className="text-slate-700 dark:text-slate-300 font-medium hover:text-accent-blue dark:hover:text-accent-blue hover:translate-x-1 transition-all">
                 {link}
@@ -70,7 +70,7 @@ export default function Footer() {
             ))}
           </div>
           <div className="flex flex-col space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 mb-4">Social</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Social</h4>
             <a href="#" className="text-slate-700 dark:text-slate-300 font-medium flex items-center gap-2 hover:text-accent-blue dark:hover:text-accent-blue transition-colors group">
               <span className="font-bold font-serif mb-1 leading-none text-base">IG</span> Instagram <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
             </a>
@@ -84,14 +84,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Banner */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-xs font-medium uppercase tracking-widest text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500">
+        <div className="flex flex-col md:flex-row justify-between items-center text-xs font-medium uppercase tracking-widest text-slate-400 dark:text-slate-500">
           <p>&copy; {new Date().getFullYear()} Aibishter Solar. All rights reserved.</p>
           <p className="mt-4 md:mt-0 flex items-center gap-2">Built for the future <span className="w-2 h-2 rounded-full bg-accent-blue inline-block animate-pulse"></span></p>
         </div>
       </div>
       
       {/* Background massive ambient text effect just for aesthetic */}
-      <div className="absolute bottom-[-10vw] left-0 right-0 text-[20vw] font-bold text-slate-100 dark:text-slate-900 dark:text-white/50 whitespace-nowrap opacity-50 z-0 pointer-events-none select-none font-poppins leading-none text-center">
+      <div className="absolute bottom-[-10vw] left-0 right-0 text-[20vw] font-bold text-slate-100 dark:text-slate-900/50 whitespace-nowrap opacity-50 z-0 pointer-events-none select-none font-poppins leading-none text-center">
         AIBISHTER
       </div>
     </footer>
