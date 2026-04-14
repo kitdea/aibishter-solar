@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Program Files/GitHub CLI//**)",
+      "Read(//c/Users/franc/AppData/Local/Programs/**)",
+      "Read(//c/Users/franc/**)",
+      "Bash($GH pr:*)",
+      "Bash('/c/Program Files/GitHub CLI/gh.exe' pr list --state open --json number,title,headRefName,isDraft --head branch-aes)",
+      "Bash('/c/Program Files/GitHub CLI/gh.exe' pr list --state all --json number,title,headRefName,isDraft,state)"
+    ]
+  },
+  "enabledPlugins": {
+    "code-review@claude-plugins-official": true
+  }
+}
