@@ -3,12 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Sun } from "lucide-react";
-import { motion, Variants } from "framer-motion";
-
-const fadeUpVariant: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-};
+import { motion } from "framer-motion";
+import { fadeUpVariant } from "@/lib/animations";
 
 const projects = [
   {
@@ -48,6 +44,8 @@ const projects = [
     image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2058&auto=format&fit=crop"
   }
 ];
+
+const currentYear = new Date().getFullYear();
 
 export default function ProjectsPage() {
   return (
@@ -122,7 +120,7 @@ export default function ProjectsPage() {
                   <p className="font-sans text-slate-500 dark:text-slate-400 font-medium">{project.type}</p>
                 </div>
                 <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">
-                  {new Date().getFullYear()}
+                  {currentYear}
                 </div>
               </div>
             </motion.div>

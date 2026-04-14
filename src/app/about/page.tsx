@@ -2,12 +2,8 @@
 
 import Image from "next/image";
 import { CheckCircle2, Award, Users, TrendingUp, Sun } from "lucide-react";
-import { motion, Variants } from "framer-motion";
-
-const fadeUpVariant: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-};
+import { motion } from "framer-motion";
+import { fadeUpVariant } from "@/lib/animations";
 
 export default function AboutPage() {
   return (

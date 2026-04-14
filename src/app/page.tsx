@@ -39,10 +39,10 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mt-8 gap-6 md:gap-0">
               <div className="flex gap-4">
                 <span className="text-white/60 uppercase tracking-widest text-xs font-bold font-sans flex items-center gap-2">
-                  <span className="w-8 h-[1px] bg-white dark:bg-slate-800/40 block"></span> Home
+                  <span className="w-8 h-[1px] bg-white/40 block"></span> Home
                 </span>
                 <span className="text-white/60 uppercase tracking-widest text-xs font-bold font-sans flex items-center gap-2">
-                  <span className="w-8 h-[1px] bg-white dark:bg-slate-800/40 block"></span> Energy
+                  <span className="w-8 h-[1px] bg-white/40 block"></span> Energy
                 </span>
               </div>
               <p className="text-white/80 max-w-sm text-sm md:text-base leading-relaxed font-sans">
@@ -117,7 +117,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="col-span-1 md:col-span-1 bg-blue-50 dark:bg-slate-800 rounded-[2rem] p-6 relative overflow-hidden group"
           >
-            <div className="absolute top-6 left-6 z-10 flex items-center gap-2 text-xs font-bold text-accent-blue dark:text-white uppercase tracking-widest bg-white dark:bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur px-3 py-1 rounded-full">
+            <div className="absolute top-6 left-6 z-10 flex items-center gap-2 text-xs font-bold text-accent-blue dark:text-white uppercase tracking-widest bg-white dark:bg-slate-900/80 backdrop-blur px-3 py-1 rounded-full">
               <Sun size={14} className="text-accent-yellow" /> Solar Irradiation
             </div>
 
@@ -255,7 +255,7 @@ export default function Home() {
             >
               <Image src={src} alt="Solar Install" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 dark:group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                <div className="w-10 h-10 bg-white dark:bg-slate-800/90 dark:bg-slate-800/90 backdrop-blur rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 text-accent-blue dark:text-white">
+                <div className="w-10 h-10 bg-white dark:bg-slate-800/90 backdrop-blur rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 text-accent-blue dark:text-white">
                   <Play size={16} className="ml-1" />
                 </div>
               </div>
