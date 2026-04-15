@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MapPin, Phone, Mail, Clock, ArrowRight, Sun } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowRight, Sun } from "@/lib/icons";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
 
@@ -16,9 +16,10 @@ export default function ContactPage() {
           alt="Contact Aibishter Solar"
           fill
           priority
+          suppressHydrationWarning
           className="object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10"></div>
         
         <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-20 px-6 md:px-12 z-10 text-center md:text-left">
           <motion.div
@@ -56,7 +57,7 @@ export default function ContactPage() {
             </p>
           </div>
           
-          <div className="space-y-8 flex-grow">
+          <div className="space-y-8 grow">
             <div className="flex gap-4">
               <div className="text-accent-blue mt-1"><MapPin size={24} /></div>
               <div>

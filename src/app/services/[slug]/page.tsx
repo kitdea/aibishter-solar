@@ -4,7 +4,7 @@ import { use } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Zap, Battery, Wrench, Cpu, Check, ArrowRight, Sun, ChevronRight } from "lucide-react";
+import { Zap, Battery, Wrench, Cpu, Check, ArrowRight, Sun, ChevronRight } from "@/lib/icons";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
 import { getServiceBySlug } from "@/lib/services-data";
@@ -28,15 +28,16 @@ export default function ServiceDetailPage({
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
 
       {/* Hero Banner */}
-      <section className="relative min-h-[500px] h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-[2rem] md:rounded-[3rem] overflow-hidden mb-24">
+      <section className="relative min-h-[500px] h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-24">
         <Image
           src={service.heroImage}
           alt={`${service.title} – Aibishter Solar`}
           fill
           priority
+          suppressHydrationWarning
           className="object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10" />
 
         <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-20 px-6 md:px-12 z-10 text-center md:text-left">
           <motion.div
@@ -119,11 +120,12 @@ export default function ServiceDetailPage({
           </div>
 
           {/* Image */}
-          <div className="lg:w-1/2 relative h-[500px] md:h-[600px] w-full rounded-[3rem] overflow-hidden shadow-xl group">
+          <div className="lg:w-1/2 relative h-125 md:h-150 w-full rounded-5xl overflow-hidden shadow-xl group">
             <Image
               src={service.image}
               alt={service.title}
               fill
+              suppressHydrationWarning
               className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
             />
           </div>
@@ -166,9 +168,9 @@ export default function ServiceDetailPage({
                     transition: { duration: 0.5, delay: idx * 0.1 },
                   },
                 }}
-                className="flex gap-5 p-7 bg-slate-50 dark:bg-slate-800 rounded-[2rem] border border-slate-100 dark:border-slate-700"
+                className="flex gap-5 p-7 bg-slate-50 dark:bg-slate-800 rounded-4xl border border-slate-100 dark:border-slate-700"
               >
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center mt-0.5">
+                <div className="shrink-0 w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center mt-0.5">
                   <Check size={18} className="text-accent-blue" />
                 </div>
                 <div>
@@ -220,7 +222,7 @@ export default function ServiceDetailPage({
                   transition: { duration: 0.5, delay: idx * 0.1 },
                 },
               }}
-              className={`p-8 rounded-[2rem] border ${
+              className={`p-8 rounded-4xl border ${
                 idx === 0
                   ? "bg-accent-blue border-accent-blue"
                   : "bg-white dark:bg-slate-800 border-slate-100 dark:border-slate-700"
@@ -261,7 +263,7 @@ export default function ServiceDetailPage({
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeUpVariant}
-          className="relative overflow-hidden bg-slate-900 dark:bg-slate-800 rounded-[2rem] md:rounded-[3rem] px-8 md:px-16 py-16 text-center"
+          className="relative overflow-hidden bg-slate-900 dark:bg-slate-800 rounded-4xl md:rounded-5xl px-8 md:px-16 py-16 text-center"
         >
           {/* Decorative blurs */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-accent-blue opacity-10 rounded-full translate-x-1/2 -translate-y-1/2 blur-3xl pointer-events-none" />

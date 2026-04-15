@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Leaf, Sun, Zap, ThermometerSun, ShieldCheck, Play } from "lucide-react";
+import { ArrowRight, Leaf, Sun, Zap, ThermometerSun, ShieldCheck, Play } from "@/lib/icons";
 import { motion, Variants } from "framer-motion";
 
 const fadeUpVariant: Variants = {
@@ -15,15 +15,16 @@ export default function Home() {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen overflow-hidden">
 
       {/* 1. Ultra-Modern Hero Section */}
-      <section className="relative h-[90vh] md:h-[100vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-[2rem] md:rounded-[3rem] overflow-hidden">
+      <section className="relative h-[90vh] md:h-[100vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop"
           alt="Solar panels filling the sky"
           fill
           priority
+          suppressHydrationWarning
           className="object-cover object-bottom scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
 
         {/* Massive Typography Overlay */}
         <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-24 px-6 md:px-12 z-10">
@@ -39,10 +40,10 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mt-8 gap-6 md:gap-0">
               <div className="flex gap-4">
                 <span className="text-white/60 uppercase tracking-widest text-xs font-bold font-sans flex items-center gap-2">
-                  <span className="w-8 h-[1px] bg-white/40 block"></span> Home
+                  <span className="w-8 h-px bg-white/40 block"></span> Home
                 </span>
                 <span className="text-white/60 uppercase tracking-widest text-xs font-bold font-sans flex items-center gap-2">
-                  <span className="w-8 h-[1px] bg-white/40 block"></span> Energy
+                  <span className="w-8 h-px bg-white/40 block"></span> Energy
                 </span>
               </div>
               <p className="text-white/80 max-w-sm text-sm md:text-base leading-relaxed font-sans">
@@ -92,7 +93,7 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="col-span-1 md:col-span-1 bg-accent-blue rounded-[2rem] p-8 flex flex-col justify-between text-white relative overflow-hidden group hover:shadow-2xl transition-all"
+            className="col-span-1 md:col-span-1 bg-accent-blue rounded-4xl p-8 flex flex-col justify-between text-white relative overflow-hidden group hover:shadow-2xl transition-all"
           >
             <div className="absolute top-0 right-0 p-6 opacity-30 group-hover:opacity-100 transition-opacity">
               <Leaf size={40} />
@@ -115,7 +116,7 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="col-span-1 md:col-span-1 bg-blue-50 dark:bg-slate-800 rounded-[2rem] p-6 relative overflow-hidden group"
+            className="col-span-1 md:col-span-1 bg-blue-50 dark:bg-slate-800 rounded-4xl p-6 relative overflow-hidden group"
           >
             <div className="absolute top-6 left-6 z-10 flex items-center gap-2 text-xs font-bold text-accent-blue dark:text-white uppercase tracking-widest bg-white dark:bg-slate-900/80 backdrop-blur px-3 py-1 rounded-full">
               <Sun size={14} className="text-accent-yellow" /> Solar Irradiation
@@ -125,6 +126,7 @@ export default function Home() {
               src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop"
               alt="Solar Detail"
               fill
+              suppressHydrationWarning
               className="object-cover group-hover:scale-110 transition-transform duration-1000"
             />
           </motion.div>
@@ -135,7 +137,7 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="col-span-1 md:col-span-1 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 rounded-[2rem] p-8 flex flex-col justify-between text-slate-800 dark:text-slate-200 hover:shadow-xl transition-all"
+            className="col-span-1 md:col-span-1 bg-linear-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 rounded-4xl p-8 flex flex-col justify-between text-slate-800 dark:text-slate-200 hover:shadow-xl transition-all"
           >
             <div>
               <div className="w-10 h-10 bg-white dark:bg-slate-700 rounded-full flex items-center justify-center mb-6 shadow-sm">
@@ -163,7 +165,7 @@ export default function Home() {
       >
         <div className="bg-slate-900 rounded-[3rem] overflow-hidden relative shadow-2xl flex flex-col lg:flex-row">
           {/* Background Decorative */}
-          <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-10 blur-3xl rounded-full w-[800px] h-[800px] bg-accent-yellow pointer-events-none"></div>
+          <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-10 blur-3xl rounded-full w-200 h-200 bg-accent-yellow pointer-events-none"></div>
 
           {/* Left Text/Value Prop */}
           <div className="lg:w-1/2 p-12 md:p-20 relative z-10 flex flex-col justify-center">
@@ -187,7 +189,7 @@ export default function Home() {
           </div>
 
           {/* Right Lead Capture Form */}
-          <div className="lg:w-1/2 bg-white dark:bg-slate-800 m-4 md:m-8 lg:m-4 rounded-[2rem] p-8 md:p-12 relative z-10 shadow-inner">
+          <div className="lg:w-1/2 bg-white dark:bg-slate-800 m-4 md:m-8 lg:m-4 rounded-4xl p-8 md:p-12 relative z-10 shadow-inner">
             <div className="mb-8">
               <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-widest mb-4 inline-block">Free Consultation</span>
               <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Request an Estimate</h3>
@@ -253,7 +255,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer"
             >
-              <Image src={src} alt="Solar Install" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+              <Image src={src} alt="Solar Install" fill suppressHydrationWarning className="object-cover group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 dark:group-hover:bg-black/40 transition-colors flex items-center justify-center">
                 <div className="w-10 h-10 bg-white dark:bg-slate-800/90 backdrop-blur rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 text-accent-blue dark:text-white">
                   <Play size={16} className="ml-1" />

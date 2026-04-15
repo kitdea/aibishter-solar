@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Check, Zap, Battery, Wrench, ArrowRight, Sun, Cpu } from "lucide-react";
+import { Check, Zap, Battery, Wrench, ArrowRight, Sun, Cpu } from "@/lib/icons";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
@@ -14,15 +14,16 @@ export default function ServicesPage() {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
       
       {/* Inner Page Hero Banner */}
-      <section className="relative min-h-[500px] h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-[2rem] md:rounded-[3rem] overflow-hidden mb-24">
+      <section className="relative min-h-125 h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-24">
         <Image
           src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop"
           alt="Aibishter Solar services"
           fill
           priority
+          suppressHydrationWarning
           className="object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10"></div>
         
         <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-20 px-6 md:px-12 z-10 text-center md:text-left">
           <motion.div
@@ -60,11 +61,12 @@ export default function ServicesPage() {
             className={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
           >
             {/* Visual — clicking the image navigates to the detail page */}
-            <Link href={`/services/${service.slug}`} className="lg:w-1/2 relative h-[500px] md:h-[600px] w-full rounded-[3rem] overflow-hidden group shadow-xl block">
+            <Link href={`/services/${service.slug}`} className="lg:w-1/2 relative h-125 md:h-150 w-full rounded-5xl overflow-hidden group shadow-xl block">
               <Image
                 src={service.image}
                 alt={service.title}
                 fill
+                suppressHydrationWarning
                 className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
               />
               <div className="absolute top-6 left-6 bg-white dark:bg-slate-800/90 backdrop-blur-md px-6 py-3 rounded-full flex items-center gap-3">
@@ -75,7 +77,7 @@ export default function ServicesPage() {
 
             {/* Content */}
             <div className="lg:w-1/2 flex flex-col justify-center space-y-8 pr-12">
-              <div className="text-accent-blue font-mono font-bold text-lg opacity-40 mb-[-1rem]">0{index + 1}</div>
+              <div className="text-accent-blue font-mono font-bold text-lg opacity-40 -mb-4">0{index + 1}</div>
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight">
                 {titleWord1} <span className="text-slate-400 dark:text-slate-500">{titleRest.join(' ')}</span>
               </h2>
@@ -86,7 +88,7 @@ export default function ServicesPage() {
               <ul className="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-700">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center gap-4 text-slate-700 dark:text-slate-300 font-sans font-semibold">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center">
+                    <div className="shrink-0 w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center">
                       <Check className="text-accent-blue" size={16} />
                     </div>
                     {feature.label}

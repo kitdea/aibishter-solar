@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Sun, ArrowRight } from "lucide-react";
+import { Sun, ArrowRight } from "@/lib/icons";
 
 export default function Footer() {
   return (
