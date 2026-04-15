@@ -3,12 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Sun } from "lucide-react";
-import { motion, Variants } from "framer-motion";
-
-const fadeUpVariant: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-};
+import { motion } from "framer-motion";
+import { fadeUpVariant } from "@/lib/animations";
 
 const blogPosts = [
   {
@@ -91,7 +87,7 @@ export default function BlogPage() {
                     {post.title}
                   </h2>
                 </Link>
-                <p className="text-lg text-slate-500 dark:text-slate-400 dark:text-slate-500 font-sans leading-relaxed">
+                <p className="text-lg text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
                   {post.excerpt}
                 </p>
                 <div className="mt-4 flex items-center text-xs font-bold tracking-widest uppercase text-slate-400 dark:text-slate-500 group-hover:text-accent-blue transition-colors gap-2">

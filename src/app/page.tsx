@@ -39,10 +39,10 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mt-8 gap-6 md:gap-0">
               <div className="flex gap-4">
                 <span className="text-white/60 uppercase tracking-widest text-xs font-bold font-sans flex items-center gap-2">
-                  <span className="w-8 h-[1px] bg-white dark:bg-slate-800/40 block"></span> Home
+                  <span className="w-8 h-[1px] bg-white/40 block"></span> Home
                 </span>
                 <span className="text-white/60 uppercase tracking-widest text-xs font-bold font-sans flex items-center gap-2">
-                  <span className="w-8 h-[1px] bg-white dark:bg-slate-800/40 block"></span> Energy
+                  <span className="w-8 h-[1px] bg-white/40 block"></span> Energy
                 </span>
               </div>
               <p className="text-white/80 max-w-sm text-sm md:text-base leading-relaxed font-sans">
@@ -76,7 +76,7 @@ export default function Home() {
         </div>
 
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight text-slate-900 dark:text-slate-50 max-w-5xl">
-          From high-efficiency residential arrays to robust commercial grids, <span className="text-slate-400 dark:text-slate-400 dark:text-slate-500/80">innovating the transition to sustainable and reliable energy.</span>
+          From high-efficiency residential arrays to robust commercial grids, <span className="text-slate-400 dark:text-slate-400/80">innovating the transition to sustainable and reliable energy.</span>
         </h2>
       </motion.section>
 
@@ -117,12 +117,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="col-span-1 md:col-span-1 bg-blue-50 dark:bg-slate-800 rounded-[2rem] p-6 relative overflow-hidden group"
           >
-            <div className="absolute top-6 left-6 z-10 flex items-center gap-2 text-xs font-bold text-accent-blue dark:text-white uppercase tracking-widest bg-white dark:bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur px-3 py-1 rounded-full">
+            <div className="absolute top-6 left-6 z-10 flex items-center gap-2 text-xs font-bold text-accent-blue dark:text-white uppercase tracking-widest bg-white dark:bg-slate-900/80 backdrop-blur px-3 py-1 rounded-full">
               <Sun size={14} className="text-accent-yellow" /> Solar Irradiation
             </div>
 
             <Image
-              src="https://images.unsplash.com/photo-1542339031-a0680fd7a496?q=80&w=2070&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop"
               alt="Solar Detail"
               fill
               className="object-cover group-hover:scale-110 transition-transform duration-1000"
@@ -141,9 +141,9 @@ export default function Home() {
               <div className="w-10 h-10 bg-white dark:bg-slate-700 rounded-full flex items-center justify-center mb-6 shadow-sm">
                 <ShieldCheck size={20} className="text-accent-blue dark:text-white" />
               </div>
-              <p className="text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 dark:text-slate-500 font-bold mb-2">For every application</p>
+              <p className="text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 font-bold mb-2">For every application</p>
               <h3 className="text-3xl font-bold leading-tight">Up to <span className="text-accent-blue">25 Years</span></h3>
-              <p className="text-slate-600 dark:text-slate-400 dark:text-slate-500 mt-2 text-sm leading-relaxed">Comprehensive warranty covering panels, inverters, and roofing labor.</p>
+              <p className="text-slate-600 dark:text-slate-400 mt-2 text-sm leading-relaxed">Comprehensive warranty covering panels, inverters, and roofing labor.</p>
             </div>
 
             <button className="self-start text-xs font-bold uppercase tracking-widest bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 px-4 py-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors">
@@ -191,7 +191,7 @@ export default function Home() {
             <div className="mb-8">
               <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-widest mb-4 inline-block">Free Consultation</span>
               <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Request an Estimate</h3>
-              <p className="text-slate-500 dark:text-slate-400 dark:text-slate-500 text-sm">Fill out the quick form below. Our energy consultants respond within 24 hours.</p>
+              <p className="text-slate-500 dark:text-slate-400 text-sm">Fill out the quick form below. Our energy consultants respond within 24 hours.</p>
             </div>
 
             <form className="space-y-5 font-sans" onSubmit={(e) => e.preventDefault()}>
@@ -223,7 +223,7 @@ export default function Home() {
                 Get My Estimate <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </button>
 
-              <p className="text-center text-xs text-slate-400 dark:text-slate-500 mt-4">By submitting this form, you agree to our <Link href="#" className="underline hover:text-slate-600 dark:text-slate-400 dark:text-slate-500">Privacy Policy</Link>.</p>
+              <p className="text-center text-xs text-slate-400 dark:text-slate-500 mt-4">By submitting this form, you agree to our <Link href="#" className="underline hover:text-slate-600 dark:text-slate-400">Privacy Policy</Link>.</p>
             </form>
           </div>
         </div>
@@ -255,7 +255,7 @@ export default function Home() {
             >
               <Image src={src} alt="Solar Install" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 dark:group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                <div className="w-10 h-10 bg-white dark:bg-slate-800/90 dark:bg-slate-800/90 backdrop-blur rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 text-accent-blue dark:text-white">
+                <div className="w-10 h-10 bg-white dark:bg-slate-800/90 backdrop-blur rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 text-accent-blue dark:text-white">
                   <Play size={16} className="ml-1" />
                 </div>
               </div>

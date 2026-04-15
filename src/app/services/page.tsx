@@ -3,12 +3,8 @@
 import Image from "next/image";
 import { Check, Zap, Battery, Wrench, ArrowRight, Sun } from "lucide-react";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
-
-const fadeUpVariant: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-};
+import { motion } from "framer-motion";
+import { fadeUpVariant } from "@/lib/animations";
 
 const services = [
   {
@@ -72,9 +68,11 @@ export default function ServicesPage() {
 
       {/* Services List overlapping style */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 space-y-32">
-        {services.map((service, index) => (
-          <motion.div 
-            key={index} 
+        {services.map((service, index) => {
+          const [titleWord1, titleWord2] = service.title.split(' ');
+          return (
+          <motion.div
+            key={index}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -99,9 +97,9 @@ export default function ServicesPage() {
             <div className="lg:w-1/2 flex flex-col justify-center space-y-8 pr-12">
               <div className="text-accent-blue font-mono font-bold text-lg opacity-40 mb-[-1rem]">0{index + 1}</div>
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight">
-                {service.title.split(' ')[0]} <span className="text-slate-400 dark:text-slate-500">{service.title.split(' ')[1]}</span>
+                {titleWord1} <span className="text-slate-400 dark:text-slate-500">{titleWord2}</span>
               </h2>
-              <p className="text-xl text-slate-500 dark:text-slate-400 dark:text-slate-500 font-sans leading-relaxed">
+              <p className="text-xl text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
                 {service.description}
               </p>
               
@@ -124,7 +122,8 @@ export default function ServicesPage() {
               </Link>
             </div>
           </motion.div>
-        ))}
+          );
+        })}
       </section>
 
     </div>
