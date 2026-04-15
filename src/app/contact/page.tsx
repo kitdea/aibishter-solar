@@ -10,7 +10,7 @@ export default function ContactPage() {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
 
       {/* Inner Page Hero Banner */}
-      <section className="relative min-h-[500px] h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-[2rem] md:rounded-[3rem] overflow-hidden mb-24">
+      <section className="relative h-[38vh] sm:h-[45vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden mb-14 md:mb-24">
         <Image
           src="https://plus.unsplash.com/premium_photo-1678852331610-1c3906be7316?q=80&w=2030&auto=format&fit=crop"
           alt="Contact Aibishter Solar"
@@ -28,11 +28,11 @@ export default function ContactPage() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-5xl mx-auto md:mx-0"
           >
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-3 md:mb-6">
               <Sun size={24} className="text-accent-yellow" />
               <span className="uppercase tracking-widest text-xs font-bold text-white/80">Aibishter Contact</span>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[0.9] font-poppins">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-tight md:leading-[0.9] font-poppins">
               Get In <span className="text-white/60">Touch.</span>
             </h1>
           </motion.div>

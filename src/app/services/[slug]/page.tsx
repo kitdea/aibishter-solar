@@ -28,7 +28,7 @@ export default function ServiceDetailPage({
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
 
       {/* Hero Banner */}
-      <section className="relative min-h-[500px] h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-24">
+      <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-14 md:mb-24">
         <Image
           src={service.heroImage}
           alt={`${service.title} – Aibishter Solar`}
@@ -39,7 +39,7 @@ export default function ServiceDetailPage({
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10" />
 
-        <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-20 px-6 md:px-12 z-10 text-center md:text-left">
+        <div className="absolute inset-0 flex flex-col justify-end pb-8 md:pb-20 px-6 md:px-12 z-10 text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export default function ServiceDetailPage({
             className="max-w-5xl mx-auto md:mx-0"
           >
             {/* Breadcrumb */}
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-6 flex-wrap">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-3 md:mb-6 flex-wrap">
               <Sun size={20} className="text-accent-yellow" />
               <span className="text-white/60 text-xs font-bold uppercase tracking-widest">
                 Aibishter Solar
@@ -65,11 +65,11 @@ export default function ServiceDetailPage({
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] font-poppins">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] md:leading-[1.1] font-poppins">
               {titleWord1}{" "}
               <span className="text-white/60">{titleRest.join(" ")}</span>
             </h1>
-            <p className="mt-6 text-white/80 max-w-lg font-sans leading-relaxed text-sm md:text-base mx-auto md:mx-0">
+            <p className="mt-3 md:mt-6 text-white/80 max-w-lg font-sans leading-relaxed text-sm md:text-base mx-auto md:mx-0 hidden sm:block">
               {service.tagline}
             </p>
           </motion.div>
@@ -77,7 +77,7 @@ export default function ServiceDetailPage({
       </section>
 
       {/* Overview */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 mb-32">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 mb-20 md:mb-32">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -120,7 +120,7 @@ export default function ServiceDetailPage({
           </div>
 
           {/* Image */}
-          <div className="lg:w-1/2 relative h-125 md:h-150 w-full rounded-5xl overflow-hidden shadow-xl group">
+          <div className="lg:w-1/2 relative h-72 sm:h-80 md:h-100 lg:h-125 w-full rounded-4xl md:rounded-5xl overflow-hidden shadow-xl group">
             <Image
               src={service.image}
               alt={service.title}

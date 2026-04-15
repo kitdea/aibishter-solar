@@ -546,7 +546,7 @@ export default function SolarCalculatorPage() {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
 
       {/* Hero Banner */}
-      <section className="relative min-h-[50vh] w-full mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden mb-20">
+      <section className="relative h-[38vh] sm:h-[44vh] md:min-h-[50vh] w-full mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden mb-14 md:mb-20">
         <Image
           src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop"
           alt="Solar panels on rooftop in the Philippines — Aibishter Solar Calculator"
@@ -558,24 +558,24 @@ export default function SolarCalculatorPage() {
         {/* Overlay */}
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10" />
 
-        <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-20 px-6 md:px-14 z-10">
+        <div className="absolute inset-0 flex flex-col justify-end pb-8 md:pb-20 px-6 md:px-14 z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-4xl"
           >
-            <div className="flex items-center gap-2 mb-5">
+            <div className="flex items-center gap-2 mb-3 md:mb-5">
               <Calculator size={20} className="text-accent-blue" suppressHydrationWarning />
               <span className="uppercase tracking-widest text-xs font-bold text-white/70">
                 Aibishter Solar / Solar Calculator
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] font-poppins">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight md:leading-[1.05] font-poppins">
               Know your numbers<br />
               <span className="text-white/60">before you invest.</span>
             </h1>
-            <p className="mt-6 text-white/80 max-w-lg font-sans leading-relaxed text-sm md:text-base">
+            <p className="mt-4 md:mt-6 text-white/80 max-w-lg font-sans leading-relaxed text-sm md:text-base hidden sm:block">
               Use our free, Philippines-specific solar calculators to estimate the right system
               size and projected monthly savings — powered by PAGASA sun-hour data and Meralco
               reference rates.

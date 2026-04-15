@@ -14,7 +14,7 @@ export default function ServicesPage() {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
       
       {/* Inner Page Hero Banner */}
-      <section className="relative min-h-125 h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-24">
+      <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-14 md:mb-24">
         <Image
           src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop"
           alt="Aibishter Solar services"
@@ -32,14 +32,14 @@ export default function ServicesPage() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-5xl mx-auto md:mx-0"
           >
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-3 md:mb-6">
               <Sun size={24} className="text-accent-yellow" />
               <span className="uppercase tracking-widest text-xs font-bold text-white/80">Aibishter Solar / Services</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] font-poppins">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] md:leading-[1.1] font-poppins">
               Comprehensive solar <span className="text-white/60">energy solutions.</span>
             </h1>
-            <p className="mt-6 md:mt-8 text-white/80 max-w-lg font-sans leading-relaxed text-sm md:text-base mx-auto md:mx-0">
+            <p className="mt-4 md:mt-8 text-white/80 max-w-lg font-sans leading-relaxed text-sm md:text-base mx-auto md:mx-0">
               Designed for efficiency, durability, and maximum savings. We handle the engineering while you reap the rewards.
             </p>
           </motion.div>
@@ -61,7 +61,7 @@ export default function ServicesPage() {
             className={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
           >
             {/* Visual — clicking the image navigates to the detail page */}
-            <Link href={`/services/${service.slug}`} className="lg:w-1/2 relative h-125 md:h-150 w-full rounded-5xl overflow-hidden group shadow-xl block">
+            <Link href={`/services/${service.slug}`} className="lg:w-1/2 relative h-72 sm:h-80 md:h-100 lg:h-125 w-full rounded-4xl md:rounded-5xl overflow-hidden group shadow-xl block">
               <Image
                 src={service.image}
                 alt={service.title}
