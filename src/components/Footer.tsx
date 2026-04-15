@@ -55,9 +55,14 @@ export default function Footer() {
           </div>
           <div className="flex flex-col space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Resources</h4>
-            {["Blog & News", "Case Studies", "Energy Calculator", "FAQ"].map((link, i) => (
-              <Link key={i} href="#" className="text-slate-700 dark:text-slate-300 font-medium hover:text-accent-blue dark:hover:text-accent-blue hover:translate-x-1 transition-all">
-                {link}
+            {[
+              { label: "Blog & News", href: "/blog" },
+              { label: "Case Studies", href: "/projects" },
+              { label: "Solar Calculator", href: "/solar-calculator" },
+              { label: "FAQ", href: "#" },
+            ].map((item, i) => (
+              <Link key={i} href={item.href} className="text-slate-700 dark:text-slate-300 font-medium hover:text-accent-blue dark:hover:text-accent-blue hover:translate-x-1 transition-all">
+                {item.label}
               </Link>
             ))}
           </div>
