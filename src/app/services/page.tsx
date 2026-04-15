@@ -1,34 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { Check, Zap, Battery, Wrench, ArrowRight, Sun } from "lucide-react";
+import { Check, Zap, Battery, Wrench, ArrowRight, Sun, Cpu } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
+import { services } from "@/lib/services-data";
 
-const services = [
-  {
-    title: "Residential Solar",
-    description: "Transform your home into a clean energy powerhouse. We design scalable and aesthetic solar arrays tailored to your roof, maximizing energy production.",
-    features: ["Custom System Design", "Permit Acquisition", "Professional Installation", "System Monitoring App"],
-    icon: Zap,
-    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop"
-  },
-  {
-    title: "Commercial Solar",
-    description: "Empower your business with reliable energy independence. Lower operational costs and demonstrate corporate social responsibility with our large-scale solutions.",
-    features: ["ROI & Yield Analysis", "Rooftop & Carport Solar", "Microgrid Solutions", "Tax Credit Guidance"],
-    icon: Wrench,
-    image: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?q=80&w=2079&auto=format&fit=crop"
-  },
-  {
-    title: "Solar Storage",
-    description: "Store excess solar energy for when you need it most. Our battery backups ensure your lights stay on during grid outages and peak pricing times.",
-    features: ["Lithium-Ion Technology", "Seamless Transition", "Off-Grid Capability", "Smart Load Management"],
-    icon: Battery,
-    image: "https://images.unsplash.com/photo-1548611135-24b94f061173?q=80&w=2070&auto=format&fit=crop"
-  }
-];
+const iconMap = { Zap, Battery, Wrench, Cpu } as const;
 
 export default function ServicesPage() {
   return (
@@ -69,18 +48,19 @@ export default function ServicesPage() {
       {/* Services List overlapping style */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 space-y-32">
         {services.map((service, index) => {
-          const [titleWord1, titleWord2] = service.title.split(' ');
+          const [titleWord1, ...titleRest] = service.title.split(' ');
+          const IconComponent = iconMap[service.iconName];
           return (
           <motion.div
-            key={index}
+            key={service.slug}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUpVariant}
             className={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
           >
-            {/* Visual */}
-            <div className="lg:w-1/2 relative h-[500px] md:h-[600px] w-full rounded-[3rem] overflow-hidden group shadow-xl">
+            {/* Visual — clicking the image navigates to the detail page */}
+            <Link href={`/services/${service.slug}`} className="lg:w-1/2 relative h-[500px] md:h-[600px] w-full rounded-[3rem] overflow-hidden group shadow-xl block">
               <Image
                 src={service.image}
                 alt={service.title}
@@ -88,38 +68,46 @@ export default function ServicesPage() {
                 className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
               />
               <div className="absolute top-6 left-6 bg-white dark:bg-slate-800/90 backdrop-blur-md px-6 py-3 rounded-full flex items-center gap-3">
-                <service.icon size={20} className="text-accent-blue" />
+                <IconComponent size={20} className="text-accent-blue" />
                 <span className="text-sm font-bold tracking-widest uppercase text-slate-900 dark:text-white">{service.title}</span>
               </div>
-            </div>
+            </Link>
 
             {/* Content */}
             <div className="lg:w-1/2 flex flex-col justify-center space-y-8 pr-12">
               <div className="text-accent-blue font-mono font-bold text-lg opacity-40 mb-[-1rem]">0{index + 1}</div>
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight">
-                {titleWord1} <span className="text-slate-400 dark:text-slate-500">{titleWord2}</span>
+                {titleWord1} <span className="text-slate-400 dark:text-slate-500">{titleRest.join(' ')}</span>
               </h2>
               <p className="text-xl text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
                 {service.description}
               </p>
-              
+
               <ul className="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-700">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center gap-4 text-slate-700 dark:text-slate-300 font-sans font-semibold">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center">
                       <Check className="text-accent-blue" size={16} />
                     </div>
-                    {feature}
+                    {feature.label}
                   </li>
                 ))}
               </ul>
-              
-              <Link
-                href="/contact"
-                className="inline-flex max-w-max items-center mt-8 bg-slate-900 text-white font-bold px-8 py-4 rounded-full hover:bg-accent-blue transition-colors gap-3 group shadow-lg"
-              >
-                Request Quote <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </Link>
+
+              <div className="flex flex-wrap gap-4 mt-8">
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="inline-flex items-center bg-slate-900 text-white font-bold px-8 py-4 rounded-full hover:bg-accent-blue transition-colors gap-3 group shadow-lg"
+                >
+                  Learn More <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-bold px-8 py-4 rounded-full hover:border-accent-blue hover:text-accent-blue dark:hover:border-accent-blue dark:hover:text-accent-blue transition-colors"
+                >
+                  Request Quote
+                </Link>
+              </div>
             </div>
           </motion.div>
           );
