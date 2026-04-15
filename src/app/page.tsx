@@ -15,7 +15,7 @@ export default function Home() {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen overflow-hidden">
 
       {/* 1. Ultra-Modern Hero Section */}
-      <section className="relative h-[90vh] md:h-[100vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden">
+      <section className="relative h-[70vh] md:h-[100vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop"
           alt="Solar panels filling the sky"
@@ -27,17 +27,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
 
         {/* Massive Typography Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-24 px-6 md:px-12 z-10">
+        <div className="absolute inset-0 flex flex-col justify-end pb-10 md:pb-24 px-6 md:px-12 z-10">
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-[12vw] md:text-[min(10rem,12vw)] font-bold text-white leading-[0.85] tracking-tighter mix-blend-overlay opacity-90 font-poppins">
-              AIBISHTER<br /><span className="text-[10vw] md:text-[min(8rem,10vw)] text-white/70">SOLAR</span>
+            <h1 className="text-[14vw] md:text-[min(10rem,12vw)] font-bold text-white leading-[0.88] md:leading-[0.85] tracking-tighter mix-blend-overlay opacity-90 font-poppins">
+              AIBISHTER<br /><span className="text-[11vw] md:text-[min(8rem,10vw)] text-white/70">SOLAR</span>
             </h1>
 
-            <div className="flex flex-col md:flex-row md:items-end justify-between mt-8 gap-6 md:gap-0">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mt-5 md:mt-8 gap-4 md:gap-0">
               <div className="flex gap-4">
                 <span className="text-white/60 uppercase tracking-widest text-xs font-bold font-sans flex items-center gap-2">
                   <span className="w-8 h-px bg-white/40 block"></span> Home

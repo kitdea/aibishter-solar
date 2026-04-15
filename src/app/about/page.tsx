@@ -46,7 +46,7 @@ export default function AboutPage() {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
       
       {/* Inner Page Hero Banner */}
-      <section className="relative min-h-[500px] h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-20">
+      <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-14 md:mb-20">
         <Image
           src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2058&auto=format&fit=crop"
           alt="Aibishter Solar professionals"
@@ -64,11 +64,11 @@ export default function AboutPage() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-5xl mx-auto md:mx-0"
           >
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-3 md:mb-6">
               <Sun size={24} className="text-accent-yellow" />
               <span className="uppercase tracking-widest text-xs font-bold text-white/80">Aibishter Solar / About Us</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] md:leading-[1.1]">
               We are increasing the productivity and quality of <span className="text-white/60">global energy.</span>
             </h1>
           </motion.div>
