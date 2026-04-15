@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle2, Award, Users, TrendingUp, Sun } from "lucide-react";
+import { CheckCircle2, Award, Users, TrendingUp, Sun } from "@/lib/icons";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
 
@@ -46,15 +46,16 @@ export default function AboutPage() {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
       
       {/* Inner Page Hero Banner */}
-      <section className="relative min-h-[500px] h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-[2rem] md:rounded-[3rem] overflow-hidden mb-20">
+      <section className="relative min-h-[500px] h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-20">
         <Image
           src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2058&auto=format&fit=crop"
           alt="Aibishter Solar professionals"
           fill
           priority
+          suppressHydrationWarning
           className="object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10"></div>
         
         <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-20 px-6 md:px-12 z-10 text-center md:text-left">
           <motion.div
@@ -98,7 +99,7 @@ export default function AboutPage() {
               "24/7 Monitoring"
             ].map((item, idx) => (
               <div key={idx} className="flex items-center gap-3">
-                <CheckCircle2 className="text-accent-yellow flex-shrink-0" size={24} />
+                <CheckCircle2 className="text-accent-yellow shrink-0" size={24} />
                 <span className="font-bold text-slate-800 dark:text-slate-200 font-sans">{item}</span>
               </div>
             ))}
@@ -121,7 +122,7 @@ export default function AboutPage() {
                 hidden: { opacity: 0, scale: 0.9 },
                 visible: { opacity: 1, scale: 1, transition: { duration: 0.5, delay: idx * 0.1 } }
               }}
-              className={`p-8 rounded-[2rem] flex flex-col justify-center items-center text-center shadow-lg border border-slate-100 dark:border-slate-800 ${item.bg} ${item.text}`}
+              className={`p-8 rounded-4xl flex flex-col justify-center items-center text-center shadow-lg border border-slate-100 dark:border-slate-800 ${item.bg} ${item.text}`}
             >
               <item.icon size={36} className={`${item.bg === 'bg-accent-blue' ? 'text-accent-yellow' : 'text-accent-blue'} mb-4`} />
               <span className="text-4xl font-extrabold tracking-tighter mb-2">{item.stat}</span>
@@ -185,13 +186,14 @@ function TeamCard({ member, delay }: { member: TeamMember; delay: number }) {
         hidden: { opacity: 0, y: 30 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay } },
       }}
-      className="bg-white dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700 rounded-[2rem] p-8 flex flex-col items-center text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+      className="bg-white dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700 rounded-4xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
     >
       <div className="relative w-24 h-24 rounded-full overflow-hidden mb-6 ring-4 ring-slate-100 dark:ring-slate-700">
         <Image
           src={member.image}
           alt={`${member.name} – ${member.title} at Aibishter Solar`}
           fill
+          suppressHydrationWarning
           className="object-cover"
           sizes="96px"
         />

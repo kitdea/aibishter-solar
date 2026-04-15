@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Sun } from "lucide-react";
+import { ArrowUpRight, Sun } from "@/lib/icons";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
 
@@ -58,9 +58,10 @@ export default function ProjectsPage() {
           alt="Aibishter Solar portfolio"
           fill
           priority
+          suppressHydrationWarning
           className="object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10"></div>
         
         <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-20 px-6 md:px-12 z-10 text-center md:text-left">
           <motion.div
@@ -91,11 +92,12 @@ export default function ProjectsPage() {
               variants={fadeUpVariant}
               className={`group flex flex-col cursor-pointer ${index % 2 !== 0 ? 'md:mt-24' : ''}`}
             >
-              <div className="relative h-[400px] md:h-[500px] w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden mb-8 shadow-xl">
+              <div className="relative h-100 md:h-125 w-full rounded-4xl md:rounded-5xl overflow-hidden mb-8 shadow-xl">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
+                  suppressHydrationWarning
                   className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
                 />
                 

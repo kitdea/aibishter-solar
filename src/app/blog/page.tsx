@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Sun } from "lucide-react";
+import { ArrowUpRight, Sun } from "@/lib/icons";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
 
@@ -41,9 +41,10 @@ export default function BlogPage() {
           alt="Aibishter Solar news"
           fill
           priority
+          suppressHydrationWarning
           className="object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10"></div>
         
         <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-20 px-6 md:px-12 z-10 text-center md:text-left">
           <motion.div
@@ -82,7 +83,7 @@ export default function BlogPage() {
               
               {/* Massive Title & Excerpt */}
               <div className="md:w-1/2 flex flex-col gap-6 pr-8">
-                <Link href="#" className="flex-grow">
+                <Link href="#" className="grow">
                   <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white group-hover:text-accent-blue transition-colors duration-300 leading-tight">
                     {post.title}
                   </h2>
@@ -96,11 +97,12 @@ export default function BlogPage() {
               </div>
               
               {/* Image Reveal Effect */}
-              <div className="md:w-1/3 relative h-[300px] md:h-[250px] w-full rounded-[2rem] overflow-hidden shadow-lg mt-8 md:mt-0">
+              <div className="md:w-1/3 relative h-75 md:h-62.5 w-full rounded-4xl overflow-hidden shadow-lg mt-8 md:mt-0">
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
+                  suppressHydrationWarning
                   className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out filter grayscale group-hover:grayscale-0"
                 />
               </div>

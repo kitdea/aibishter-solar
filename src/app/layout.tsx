@@ -118,6 +118,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${poppins.variable} ${nunito.variable} font-sans min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300`}
+        suppressHydrationWarning
       >
         <ThemeProvider>
           <Navbar />
