@@ -15,12 +15,13 @@ export default function Home() {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen overflow-hidden">
 
       {/* 1. Ultra-Modern Hero Section */}
-      <section className="relative h-[70vh] md:h-[100vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden">
+      <section className="relative h-[70vh] md:h-screen w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop"
           alt="Solar panels filling the sky"
           fill
           priority
+          sizes="100vw"
           suppressHydrationWarning
           className="object-cover object-bottom scale-105"
         />
@@ -199,18 +200,18 @@ export default function Home() {
             <form className="space-y-5 font-sans" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">First Name</label>
-                  <input type="text" className="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-yellow transition-all shadow-sm" placeholder="John" />
+                  <label htmlFor="estimate-first-name" className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">First Name</label>
+                  <input id="estimate-first-name" name="first-name" type="text" autoComplete="given-name" className="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-yellow transition-all shadow-sm" placeholder="John" />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Last Name</label>
-                  <input type="text" className="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-yellow transition-all shadow-sm" placeholder="Doe" />
+                  <label htmlFor="estimate-last-name" className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Last Name</label>
+                  <input id="estimate-last-name" name="last-name" type="text" autoComplete="family-name" className="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-yellow transition-all shadow-sm" placeholder="Doe" />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Email Address</label>
-                <input type="email" className="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-yellow transition-all shadow-sm" placeholder="john@example.com" data-lpignore="true" />
+                <label htmlFor="estimate-email" className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Email Address</label>
+                <input id="estimate-email" name="email" type="email" autoComplete="email" className="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-yellow transition-all shadow-sm" placeholder="john@example.com" />
               </div>
 
               <div className="space-y-1">
@@ -255,7 +256,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer"
             >
-              <Image src={src} alt="Solar Install" fill suppressHydrationWarning className="object-cover group-hover:scale-110 transition-transform duration-700" />
+              <Image src={src} alt="Solar installation project" fill sizes="(max-width: 768px) 50vw, 25vw" suppressHydrationWarning className="object-cover group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 dark:group-hover:bg-black/40 transition-colors flex items-center justify-center">
                 <div className="w-10 h-10 bg-white dark:bg-slate-800/90 backdrop-blur rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 text-accent-blue dark:text-white">
                   <Play size={16} className="ml-1" />
