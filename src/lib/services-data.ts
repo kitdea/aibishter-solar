@@ -18,7 +18,7 @@ export interface Service {
   benefits: ServiceBenefit[];
   image: string;
   heroImage: string;
-  iconName: "Zap" | "Wrench" | "Battery" | "Cpu";
+  iconName: "Zap" | "Wrench" | "Battery" | "Cpu" | "ShieldCheck";
   seo: {
     metaTitle: string;
     metaDescription: string;
@@ -344,6 +344,85 @@ export const services: Service[] = [
       canonical: "https://aibishter.com/services/electrical-design",
       ogImage:
         "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1200&auto=format&fit=crop",
+    },
+  },
+  {
+    slug: "general-maintenance",
+    title: "General Maintenance",
+    tagline: "Keep your solar system running at peak performance, year after year.",
+    description:
+      "Protect your solar investment with scheduled inspections, professional panel cleaning, and proactive system care. Our certified technicians ensure maximum energy output 365 days a year.",
+    longDescription:
+      "Solar systems are built to last 25+ years — but only when properly maintained. Aibishter Solar's maintenance program covers everything from panel cleaning and inverter diagnostics to electrical connection audits and detailed performance reporting. Regular service can recover up to 30% of production lost to soiling, degraded connections, or component wear, turning your investment into a consistently high-performing asset.",
+    features: [
+      {
+        label: "Panel Cleaning & Inspection",
+        detail:
+          "Professional cleaning removes dust, bird droppings, and debris that silently reduce energy output by up to 30%, restoring peak performance.",
+      },
+      {
+        label: "Inverter Health Checks",
+        detail:
+          "Full inverter diagnostics including error log review, firmware updates, and connection integrity verification to catch issues early.",
+      },
+      {
+        label: "Electrical & Connection Audit",
+        detail:
+          "Comprehensive inspection of all DC/AC connections, combiner boxes, and breakers to prevent performance loss and eliminate fire hazards.",
+      },
+      {
+        label: "Performance Reporting",
+        detail:
+          "Detailed before-and-after energy yield reports delivered after every visit, so you can see exactly what was recovered and what to expect next.",
+      },
+    ],
+    benefits: [
+      {
+        title: "Recover Lost Production",
+        description:
+          "Soiling alone can cut output by up to 30%. Regular cleaning and inspection puts that energy — and savings — back in your pocket every billing cycle.",
+      },
+      {
+        title: "Extend System Lifespan",
+        description:
+          "Catching small issues early prevents costly component failures, extending the effective life of your entire solar investment well beyond 25 years.",
+      },
+      {
+        title: "Maintain Warranty Compliance",
+        description:
+          "Panel and inverter warranties often require documented maintenance. Our service records keep you fully covered and audit-ready at all times.",
+      },
+      {
+        title: "Priority Response",
+        description:
+          "Active maintenance subscribers receive priority scheduling and preferred rates on any repairs identified during inspection visits.",
+      },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1591190702780-4d56c6b4b9b1?q=80&w=2069&auto=format&fit=crop",
+    heroImage:
+      "https://images.unsplash.com/photo-1591190702780-4d56c6b4b9b1?q=80&w=2069&auto=format&fit=crop",
+    iconName: "ShieldCheck",
+    seo: {
+      metaTitle: "Solar Panel Maintenance & Inspection",
+      metaDescription:
+        "Aibishter Solar's general maintenance program keeps your solar system at peak efficiency with professional panel cleaning, inverter health checks, and electrical audits — recovering up to 30% of lost production.",
+      keywords: [
+        "solar panel maintenance",
+        "solar system inspection",
+        "solar panel cleaning",
+        "inverter health check",
+        "solar performance repair",
+        "solar maintenance plan",
+        "solar electrical audit",
+        "Aibishter Solar maintenance",
+      ],
+      ogTitle: "General Maintenance – Aibishter Solar",
+      ogDescription:
+        "Keep your solar system performing at its best. Aibishter Solar's maintenance program covers cleaning, inverter checks, electrical audits, and detailed performance reporting.",
+      canonical: "https://aibishter.com/services/general-maintenance",
+      ogImage:
+        "https://images.unsplash.com/photo-1591190702780-4d56c6b4b9b1?q=80&w=1200&auto=format&fit=crop",
     },
   },
 ];

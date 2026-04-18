@@ -4,12 +4,12 @@ import { use } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Zap, Battery, Wrench, Cpu, Check, ArrowRight, Sun, ChevronRight } from "@/lib/icons";
+import { Zap, Battery, Wrench, Cpu, ShieldCheck, Check, ArrowRight, Sun, ChevronRight } from "@/lib/icons";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
 import { getServiceBySlug } from "@/lib/services-data";
 
-const iconMap = { Zap, Battery, Wrench, Cpu } as const;
+const iconMap = { Zap, Battery, Wrench, Cpu, ShieldCheck } as const;
 
 export default function ServiceDetailPage({
   params,

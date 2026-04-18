@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Sun, Moon } from "@/lib/icons";
+import { Menu, X, Sun, Moon, ChevronDown } from "@/lib/icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/components/ThemeProvider";
+import { services } from "@/lib/services-data";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
   { href: "/solar-calculator", label: "Calculator" },
   { href: "/blog", label: "Blog" },
@@ -19,9 +19,12 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
+  const isServicesActive = pathname.startsWith("/services");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +62,86 @@ export default function Navbar() {
 
           {/* Middle: Pills (Desktop) */}
           <div className={`hidden md:flex items-center space-x-1 rounded-full p-1 backdrop-blur-sm transition-colors ${!isWhiteText ? "bg-slate-100/50 dark:bg-slate-800/50 border border-slate-200/50 dark:border-slate-700/50" : "bg-black/5 border border-white/10"}`}>
-            {navLinks.map((link) => (
+            {/* Home & About Us */}
+            {navLinks.slice(0, 2).map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${!isWhiteText ? "text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white hover:shadow-sm" : "text-white/80 hover:bg-white/20 hover:text-white"}`}
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            {/* Services dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                aria-haspopup="true"
+                aria-expanded={servicesOpen}
+                className={`flex items-center gap-1 px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                  isServicesActive
+                    ? !isWhiteText
+                      ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm"
+                      : "bg-white/20 text-white"
+                    : !isWhiteText
+                    ? "text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white hover:shadow-sm"
+                    : "text-white/80 hover:bg-white/20 hover:text-white"
+                }`}
+              >
+                Services
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              <AnimatePresence>
+                {servicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 6, scale: 0.97 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                    transition={{ duration: 0.15, ease: "easeOut" }}
+                    role="menu"
+                    className="absolute left-0 top-full pt-2 w-56 z-50"
+                  >
+                    <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 overflow-hidden py-2">
+                      <Link
+                        href="/services"
+                        role="menuitem"
+                        className="flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-accent-blue hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                        onClick={() => setServicesOpen(false)}
+                      >
+                        All Services
+                      </Link>
+                      <div className="mx-3 my-1 border-t border-slate-100 dark:border-slate-800" />
+                      {services.map((s) => (
+                        <Link
+                          key={s.slug}
+                          href={`/services/${s.slug}`}
+                          role="menuitem"
+                          className={`flex items-center px-4 py-2.5 text-sm font-medium transition-colors ${
+                            pathname === `/services/${s.slug}`
+                              ? "text-accent-blue bg-blue-50 dark:bg-blue-900/20"
+                              : "text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
+                          }`}
+                          onClick={() => setServicesOpen(false)}
+                        >
+                          {s.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Remaining links: Projects, Calculator, Blog, Contact Us */}
+            {navLinks.slice(2).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -120,7 +202,68 @@ export default function Navbar() {
             className="absolute top-full left-4 right-4 mt-2 bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-800 p-6 md:hidden overflow-hidden"
           >
             <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
+              {/* Home & About Us */}
+              {navLinks.slice(0, 2).map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-2xl font-bold text-slate-800 dark:text-slate-200 hover:text-accent-blue dark:hover:text-accent-blue transition-colors pb-4 border-b border-slate-100 dark:border-slate-800 line-clamp-1"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              {/* Services expandable */}
+              <div className="pb-4 border-b border-slate-100 dark:border-slate-800">
+                <button
+                  aria-expanded={mobileServicesOpen}
+                  aria-controls="mobile-services-menu"
+                  className="w-full flex items-center justify-between text-2xl font-bold text-slate-800 dark:text-slate-200 hover:text-accent-blue dark:hover:text-accent-blue transition-colors"
+                  onClick={() => setMobileServicesOpen((v) => !v)}
+                >
+                  <span>Services</span>
+                  <ChevronDown
+                    size={20}
+                    className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {mobileServicesOpen && (
+                    <motion.div
+                      id="mobile-services-menu"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-3 flex flex-col gap-1">
+                        <Link
+                          href="/services"
+                          className="text-sm font-bold uppercase tracking-widest text-accent-blue px-3 py-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                          onClick={() => { setIsOpen(false); setMobileServicesOpen(false); }}
+                        >
+                          All Services
+                        </Link>
+                        {services.map((s) => (
+                          <Link
+                            key={s.slug}
+                            href={`/services/${s.slug}`}
+                            className="text-base font-semibold text-slate-600 dark:text-slate-400 px-3 py-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent-blue dark:hover:text-accent-blue transition-colors"
+                            onClick={() => { setIsOpen(false); setMobileServicesOpen(false); }}
+                          >
+                            {s.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Projects, Calculator, Blog, Contact Us */}
+              {navLinks.slice(2).map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
