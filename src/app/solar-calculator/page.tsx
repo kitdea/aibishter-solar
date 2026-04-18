@@ -225,7 +225,7 @@ function SystemSizeCalculator() {
           <h2 className="text-white font-bold text-2xl tracking-tight font-poppins">
             Solar System Size Calculator
           </h2>
-          <p className="text-slate-400 text-base mt-0.5 uppercase tracking-widest">Philippines — Meralco Service Area</p>
+          <p className="text-slate-400 text-sm mt-0.5 uppercase tracking-widest">Philippines - Meralco Service Area</p>
         </div>
       </div>
 
@@ -603,12 +603,14 @@ export default function SolarCalculatorPage() {
               <span className="text-slate-400 dark:text-slate-500 font-normal">all the answers you need.</span>
             </h2>
           </div>
-          <p className="text-slate-500 dark:text-slate-400 text-base max-w-sm leading-relaxed">
-            Step 1: Find out what system size you need.
-          </p>
-          <p className="text-slate-500 dark:text-slate-400 text-base max-w-sm leading-relaxed">
-            Step 2: See how much you&apos;ll save every month. Both tailored for the Philippine grid.
-          </p>
+          <div>
+            <p className="text-slate-600 dark:text-slate-400 text-base max-w-sm leading-relaxed">
+              <strong>Step 1:</strong>  Find out what system size you need. 
+            </p>
+            <p className="text-slate-600 dark:text-slate-400 text-base max-w-sm leading-relaxed">
+              <strong>Step 2:</strong>  See how much you&apos;ll save every month. Both tailored for the Philippine grid.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -652,11 +654,11 @@ export default function SolarCalculatorPage() {
               {
                 step: "03",
                 title: "Philippine Context",
-                desc: "Rates sourced from Meralco's published residential tariff. Sun hours from PAGASA solar radiation atlas. Results are estimates — actual savings vary.",
+                desc: "Rates sourced from Meralco's published residential tariff. Sun hours from PAGASA solar radiation atlas. Results are estimates actual savings vary.",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col gap-3">
-                <span className="text-4xl font-bold text-slate-100 dark:text-slate-800 font-poppins">{item.step}</span>
+                <span className="text-4xl font-bold text-slate-300 dark:text-slate-800 font-poppins">{item.step}</span>
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white -mt-2">{item.title}</h3>
                 <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed">{item.desc}</p>
               </div>

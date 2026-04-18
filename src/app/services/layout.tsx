@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Aibishter Solar offers residential solar, commercial solar, solar battery storage, and professional electrical design services. Permit-ready engineering solutions for homes and businesses.",
+    "Aibishter Solar offers residential solar, commercial solar, solar battery storage, electrical design, and general maintenance services. Permit-ready engineering solutions for homes and businesses.",
   keywords: [
     "solar installation services",
     "residential solar panels",
@@ -13,13 +13,15 @@ export const metadata: Metadata = {
     "single-line diagram",
     "solar permit documentation",
     "NEC code compliance solar",
+    "solar panel maintenance",
+    "solar system inspection",
     "solar energy services",
     "Aibishter Solar",
   ],
   openGraph: {
     title: "Our Services – Aibishter Solar",
     description:
-      "From residential and commercial solar to battery storage and precision electrical design — explore all of Aibishter Solar's engineering solutions.",
+      "From residential and commercial solar to battery storage, electrical design, and general maintenance — explore all of Aibishter Solar's engineering solutions.",
     url: "https://aibishter.com/services",
     images: [
       {

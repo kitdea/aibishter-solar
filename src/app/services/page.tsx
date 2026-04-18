@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { Check, Zap, Battery, Wrench, ArrowRight, Sun, Cpu } from "@/lib/icons";
+import { Check, Zap, Battery, Wrench, ArrowRight, Sun, Cpu, ShieldCheck } from "@/lib/icons";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
 import { services } from "@/lib/services-data";
 
-const iconMap = { Zap, Battery, Wrench, Cpu } as const;
+const iconMap = { Zap, Battery, Wrench, Cpu, ShieldCheck } as const;
 
 export default function ServicesPage() {
   return (
