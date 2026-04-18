@@ -7,14 +7,16 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "600", "700"],
   variable: "--font-poppins",
+  display: "swap",
 });
 
 const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700"],
   variable: "--font-nunito",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

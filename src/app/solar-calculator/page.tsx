@@ -44,19 +44,20 @@ function toNum(v: string): number {
   return isNaN(n) || n < 0 ? 0 : n;
 }
 
+const phpFormatter = new Intl.NumberFormat("en-PH", {
+  style: "currency",
+  currency: "PHP",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
 function formatPHP(n: number): string {
-  return new Intl.NumberFormat("en-PH", {
-    style: "currency",
-    currency: "PHP",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(n);
+  return phpFormatter.format(n);
 }
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 function InputField({
   label,
-  unit,
   value,
   onChange,
   type = "number",
@@ -67,7 +68,6 @@ function InputField({
   hint,
 }: {
   label: string;
-  unit?: string;
   value: string;
   onChange: (v: string) => void;
   type?: string;
@@ -88,37 +88,28 @@ function InputField({
           </span>
         )}
       </label>
-      <div className="flex items-center gap-2">
-        <input
-          id={id}
-          type={type}
-          min={min}
-          max={max}
-          step={step ?? "any"}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          placeholder={placeholder}
-          className="flex-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-blue transition-all text-sm font-medium"
-        />
-        {unit && (
-          <span className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest w-10 shrink-0">
-            {unit}
-          </span>
-        )}
-      </div>
+      <input
+        id={id}
+        type={type}
+        min={min}
+        max={max}
+        step={step ?? "any"}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        className="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-blue transition-all text-sm font-medium"
+      />
     </div>
   );
 }
 
 function SelectField({
   label,
-  unit,
   value,
   onChange,
   options,
 }: {
   label: string;
-  unit?: string;
   value: string;
   onChange: (v: string) => void;
   options: { label: string; value: string }[];
@@ -129,23 +120,16 @@ function SelectField({
       <label htmlFor={id} className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
         {label}
       </label>
-      <div className="flex items-center gap-2">
-        <select
-          id={id}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          className="flex-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-blue transition-all text-sm font-medium appearance-none"
-        >
-          {options.map((o) => (
-            <option key={o.value} value={o.value}>{o.label}</option>
-          ))}
-        </select>
-        {unit && (
-          <span className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest w-10 shrink-0">
-            {unit}
-          </span>
-        )}
-      </div>
+      <select
+        id={id}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-blue transition-all text-sm font-medium appearance-none"
+      >
+        {options.map((o) => (
+          <option key={o.value} value={o.value}>{o.label}</option>
+        ))}
+      </select>
     </div>
   );
 }
@@ -165,16 +149,17 @@ function ResultBadge({ label, value, unit }: { label: string; value: string; uni
 }
 
 // ─── Calculator 1: System Size ─────────────────────────────────────────────────
+const defaultSizingInput: SizingInput = {
+  monthlyBillPHP: "",
+  monthlyBillKWh: "",
+  phpPerKWhr: String(MERALCO_RATE),
+  daysPerWeek: "7",
+  opHours: "8",
+  pattern: "hourly",
+};
+
 function SystemSizeCalculator() {
-  const defaultInput: SizingInput = {
-    monthlyBillPHP: "",
-    monthlyBillKWh: "",
-    phpPerKWhr: String(MERALCO_RATE),
-    daysPerWeek: "7",
-    opHours: "8",
-    pattern: "hourly",
-  };
-  const [input, setInput] = useState<SizingInput>(defaultInput);
+  const [input, setInput] = useState<SizingInput>(defaultSizingInput);
   const [result, setResult] = useState<number | null>(null);
 
   const set = useCallback(
@@ -215,7 +200,7 @@ function SystemSizeCalculator() {
   };
 
   const reset = () => {
-    setInput(defaultInput);
+    setInput(defaultSizingInput);
     setResult(null);
   };
 
@@ -232,8 +217,8 @@ function SystemSizeCalculator() {
   return (
     <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg overflow-hidden">
       {/* Header */}
-      <div className="bg-slate-900 dark:bg-slate-800 px-8 py-6 flex items-center gap-4">
-        <div className="w-10 h-10 rounded-full bg-accent-blue/20 flex items-center justify-center">
+      <div className="bg-slate-900 dark:bg-slate-800 px-4 py-4 sm:px-8 sm:py-6 flex items-center gap-4">
+        <div className="w-10 h-10 rounded-full bg-accent-blue/20 flex items-center justify-center shrink-0">
           <Sun size={20} className="text-accent-blue" />
         </div>
         <div>
@@ -244,12 +229,11 @@ function SystemSizeCalculator() {
         </div>
       </div>
 
-      <div className="p-8 space-y-5">
+      <div className="p-4 sm:p-8 space-y-5">
         {/* Bill inputs */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <InputField
             label="Monthly Electricity Bill (PHP)"
-            unit="PHP"
             value={input.monthlyBillPHP}
             onChange={set("monthlyBillPHP")}
             placeholder="e.g. 5,000"
@@ -258,7 +242,6 @@ function SystemSizeCalculator() {
           />
           <InputField
             label="Monthly Electricity Bill (kWhe)"
-            unit="kWhe"
             value={input.monthlyBillKWh}
             onChange={set("monthlyBillKWh")}
             placeholder="e.g. 300"
@@ -269,7 +252,6 @@ function SystemSizeCalculator() {
 
         <InputField
           label="PHP per kWhr"
-          unit="PHP"
           value={input.phpPerKWhr}
           onChange={set("phpPerKWhr")}
           placeholder={String(MERALCO_RATE)}
@@ -278,25 +260,22 @@ function SystemSizeCalculator() {
           hint="Check your Meralco or distribution utility bill. Average residential rate is PHP 16.67/kWh."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <SelectField
-            label="Operational Days per Week"
-            value={input.daysPerWeek}
-            onChange={set("daysPerWeek")}
-            options={daysOptions}
-          />
-          <InputField
-            label="Operational Hours (6am – 6pm)"
-            unit="hrs"
-            value={input.opHours}
-            onChange={set("opHours")}
-            placeholder="8"
-            min="1"
-            max="12"
-            step="0.5"
-            hint="How many hours per day does your household/business operate during solar production hours?"
-          />
-        </div>
+        <SelectField
+          label="Operational Days per Week"
+          value={input.daysPerWeek}
+          onChange={set("daysPerWeek")}
+          options={daysOptions}
+        />
+        <InputField
+          label="Operational Hours (6am – 6pm)"
+          value={input.opHours}
+          onChange={set("opHours")}
+          placeholder="8"
+          min="1"
+          max="12"
+          step="0.5"
+          hint="How many hours per day does your household/business operate during solar production hours?"
+        />
 
         {/* Pattern Toggle */}
         <div className="flex flex-col gap-2">
@@ -364,14 +343,15 @@ function SystemSizeCalculator() {
 }
 
 // ─── Calculator 2: Savings ─────────────────────────────────────────────────────
+const defaultSavingsInput: SavingsInput = {
+  systemSizeKWp: "3",
+  phpPerKWhr: String(MERALCO_RATE),
+  sunHours: String(PH_PEAK_SUN_HOURS),
+  performanceRate: String(DEFAULT_PERF_RATIO),
+};
+
 function SavingsCalculator() {
-  const defaultInput: SavingsInput = {
-    systemSizeKWp: "3",
-    phpPerKWhr: String(MERALCO_RATE),
-    sunHours: String(PH_PEAK_SUN_HOURS),
-    performanceRate: String(DEFAULT_PERF_RATIO),
-  };
-  const [input, setInput] = useState<SavingsInput>(defaultInput);
+  const [input, setInput] = useState<SavingsInput>(defaultSavingsInput);
   const [result, setResult] = useState<number | null>(null);
 
   const set = useCallback(
@@ -396,15 +376,15 @@ function SavingsCalculator() {
   };
 
   const reset = () => {
-    setInput(defaultInput);
+    setInput(defaultSavingsInput);
     setResult(null);
   };
 
   return (
     <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg overflow-hidden">
       {/* Header */}
-      <div className="bg-slate-900 dark:bg-slate-800 px-8 py-6 flex items-center gap-4">
-        <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+      <div className="bg-slate-900 dark:bg-slate-800 px-4 py-4 sm:px-8 sm:py-6 flex items-center gap-4">
+        <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
           <Zap size={20} className="text-green-400" />
         </div>
         <div>
@@ -415,7 +395,7 @@ function SavingsCalculator() {
         </div>
       </div>
 
-      <div className="p-8 space-y-5">
+      <div className="p-4 sm:p-8 space-y-5">
         {/* Slider for system size */}
         <div className="flex flex-col gap-2">
           <div className="flex justify-between items-center">
@@ -440,7 +420,6 @@ function SavingsCalculator() {
           {/* Also allow direct input */}
           <InputField
             label="Or Enter Directly"
-            unit="kWp"
             value={input.systemSizeKWp}
             onChange={set("systemSizeKWp")}
             placeholder="e.g. 3"
@@ -453,7 +432,6 @@ function SavingsCalculator() {
 
         <InputField
           label="PHP per kWhr"
-          unit="PHP"
           value={input.phpPerKWhr}
           onChange={set("phpPerKWhr")}
           placeholder={String(MERALCO_RATE)}
@@ -464,7 +442,6 @@ function SavingsCalculator() {
 
         <InputField
           label="Sunhours Average per Day"
-          unit="hrs"
           value={input.sunHours}
           onChange={set("sunHours")}
           placeholder={String(PH_PEAK_SUN_HOURS)}
@@ -476,7 +453,6 @@ function SavingsCalculator() {
 
         <InputField
           label="Performance Rate"
-          unit="%"
           value={input.performanceRate}
           onChange={set("performanceRate")}
           placeholder={String(DEFAULT_PERF_RATIO)}
@@ -541,6 +517,13 @@ function SavingsCalculator() {
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
+const quickStats = [
+  { icon: <Sun size={20} />, label: "Avg. Peak Sun Hours", value: "4.6 hrs/day", note: "Philippines PAGASA" },
+  { icon: <Zap size={20} />, label: "Meralco Ref. Rate", value: "PHP 16.67/kWh", note: "Residential average" },
+  { icon: <Leaf size={20} />, label: "System Performance", value: "75–85%", note: "PH climate-adjusted" },
+  { icon: <ShieldCheck size={20} />, label: "Panel Warranty", value: "25 Years", note: "Manufacturer guarantee" },
+];
+
 export default function SolarCalculatorPage() {
   return (
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
@@ -552,6 +535,7 @@ export default function SolarCalculatorPage() {
           alt="Solar panels on rooftop in the Philippines — Aibishter Solar Calculator"
           fill
           priority
+          sizes="(max-width: 1280px) 98vw, 1280px"
           suppressHydrationWarning
           className="object-cover object-center scale-105"
         />
@@ -587,12 +571,7 @@ export default function SolarCalculatorPage() {
       {/* Quick Stats Banner */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { icon: <Sun size={20} />, label: "Avg. Peak Sun Hours", value: "4.6 hrs/day", note: "Philippines PAGASA" },
-            { icon: <Zap size={20} />, label: "Meralco Ref. Rate", value: "PHP 16.67/kWh", note: "Residential average" },
-            { icon: <Leaf size={20} />, label: "System Performance", value: "75–85%", note: "PH climate-adjusted" },
-            { icon: <ShieldCheck size={20} />, label: "Panel Warranty", value: "25 Years", note: "Manufacturer guarantee" },
-          ].map((stat, i) => (
+          {quickStats.map((stat, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -625,8 +604,10 @@ export default function SolarCalculatorPage() {
             </h2>
           </div>
           <p className="text-slate-500 dark:text-slate-400 text-sm max-w-sm leading-relaxed">
-            Step 1: Find out what system size you need. Step 2: See how much you&apos;ll save every
-            month. Both tailored for the Philippine grid.
+            Step 1: Find out what system size you need.
+          </p>
+          <p className="text-slate-500 dark:text-slate-400 text-sm max-w-sm leading-relaxed">
+            Step 2: See how much you&apos;ll save every month. Both tailored for the Philippine grid.
           </p>
         </div>
 
@@ -686,10 +667,7 @@ export default function SolarCalculatorPage() {
 
       {/* Disclaimer */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-20">
-        <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-800/30 rounded-3xl p-8 flex gap-5">
-          <div className="text-amber-500 mt-0.5 shrink-0">
-            <Info size={22} suppressHydrationWarning />
-          </div>
+        <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-800/30 rounded-3xl p-8">
           <div>
             <h3 className="text-base font-bold text-amber-800 dark:text-amber-400 mb-2">
               Important Disclaimer

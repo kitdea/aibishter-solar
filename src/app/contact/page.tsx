@@ -16,6 +16,7 @@ export default function ContactPage() {
           alt="Contact Aibishter Solar"
           fill
           priority
+          sizes="(max-width: 1280px) 98vw, 1280px"
           suppressHydrationWarning
           className="object-cover scale-105"
         />
@@ -111,29 +112,29 @@ export default function ContactPage() {
           <form className="space-y-8 font-sans" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">First Name</label>
-                <input type="text" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="Jane" />
+                <label htmlFor="contact-first-name" className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">First Name</label>
+                <input id="contact-first-name" name="first-name" type="text" autoComplete="given-name" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="Jane" />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Last Name</label>
-                <input type="text" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="Doe" />
+                <label htmlFor="contact-last-name" className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Last Name</label>
+                <input id="contact-last-name" name="last-name" type="text" autoComplete="family-name" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="Doe" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Email Address</label>
-                <input type="email" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="jane@example.com" data-lpignore="true" />
+                <label htmlFor="contact-email" className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Email Address</label>
+                <input id="contact-email" name="email" type="email" autoComplete="email" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="jane@example.com" />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Phone Number</label>
-                <input type="tel" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="(555) 123-4567" />
+                <label htmlFor="contact-phone" className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Phone Number</label>
+                <input id="contact-phone" name="phone" type="tel" autoComplete="tel" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl" placeholder="(555) 123-4567" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Interested Service</label>
-              <select className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl appearance-none">
+              <label htmlFor="contact-service" className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Interested Service</label>
+              <select id="contact-service" name="service" className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl appearance-none">
                 <option value="residential">Residential Setup</option>
                 <option value="commercial">Commercial Arrays</option>
                 <option value="storage">Battery Storage</option>
@@ -142,8 +143,8 @@ export default function ContactPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Message context</label>
-              <textarea rows={4} className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl resize-none" placeholder="Provide any specifications or details..."></textarea>
+              <label htmlFor="contact-message" className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Message context</label>
+              <textarea id="contact-message" name="message" rows={4} className="w-full bg-slate-50 dark:bg-slate-950 border-b-2 border-slate-200 dark:border-slate-700 focus:border-accent-yellow px-4 py-3 text-slate-900 dark:text-white focus:outline-none transition-all rounded-tl-xl rounded-tr-xl resize-none" placeholder="Provide any specifications or details..."></textarea>
             </div>
 
             <button className="w-full bg-accent-blue hover:bg-slate-900 text-white font-bold text-lg rounded-full px-4 py-5 mt-4 transition-colors flex items-center justify-center gap-3 group shadow-xl">
