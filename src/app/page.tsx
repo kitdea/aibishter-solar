@@ -39,15 +39,15 @@ export default function Home() {
             </h1>
 
             <div className="flex flex-col md:flex-row md:items-end justify-between mt-5 md:mt-8 gap-4 md:gap-0">
-              <div className="flex gap-4">
+              {/* <div className="flex gap-4">
                 <span className="text-white/60 uppercase tracking-widest text-xs font-bold font-sans flex items-center gap-2">
                   <span className="w-8 h-px bg-white/40 block"></span> Home
                 </span>
                 <span className="text-white/60 uppercase tracking-widest text-xs font-bold font-sans flex items-center gap-2">
                   <span className="w-8 h-px bg-white/40 block"></span> Energy
                 </span>
-              </div>
-              <p className="text-white/80 max-w-sm text-sm md:text-base leading-relaxed font-sans">
+              </div> */}
+              <p className="text-white/90 max-w-sm text-base md:text-2xl leading-relaxed">
                 From precision roof installations to remote energy monitoring, fulfilling the promise of tomorrow&apos;s clean future.
               </p>
             </div>
@@ -63,17 +63,17 @@ export default function Home() {
         variants={fadeUpVariant}
         className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto"
       >
-        <div className="flex flex-col md:flex-row gap-8 items-start justify-between mb-8">
-          <div className="flex items-center gap-4 uppercase tracking-widest text-xs font-bold text-slate-400 dark:text-slate-500">
+        <div className="gap-8 items-start mb-8">
+          {/* <div className="flex items-center gap-4 uppercase tracking-widest text-xs font-bold text-slate-400 dark:text-slate-500">
             <span>/ 2026 FOCUS</span>
-          </div>
+          </div> */}
           <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full py-1 px-4 flex items-center gap-2 shadow-sm">
             <div className="flex -space-x-2">
               <div className="w-6 h-6 rounded-full bg-accent-blue border border-white"></div>
               <div className="w-6 h-6 rounded-full bg-accent-yellow border border-white"></div>
               <div className="w-6 h-6 rounded-full bg-slate-400 border border-white"></div>
             </div>
-            <span className="text-[10px] uppercase font-bold tracking-wider ml-2 text-slate-400 dark:text-slate-500">Meet Our Experts</span>
+            <span className="text-base uppercase font-bold tracking-wider ml-2 text-slate-400 dark:text-slate-500">Meet Our Experts</span>
           </div>
         </div>
 

@@ -55,7 +55,7 @@ export default function BlogPage() {
           >
             <div className="flex items-center justify-center md:justify-start gap-2 mb-3 md:mb-6">
               <Sun size={24} className="text-accent-yellow" />
-              <span className="uppercase tracking-widest text-xs font-bold text-white/80">Aibishter Insights</span>
+              <span className="uppercase tracking-widest text-xs font-bold text-white/80">Aibishter Solar / Blog</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-tight md:leading-[0.9] font-poppins">
               News & <span className="text-white/60">Updates.</span>
