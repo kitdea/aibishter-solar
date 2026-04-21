@@ -2,13 +2,249 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Leaf, Sun, Zap, ThermometerSun, ShieldCheck, Play } from "@/lib/icons";
+import { ArrowRight, Leaf, Sun, Zap, ThermometerSun, ShieldCheck, Play, CheckCircle2 } from "@/lib/icons";
 import { motion, Variants } from "framer-motion";
+import { useState, useId } from "react";
 
 const fadeUpVariant: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
 };
+
+const SERVICE_OPTIONS = [
+  { value: "residential", label: "Residential Solar" },
+  { value: "commercial", label: "Commercial Solar" },
+  { value: "storage", label: "Battery Storage" },
+  { value: "maintenance", label: "General Maintenance" },
+] as const;
+
+type ServiceValue = (typeof SERVICE_OPTIONS)[number]["value"];
+
+interface EstimateFormState {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  service: ServiceValue;
+  message: string;
+  _honey: string;
+}
+
+const INITIAL_ESTIMATE: EstimateFormState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  service: "residential",
+  message: "",
+  _honey: "",
+};
+
+const inputClass =
+  "w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-yellow transition-all shadow-sm";
+
+const labelClass =
+  "text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider";
+
+function EstimateForm() {
+  const id = useId();
+  const [form, setForm] = useState<EstimateFormState>(INITIAL_ESTIMATE);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  }
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setErrorMsg(data.error ?? "Something went wrong.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      setForm(INITIAL_ESTIMATE);
+    } catch {
+      setErrorMsg("Network error. Please check your connection and try again.");
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex flex-col items-center justify-center gap-4 py-12 text-center"
+        role="status"
+        aria-live="polite"
+      >
+        <CheckCircle2 size={48} className="text-green-500" aria-hidden="true" />
+        <div>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">Message Sent!</h3>
+          <p className="text-slate-500 dark:text-slate-400 text-sm">We&apos;ll get back to you within one business day.</p>
+        </div>
+        <button
+          onClick={() => setStatus("idle")}
+          className="text-accent-blue font-semibold hover:underline text-sm"
+        >
+          Send another message
+        </button>
+      </motion.div>
+    );
+  }
+
+  return (
+    <form className="space-y-5 font-sans" onSubmit={handleSubmit} noValidate>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="space-y-1">
+          <label htmlFor={`${id}-first`} className={labelClass}>
+            First Name <span className="text-red-400" aria-hidden="true">*</span>
+          </label>
+          <input
+            id={`${id}-first`}
+            name="firstName"
+            type="text"
+            autoComplete="given-name"
+            required
+            value={form.firstName}
+            onChange={handleChange}
+            className={inputClass}
+            placeholder="Jane"
+          />
+        </div>
+        <div className="space-y-1">
+          <label htmlFor={`${id}-last`} className={labelClass}>
+            Last Name <span className="text-red-400" aria-hidden="true">*</span>
+          </label>
+          <input
+            id={`${id}-last`}
+            name="lastName"
+            type="text"
+            autoComplete="family-name"
+            required
+            value={form.lastName}
+            onChange={handleChange}
+            className={inputClass}
+            placeholder="Doe"
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="space-y-1">
+          <label htmlFor={`${id}-email`} className={labelClass}>
+            Email Address <span className="text-red-400" aria-hidden="true">*</span>
+          </label>
+          <input
+            id={`${id}-email`}
+            name="email"
+            type="email"
+            autoComplete="email"
+            required
+            value={form.email}
+            onChange={handleChange}
+            className={inputClass}
+            placeholder="jane@example.com"
+          />
+        </div>
+        <div className="space-y-1">
+          <label htmlFor={`${id}-phone`} className={labelClass}>Phone Number</label>
+          <input
+            id={`${id}-phone`}
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            value={form.phone}
+            onChange={handleChange}
+            className={inputClass}
+            placeholder="(555) 123-4567"
+          />
+        </div>
+      </div>
+
+      <div className="space-y-1">
+        <label htmlFor={`${id}-service`} className={labelClass}>Interested Service</label>
+        <select
+          id={`${id}-service`}
+          name="service"
+          value={form.service}
+          onChange={handleChange}
+          className={`${inputClass} appearance-none`}
+        >
+          {SERVICE_OPTIONS.map((opt) => (
+            <option key={opt.value} value={opt.value}>{opt.label}</option>
+          ))}
+        </select>
+      </div>
+
+      <div className="space-y-1">
+        <label htmlFor={`${id}-message`} className={labelClass}>
+          Message <span className="text-red-400" aria-hidden="true">*</span>
+        </label>
+        <textarea
+          id={`${id}-message`}
+          name="message"
+          rows={4}
+          required
+          value={form.message}
+          onChange={handleChange}
+          className={`${inputClass} resize-none`}
+          placeholder="Provide any specifications or details..."
+        />
+      </div>
+
+      <input
+        type="text"
+        name="_honey"
+        value={form._honey}
+        onChange={handleChange}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute opacity-0 pointer-events-none w-0 h-0 overflow-hidden"
+      />
+
+      {status === "error" && (
+        <p role="alert" className="text-red-500 text-sm font-medium">{errorMsg}</p>
+      )}
+
+      <button
+        type="submit"
+        disabled={status === "loading"}
+        className="w-full bg-accent-blue hover:bg-blue-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-lg rounded-xl px-4 py-4 mt-4 transition-all hover:shadow-lg flex items-center justify-center gap-2 group"
+      >
+        {status === "loading" ? (
+          <>
+            <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" aria-hidden="true" />
+            Sending…
+          </>
+        ) : (
+          <>
+            Submit Inquiry <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+          </>
+        )}
+      </button>
+    </form>
+  );
+}
 
 export default function Home() {
   return (
@@ -193,41 +429,11 @@ export default function Home() {
           <div className="lg:w-1/2 bg-white dark:bg-slate-800 m-4 md:m-8 lg:m-4 rounded-4xl p-8 md:p-12 relative z-10 shadow-inner">
             <div className="mb-8">
               <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-widest mb-4 inline-block">Free Consultation</span>
-              <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Request an Estimate</h3>
-              <p className="text-slate-500 dark:text-slate-400 text-sm">Fill out the quick form below. Our energy consultants respond within 24 hours.</p>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Send a Message.</h3>
+              <p className="text-slate-500 dark:text-slate-400 text-sm">Our engineering consultants usually respond immediately during office hours.</p>
             </div>
 
-            <form className="space-y-5 font-sans" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div className="space-y-1">
-                  <label htmlFor="estimate-first-name" className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">First Name</label>
-                  <input id="estimate-first-name" name="first-name" type="text" autoComplete="given-name" className="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-yellow transition-all shadow-sm" placeholder="John" />
-                </div>
-                <div className="space-y-1">
-                  <label htmlFor="estimate-last-name" className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Last Name</label>
-                  <input id="estimate-last-name" name="last-name" type="text" autoComplete="family-name" className="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-yellow transition-all shadow-sm" placeholder="Doe" />
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <label htmlFor="estimate-email" className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Email Address</label>
-                <input id="estimate-email" name="email" type="email" autoComplete="email" className="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-yellow transition-all shadow-sm" placeholder="john@example.com" />
-              </div>
-
-              <div className="space-y-1">
-                <label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Property Type</label>
-                <div className="grid grid-cols-2 gap-3 mt-1">
-                  <button type="button" className="bg-slate-50 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-xl px-4 py-3 text-sm font-semibold transition-colors focus:ring-2 focus:ring-accent-blue focus:bg-blue-50 dark:focus:bg-slate-800 focus:text-accent-blue focus:border-accent-blue">Residential</button>
-                  <button type="button" className="bg-slate-50 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-xl px-4 py-3 text-sm font-semibold transition-colors focus:ring-2 focus:ring-accent-blue focus:bg-blue-50 dark:focus:bg-slate-800 focus:text-accent-blue focus:border-accent-blue">Commercial</button>
-                </div>
-              </div>
-
-              <button className="w-full bg-accent-blue hover:bg-blue-800 text-white font-bold text-lg rounded-xl px-4 py-4 mt-4 transition-all hover:shadow-lg flex items-center justify-center gap-2 group">
-                Get My Estimate <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </button>
-
-              <p className="text-center text-xs text-slate-400 dark:text-slate-500 mt-4">By submitting this form, you agree to our <Link href="#" className="underline hover:text-slate-600 dark:text-slate-400">Privacy Policy</Link>.</p>
-            </form>
+            <EstimateForm />
           </div>
         </div>
       </motion.section>
