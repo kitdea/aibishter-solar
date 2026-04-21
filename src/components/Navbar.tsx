@@ -79,9 +79,8 @@ export default function Navbar() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button
-                aria-haspopup="true"
-                aria-expanded={servicesOpen}
+              <Link
+                href="/services"
                 className={`flex items-center gap-1 px-5 py-2 rounded-full text-sm font-medium transition-all ${
                   isServicesActive
                     ? !isWhiteText
@@ -97,7 +96,7 @@ export default function Navbar() {
                   size={14}
                   className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
                 />
-              </button>
+              </Link>
 
               <AnimatePresence>
                 {servicesOpen && (
@@ -110,15 +109,6 @@ export default function Navbar() {
                     className="absolute left-0 top-full pt-2 w-56 z-50"
                   >
                     <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 overflow-hidden py-2">
-                      <Link
-                        href="/services"
-                        role="menuitem"
-                        className="flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-accent-blue hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        All Services
-                      </Link>
-                      <div className="mx-3 my-1 border-t border-slate-100 dark:border-slate-800" />
                       {services.map((s) => (
                         <Link
                           key={s.slug}
@@ -216,18 +206,26 @@ export default function Navbar() {
 
               {/* Services expandable */}
               <div className="pb-4 border-b border-slate-100 dark:border-slate-800">
-                <button
-                  aria-expanded={mobileServicesOpen}
-                  aria-controls="mobile-services-menu"
-                  className="w-full flex items-center justify-between text-2xl font-bold text-slate-800 dark:text-slate-200 hover:text-accent-blue dark:hover:text-accent-blue transition-colors"
-                  onClick={() => setMobileServicesOpen((v) => !v)}
-                >
-                  <span>Services</span>
-                  <ChevronDown
-                    size={20}
-                    className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
-                  />
-                </button>
+                <div className="w-full flex items-center justify-between">
+                  <Link
+                    href="/services"
+                    className="text-2xl font-bold text-slate-800 dark:text-slate-200 hover:text-accent-blue dark:hover:text-accent-blue transition-colors"
+                    onClick={() => { setIsOpen(false); setMobileServicesOpen(false); }}
+                  >
+                    Services
+                  </Link>
+                  <button
+                    aria-expanded={mobileServicesOpen}
+                    aria-controls="mobile-services-menu"
+                    onClick={() => setMobileServicesOpen((v) => !v)}
+                    className="p-1 text-slate-800 dark:text-slate-200 hover:text-accent-blue dark:hover:text-accent-blue transition-colors"
+                  >
+                    <ChevronDown
+                      size={20}
+                      className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                </div>
                 <AnimatePresence>
                   {mobileServicesOpen && (
                     <motion.div
@@ -239,13 +237,6 @@ export default function Navbar() {
                       className="overflow-hidden"
                     >
                       <div className="pt-3 flex flex-col gap-1">
-                        <Link
-                          href="/services"
-                          className="text-sm font-bold uppercase tracking-widest text-accent-blue px-3 py-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-                          onClick={() => { setIsOpen(false); setMobileServicesOpen(false); }}
-                        >
-                          All Services
-                        </Link>
                         {services.map((s) => (
                           <Link
                             key={s.slug}
