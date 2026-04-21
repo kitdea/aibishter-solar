@@ -22,6 +22,7 @@ interface FormState {
   phone: string;
   service: ServiceValue;
   message: string;
+  _honey: string;
 }
 
 const INITIAL_FORM: FormState = {
@@ -31,6 +32,7 @@ const INITIAL_FORM: FormState = {
   phone: "",
   service: "residential",
   message: "",
+  _honey: "",
 };
 
 const inputClass =
@@ -351,6 +353,17 @@ export default function ContactPage() {
                   placeholder="Provide any specifications or details..."
                 />
               </div>
+
+              <input
+                type="text"
+                name="_honey"
+                value={form._honey}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute opacity-0 pointer-events-none w-0 h-0 overflow-hidden"
+              />
 
               {/* Error message */}
               {status === "error" && (
