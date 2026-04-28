@@ -2,21 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Sun, ChevronRight, ArrowRight, Check, MapPin, Star, Zap, Battery, Wrench, Cpu, ShieldCheck } from "@/lib/icons";
+import { Sun, ChevronRight, ArrowRight, Check, MapPin, Star } from "@/lib/icons";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
-
-const iconMap = { Zap, Battery, Wrench, Cpu, ShieldCheck } as const;
-
-const SERVICE_META: Record<string, { label: string; icon: keyof typeof iconMap; description: string }> = {
-  "residential-solar": { label: "Residential Solar", icon: "Zap", description: "Custom solar installations for homes — from site survey to grid connection." },
-  "commercial-solar": { label: "Commercial Solar", icon: "Cpu", description: "High-yield solar systems for businesses, warehouses, and commercial rooftops." },
-  "solar-storage": { label: "Solar Storage", icon: "Battery", description: "Lithium-ion battery storage to keep your power flowing day and night." },
-  "electrical-design": { label: "Electrical Design", icon: "ShieldCheck", description: "NEC-compliant single-line diagrams and permit-ready electrical documents." },
-  "general-maintenance": { label: "General Maintenance", icon: "Wrench", description: "Panel cleaning, inverter checks, and performance monitoring to protect your investment." },
-};
-
-const ALL_SERVICES = Object.keys(SERVICE_META);
+import { SERVICE_MAP, SERVICE_ICON_MAP, SERVICE_SLUGS } from "@/lib/services";
 
 interface Review {
   authorName: string;
@@ -41,7 +30,7 @@ interface Area {
 }
 
 export default function AreaContent({ area, reviews, jsonLd }: { area: Area; reviews: Review[]; jsonLd: object }) {
-  const displayedServices = area.featuredServices?.length ? area.featuredServices : ALL_SERVICES;
+  const displayedServices = area.featuredServices?.length ? area.featuredServices : SERVICE_SLUGS;
   const heroHeadline = area.heroHeadline ?? `Solar Panel Installation in ${area.name}`;
   const heroSubheadline =
     area.heroSubheadline ??
@@ -153,9 +142,9 @@ export default function AreaContent({ area, reviews, jsonLd }: { area: Area; rev
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {displayedServices.map((serviceSlug) => {
-                const meta = SERVICE_META[serviceSlug];
+                const meta = SERVICE_MAP[serviceSlug];
                 if (!meta) return null;
-                const Icon = iconMap[meta.icon];
+                const Icon = SERVICE_ICON_MAP[meta.icon];
                 return (
                   <Link
                     key={serviceSlug}
@@ -166,7 +155,7 @@ export default function AreaContent({ area, reviews, jsonLd }: { area: Area; rev
                       <Icon size={22} className="text-accent-blue" />
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white font-poppins group-hover:text-accent-blue transition-colors">
-                      {meta.label} in {area.name}
+                      {meta.title} in {area.name}
                     </h3>
                     <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-sans">{meta.description}</p>
                     <div className="flex items-center gap-2 text-accent-blue font-bold text-sm mt-auto">

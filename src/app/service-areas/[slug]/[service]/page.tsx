@@ -1,14 +1,7 @@
 import { notFound } from "next/navigation";
 import { getServiceAreaBySlug, getServiceBySlug, getFeaturedReviews } from "@/sanity/queries";
+import { SERVICE_MAP } from "@/lib/services";
 import AreaServiceContent from "./AreaServiceContent";
-
-const SERVICE_LABELS: Record<string, string> = {
-  "residential-solar": "Residential Solar",
-  "commercial-solar": "Commercial Solar",
-  "solar-storage": "Solar Storage",
-  "electrical-design": "Electrical Design",
-  "general-maintenance": "General Maintenance",
-};
 
 export default async function AreaServicePage({
   params,
@@ -17,7 +10,8 @@ export default async function AreaServicePage({
 }) {
   const { slug, service } = await params;
 
-  if (!SERVICE_LABELS[service]) notFound();
+  const fallback = SERVICE_MAP[service];
+  if (!fallback) notFound();
 
   const [area, serviceData, reviews] = await Promise.all([
     getServiceAreaBySlug(slug),
@@ -25,7 +19,15 @@ export default async function AreaServicePage({
     getFeaturedReviews(),
   ]);
 
-  if (!area || !serviceData) notFound();
+  if (!area) notFound();
+
+  const resolvedService = serviceData ?? {
+    ...fallback,
+    features: [],
+    benefits: [],
+    heroImage: undefined,
+    seo: null,
+  };
 
   const avgRating =
     reviews.length > 0
@@ -35,8 +37,8 @@ export default async function AreaServicePage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `${serviceData.title} in ${area.name}`,
-    description: serviceData.description,
+    name: `${resolvedService.title} in ${area.name}`,
+    description: resolvedService.description,
     provider: {
       "@type": "LocalBusiness",
       name: "Aibishter Engineering Services",
@@ -71,10 +73,10 @@ export default async function AreaServicePage({
         { "@type": "ListItem", position: 1, name: "Home", item: "https://aibishter.com" },
         { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://aibishter.com/service-areas" },
         { "@type": "ListItem", position: 3, name: area.name, item: `https://aibishter.com/service-areas/${slug}` },
-        { "@type": "ListItem", position: 4, name: serviceData.title, item: `https://aibishter.com/service-areas/${slug}/${service}` },
+        { "@type": "ListItem", position: 4, name: resolvedService.title, item: `https://aibishter.com/service-areas/${slug}/${service}` },
       ],
     },
   };
 
-  return <AreaServiceContent area={area} service={serviceData} reviews={reviews} jsonLd={jsonLd} />;
+  return <AreaServiceContent area={area} service={resolvedService} reviews={reviews} jsonLd={jsonLd} />;
 }

@@ -28,23 +28,23 @@ export const getServiceAreaBySlug = cache(async function getServiceAreaBySlug(sl
 
 // ── Reviews ───────────────────────────────────────────────────────────────────
 
-export async function getFeaturedReviews() {
+export const getFeaturedReviews = cache(async function getFeaturedReviews() {
   return client.fetch(
     `*[_type == "review" && featured == true] | order(datePublished desc) [0...6] {
       authorName, authorLocation, rating, reviewBody, serviceType, datePublished,
       "photo": photo.asset->url
     }`
   );
-}
+})
 
-export async function getAllReviews() {
+export const getAllReviews = cache(async function getAllReviews() {
   return client.fetch(
     `*[_type == "review"] | order(datePublished desc) {
       authorName, authorLocation, rating, reviewBody, serviceType, datePublished,
       "photo": photo.asset->url
     }`
   );
-}
+});
 
 // ── Services ──────────────────────────────────────────────────────────────────
 

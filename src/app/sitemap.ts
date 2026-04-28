@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { client } from "@/sanity/client";
+import { SERVICE_SLUGS } from "@/lib/services";
 
 const BASE_URL = "https://aibishter.com";
 
@@ -12,14 +13,6 @@ const STATIC_ROUTES: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
   { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
   { url: `${BASE_URL}/solar-calculator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-];
-
-const SERVICE_SLUGS = [
-  "residential-solar",
-  "commercial-solar",
-  "solar-storage",
-  "electrical-design",
-  "general-maintenance",
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
