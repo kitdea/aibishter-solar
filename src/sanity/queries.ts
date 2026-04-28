@@ -48,6 +48,12 @@ export async function getAllReviews() {
 
 // ── Services ──────────────────────────────────────────────────────────────────
 
+export async function getNavServices(): Promise<{ slug: string; title: string }[]> {
+  return client.fetch(
+    `*[_type == "service"] | order(title asc) { "slug": slug.current, title }`
+  );
+}
+
 export async function getAllServices() {
   return client.fetch(
     `*[_type == "service"] | order(title asc) {

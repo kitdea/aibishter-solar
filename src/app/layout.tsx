@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { getNavServices } from "@/sanity/queries";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -78,11 +79,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const navServices = await getNavServices().catch(() => []);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -134,7 +136,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider>
-          <Navbar />
+          <Navbar navServices={navServices} />
           <main className="grow">{children}</main>
           <Footer />
         </ThemeProvider>

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllServiceAreas } from "@/sanity/queries";
-import { MapPin, ArrowRight, Sun } from "@/lib/icons";
+import { MapPin, ArrowRight } from "@/lib/icons";
+import HeroSection from "./HeroSection";
 
 export const revalidate = 3600;
 
@@ -57,37 +58,32 @@ export default async function AreasPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* Static JSON-LD structured data — no user input, XSS-safe */}
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
-      <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-40 pb-24">
+      <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
+
+        <HeroSection />
+
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="mb-16 max-w-3xl">
-            <div className="flex items-center gap-2 mb-4">
-              <Sun size={20} className="text-accent-yellow" />
-              <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Service Coverage</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white tracking-tight font-poppins leading-tight">
-              We bring solar <span className="text-slate-400 dark:text-slate-500">to your city.</span>
-            </h1>
-            <p className="mt-6 text-lg text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
-              From Lucena City to Metro Manila, Aibishter Engineering Services covers all of CALABARZON and the National
-              Capital Region with residential and commercial solar installations.
-            </p>
-          </div>
-
           <div className="space-y-20">
             {REGION_ORDER.map((region) => {
               const provinces = grouped[region];
               if (!provinces) return null;
+              const regionId = region === "NCR" ? "metro-manila" : "calabarzon";
               return (
-                <div key={region}>
+                <div key={region} id={regionId}>
                   <h2 className="text-2xl font-bold text-slate-900 dark:text-white font-poppins mb-8 flex items-center gap-3">
                     <MapPin size={20} className="text-accent-blue" />
                     {region === "NCR" ? "Metro Manila (NCR)" : "CALABARZON (Region IV-A)"}
                   </h2>
                   <div className="space-y-10">
                     {PROVINCE_ORDER.filter((p) => provinces[p]).map((province) => (
-                      <div key={province}>
+                      <div key={province} id={province.toLowerCase().replace(/\s+/g, "-")}>
                         <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">
                           {province}
                         </h3>

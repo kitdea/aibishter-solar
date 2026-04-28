@@ -6,18 +6,25 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Sun, Moon, ChevronDown } from "@/lib/icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/components/ThemeProvider";
-import { services } from "@/lib/services-data";
+import { services as staticServices } from "@/lib/services-data";
+
+interface NavService {
+  slug: string;
+  title: string;
+}
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/projects", label: "Projects" },
+  { href: "/service-areas", label: "Service Areas" },
   { href: "/solar-calculator", label: "Calculator" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact Us" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ navServices }: { navServices?: NavService[] }) {
+  const services = navServices ?? staticServices;
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -25,6 +32,11 @@ export default function Navbar() {
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
   const isServicesActive = pathname.startsWith("/services");
+
+  const isLinkActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +64,7 @@ export default function Navbar() {
         <div className={`flex items-center justify-between rounded-full px-6 py-3 transition-colors duration-300 ${!isWhiteText ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm border border-black/5 dark:border-white/5" : "bg-transparent text-white"}`}>
 
           {/* Left: Logo/Brand */}
-          <Link href="/" className="flex-shrink-0 flex items-center gap-3">
+          <Link href="/" className="shrink-0 flex items-center gap-3">
             <Sun className={!isWhiteText ? "text-accent-blue" : "text-accent-yellow"} size={28} />
             <div className={`flex flex-col leading-none ${!isWhiteText ? "text-slate-900 dark:text-white" : "text-white"}`}>
               <span className="text-lg font-bold tracking-widest uppercase font-poppins">Aibishter</span>
@@ -67,7 +79,15 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${!isWhiteText ? "text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white hover:shadow-sm" : "text-white/80 hover:bg-white/20 hover:text-white"}`}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                  isLinkActive(link.href)
+                    ? !isWhiteText
+                      ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm"
+                      : "bg-white/20 text-white"
+                    : !isWhiteText
+                    ? "text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white hover:shadow-sm"
+                    : "text-white/80 hover:bg-white/20 hover:text-white"
+                }`}
               >
                 {link.label}
               </Link>
@@ -130,12 +150,20 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* Remaining links: Projects, Calculator, Blog, Contact Us */}
+            {/* Remaining links: Projects, Service Areas, Calculator, Blog, Contact Us */}
             {navLinks.slice(2).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${!isWhiteText ? "text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white hover:shadow-sm" : "text-white/80 hover:bg-white/20 hover:text-white"}`}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                  isLinkActive(link.href)
+                    ? !isWhiteText
+                      ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm"
+                      : "bg-white/20 text-white"
+                    : !isWhiteText
+                    ? "text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white hover:shadow-sm"
+                    : "text-white/80 hover:bg-white/20 hover:text-white"
+                }`}
               >
                 {link.label}
               </Link>
@@ -148,7 +176,7 @@ export default function Navbar() {
               href="/contact"
               className={`text-sm font-bold px-5 py-2 rounded-full transition-all flex items-center gap-2 ${!isWhiteText ? "bg-accent-blue text-white hover:bg-slate-900 dark:hover:bg-slate-800" : "bg-white text-slate-900 hover:bg-slate-100 dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700"}`}
             >
-              Get Estimate <span className="rotate-[-45deg] inline-block font-sans">→</span>
+              Get Estimate <span className="-rotate-45 inline-block font-sans">→</span>
             </Link>
             {/* Dark / Light Mode Toggle */}
             <button
@@ -197,7 +225,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-2xl font-bold text-slate-800 dark:text-slate-200 hover:text-accent-blue dark:hover:text-accent-blue transition-colors pb-4 border-b border-slate-100 dark:border-slate-800 line-clamp-1"
+                  className={`text-2xl font-bold transition-colors pb-4 border-b border-slate-100 dark:border-slate-800 line-clamp-1 ${isLinkActive(link.href) ? "text-accent-blue" : "text-slate-800 dark:text-slate-200 hover:text-accent-blue dark:hover:text-accent-blue"}`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
@@ -253,12 +281,12 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              {/* Projects, Calculator, Blog, Contact Us */}
+              {/* Projects, Service Areas, Calculator, Blog, Contact Us */}
               {navLinks.slice(2).map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-2xl font-bold text-slate-800 dark:text-slate-200 hover:text-accent-blue dark:hover:text-accent-blue transition-colors pb-4 border-b border-slate-100 dark:border-slate-800 line-clamp-1"
+                  className={`text-2xl font-bold transition-colors pb-4 border-b border-slate-100 dark:border-slate-800 line-clamp-1 ${isLinkActive(link.href) ? "text-accent-blue" : "text-slate-800 dark:text-slate-200 hover:text-accent-blue dark:hover:text-accent-blue"}`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
@@ -270,7 +298,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
               >
                 <span>Get a Free Estimate</span>
-                <span className="rotate-[-45deg] inline-block font-sans text-2xl">→</span>
+                <span className="-rotate-45 inline-block font-sans text-2xl">→</span>
               </Link>
             </div>
           </motion.div>

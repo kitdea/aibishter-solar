@@ -47,9 +47,15 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-12 mb-24 font-sans">
           <div className="flex flex-col space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Platform</h4>
-            {["Home", "Services", "Projects", "About Us"].map((link, i) => (
-              <Link key={i} href={`/${link.toLowerCase().replace(' ', '') === 'home' ? '' : link.toLowerCase().replace(' ', '')}`} className="text-slate-700 dark:text-slate-300 font-medium hover:text-accent-blue dark:hover:text-accent-blue hover:translate-x-1 transition-all">
-                {link}
+            {[
+              { label: "Home", href: "/" },
+              { label: "Services", href: "/services" },
+              { label: "Service Areas", href: "/service-areas" },
+              { label: "Projects", href: "/projects" },
+              { label: "About Us", href: "/about" },
+            ].map((item, i) => (
+              <Link key={i} href={item.href} className="text-slate-700 dark:text-slate-300 font-medium hover:text-accent-blue dark:hover:text-accent-blue hover:translate-x-1 transition-all">
+                {item.label}
               </Link>
             ))}
           </div>
@@ -57,9 +63,9 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Service Areas</h4>
             {[
               { label: "Lucena City", href: "/service-areas/lucena-city" },
-              { label: "Quezon Province", href: "/service-areas" },
-              { label: "Metro Manila", href: "/service-areas" },
-              { label: "CALABARZON", href: "/service-areas" },
+              { label: "Quezon Province", href: "/service-areas#quezon" },
+              { label: "Metro Manila", href: "/service-areas#metro-manila" },
+              { label: "CALABARZON", href: "/service-areas#calabarzon" },
               { label: "All Areas →", href: "/service-areas" },
             ].map((item, i) => (
               <Link key={i} href={item.href} className="text-slate-700 dark:text-slate-300 font-medium hover:text-accent-blue dark:hover:text-accent-blue hover:translate-x-1 transition-all">
