@@ -26,18 +26,18 @@ export const metadata: Metadata = {
     template: "%s | Aibishter Solar",
   },
   description:
-    "Top-tier solar energy panel installations for homes and businesses in Eco City. Save money and help the environment with Aibishter Engineering Services.",
+    "Top-tier solar energy panel installations for homes and businesses across CALABARZON and Metro Manila. Save money and help the environment with Aibishter Engineering Services.",
   keywords: [
-    "solar energy",
-    "solar panels",
-    "renewable energy",
-    "clean energy",
-    "solar installation",
-    "residential solar",
-    "commercial solar",
+    "solar energy Philippines",
+    "solar panels CALABARZON",
+    "solar panels Metro Manila",
+    "solar installation Quezon Province",
+    "residential solar Philippines",
+    "commercial solar Philippines",
     "solar storage",
     "battery backup",
-    "Aibishter",
+    "Aibishter Engineering Services",
+    "solar installer Lucena City",
   ],
   authors: [{ name: "Aibishter Engineering Services" }],
   creator: "Aibishter Engineering Services",
@@ -91,21 +91,32 @@ export default function RootLayout({
       "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop",
     "@id": "https://aibishter.com",
     url: "https://aibishter.com",
-    telephone: "+18001234567",
+    telephone: "+639171898089",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "123 Solar Way",
-      addressLocality: "Eco City",
-      addressRegion: "EC",
-      postalCode: "90210",
-      addressCountry: "US",
+      streetAddress: "PH 6, Citta Grande, Via Lucera Street Blk 4 Lot 18",
+      addressLocality: "Lucena City",
+      addressRegion: "Quezon",
+      postalCode: "4301",
+      addressCountry: "PH",
     },
-    sameAs: [],
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "Metro Manila" },
+      { "@type": "AdministrativeArea", name: "Quezon Province" },
+      { "@type": "AdministrativeArea", name: "Cavite" },
+      { "@type": "AdministrativeArea", name: "Laguna" },
+      { "@type": "AdministrativeArea", name: "Batangas" },
+      { "@type": "AdministrativeArea", name: "Rizal" },
+    ],
+    sameAs: [
+      "https://www.instagram.com/aibishter_engineering/",
+      "https://x.com/AibishterES",
+    ],
     priceRange: "$$",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
       closes: "18:00",
     },
   };
@@ -124,7 +135,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Navbar />
-          <main className="flex-grow">{children}</main>
+          <main className="grow">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

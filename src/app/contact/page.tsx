@@ -151,7 +151,7 @@ export default function ContactPage() {
                   Headquarters
                 </h3>
                 <p className="text-lg font-bold text-slate-900 dark:text-white font-poppins leading-tight">
-                  123 Solar Way<br />Eco City, EC 90210
+                  PH 6, Citta Grande, VIA LUCERA WHQP+9P3 Saint Therese Blk 4 Lot 18 Via Lucera Street,<br /> Lucena City, 4301 Quezon
                 </p>
               </div>
             </div>
@@ -163,9 +163,9 @@ export default function ContactPage() {
                   Direct Lines
                 </h3>
                 <p className="text-lg font-bold text-slate-900 dark:text-white font-poppins leading-tight">
-                  <a href="tel:+18001234567" className="hover:text-accent-blue transition-colors">+1 (800) 123-4567</a>
+                  <a href="tel:+639171898089" className="hover:text-accent-blue transition-colors">+63 (917)-189-8089</a>
                   <br />
-                  <a href="tel:+15559876543" className="hover:text-accent-blue transition-colors">+1 (555) 987-6543</a>
+                  <a href="tel:+0423738841" className="hover:text-accent-blue transition-colors">(042) 373-8841</a>
                 </p>
               </div>
             </div>
@@ -177,9 +177,9 @@ export default function ContactPage() {
                   Digital
                 </h3>
                 <p className="text-lg font-bold text-slate-900 dark:text-white font-poppins leading-tight">
-                  <a href="mailto:info@aibishter.com" className="hover:text-accent-blue transition-colors">info@aibishter.com</a>
+                  <a href="mailto:sales.aibishter@gmail.com" className="hover:text-accent-blue transition-colors">sales.aibishter@gmail.com</a>
                   <br />
-                  <a href="mailto:support@aibishter.com" className="hover:text-accent-blue transition-colors">support@aibishter.com</a>
+                  
                 </p>
               </div>
             </div>
@@ -191,7 +191,7 @@ export default function ContactPage() {
                   Hours
                 </h3>
                 <p className="text-lg font-bold text-slate-900 dark:text-white font-poppins leading-tight">
-                  Mon – Fri: 8AM – 6PM<br />Sat &amp; Sun: Closed
+                  Mon – Sat: 9AM – 6PM<br />Sun: Closed
                 </p>
               </div>
             </div>
@@ -264,7 +264,7 @@ export default function ContactPage() {
                     value={form.firstName}
                     onChange={handleChange}
                     className={inputClass}
-                    placeholder="Jane"
+                    placeholder="Juan"
                   />
                 </div>
                 <div className="space-y-2">
@@ -280,7 +280,7 @@ export default function ContactPage() {
                     value={form.lastName}
                     onChange={handleChange}
                     className={inputClass}
-                    placeholder="Doe"
+                    placeholder="Dela Cruz"
                   />
                 </div>
               </div>
@@ -299,7 +299,7 @@ export default function ContactPage() {
                     value={form.email}
                     onChange={handleChange}
                     className={inputClass}
-                    placeholder="jane@example.com"
+                    placeholder="juan@example.com"
                   />
                 </div>
                 <div className="space-y-2">

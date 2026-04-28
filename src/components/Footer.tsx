@@ -44,12 +44,26 @@ export default function Footer() {
         <div className="h-[2px] w-full bg-slate-900 dark:bg-slate-100 mb-16"></div>
 
         {/* Links Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24 font-sans">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 mb-24 font-sans">
           <div className="flex flex-col space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Platform</h4>
             {["Home", "Services", "Projects", "About Us"].map((link, i) => (
               <Link key={i} href={`/${link.toLowerCase().replace(' ', '') === 'home' ? '' : link.toLowerCase().replace(' ', '')}`} className="text-slate-700 dark:text-slate-300 font-medium hover:text-accent-blue dark:hover:text-accent-blue hover:translate-x-1 transition-all">
                 {link}
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-col space-y-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Service Areas</h4>
+            {[
+              { label: "Lucena City", href: "/service-areas/lucena-city" },
+              { label: "Quezon Province", href: "/service-areas" },
+              { label: "Metro Manila", href: "/service-areas" },
+              { label: "CALABARZON", href: "/service-areas" },
+              { label: "All Areas →", href: "/service-areas" },
+            ].map((item, i) => (
+              <Link key={i} href={item.href} className="text-slate-700 dark:text-slate-300 font-medium hover:text-accent-blue dark:hover:text-accent-blue hover:translate-x-1 transition-all">
+                {item.label}
               </Link>
             ))}
           </div>
@@ -76,13 +90,13 @@ export default function Footer() {
           </div>
           <div className="flex flex-col space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Social</h4>
-            <a href="#" className="text-slate-700 dark:text-slate-300 font-medium flex items-center gap-2 hover:text-accent-blue dark:hover:text-accent-blue transition-colors group">
+            <a href="https://www.instagram.com/aibishter_engineering/" target="_blank" className="text-slate-700 dark:text-slate-300 font-medium flex items-center gap-2 hover:text-accent-blue dark:hover:text-accent-blue transition-colors group">
               <span className="font-bold font-serif mb-1 leading-none text-base">IG</span> Instagram <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
             </a>
-            <a href="#" className="text-slate-700 dark:text-slate-300 font-medium flex items-center gap-2 hover:text-accent-blue dark:hover:text-accent-blue transition-colors group">
+            <a href="https://x.com/AibishterES" target="_blank" className="text-slate-700 dark:text-slate-300 font-medium flex items-center gap-2 hover:text-accent-blue dark:hover:text-accent-blue transition-colors group">
               <span className="font-bold font-serif mb-1 leading-none text-base">X</span> Twitter <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
             </a>
-            <a href="#" className="text-slate-700 dark:text-slate-300 font-medium flex items-center gap-2 hover:text-accent-blue dark:hover:text-accent-blue transition-colors group">
+            <a href="#" target="_blank" className="text-slate-700 dark:text-slate-300 font-medium flex items-center gap-2 hover:text-accent-blue dark:hover:text-accent-blue transition-colors group">
               <span className="font-bold font-serif mb-1 leading-none text-base">IN</span> LinkedIn <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
             </a>
           </div>
