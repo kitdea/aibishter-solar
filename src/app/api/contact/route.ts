@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const APPS_SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL ?? "";
 const NOTIFY_EMAIL = process.env.CONTACT_NOTIFY_EMAIL ?? "";
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_REGEX = /^[+]?[\d\s\-().]{7,20}$/;
 const VALID_SERVICES = new Set(["residential", "commercial", "storage", "maintenance"]);
 
 export async function POST(req: NextRequest) {
@@ -36,6 +37,10 @@ export async function POST(req: NextRequest) {
 
   if (!EMAIL_REGEX.test(mail)) {
     return NextResponse.json({ error: "Invalid email address." }, { status: 422 });
+  }
+
+  if (tel && !PHONE_REGEX.test(tel)) {
+    return NextResponse.json({ error: "Invalid phone number." }, { status: 422 });
   }
 
   try {

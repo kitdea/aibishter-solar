@@ -28,6 +28,7 @@ import {
   Play as _Play,
   RefreshCw as _RefreshCw,
   ShieldCheck as _ShieldCheck,
+  Star as _Star,
   Sun as _Sun,
   ThermometerSun as _ThermometerSun,
   TrendingUp as _TrendingUp,
@@ -66,6 +67,7 @@ export const Phone         = wrap(_Phone);
 export const Play          = wrap(_Play);
 export const RefreshCw     = wrap(_RefreshCw);
 export const ShieldCheck   = wrap(_ShieldCheck);
+export const Star          = wrap(_Star);
 export const Sun           = wrap(_Sun);
 export const ThermometerSun = wrap(_ThermometerSun);
 export const TrendingUp    = wrap(_TrendingUp);
