@@ -33,7 +33,7 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: "residential-solar",
-    title: "Residential Solar",
+    title: "Residential",
     tagline: "Power your home with clean, renewable energy.",
     description:
       "Transform your home into a clean energy powerhouse. We design scalable and aesthetic solar arrays tailored to your roof, maximizing energy production.",
@@ -111,7 +111,7 @@ export const services: Service[] = [
   },
   {
     slug: "commercial-solar",
-    title: "Commercial Solar",
+    title: "Commercial",
     tagline: "Cut operational costs with large-scale solar power.",
     description:
       "Empower your business with reliable energy independence. Lower operational costs and demonstrate corporate social responsibility with our large-scale solutions.",
@@ -190,7 +190,7 @@ export const services: Service[] = [
   },
   {
     slug: "solar-storage",
-    title: "Solar Storage",
+    title: "Solar Battery",
     tagline: "Store your solar energy for whenever you need it most.",
     description:
       "Store excess solar energy for when you need it most. Our battery backups ensure your lights stay on during grid outages and peak pricing times.",
@@ -265,85 +265,6 @@ export const services: Service[] = [
       canonical: "https://aibishter.com/services/solar-storage",
       ogImage:
         "https://images.unsplash.com/photo-1548611135-24b94f061173?q=80&w=1200&auto=format&fit=crop",
-    },
-  },
-  {
-    slug: "electrical-design",
-    title: "Electrical Design",
-    tagline: "Permit-ready engineering documentation for every installation.",
-    description:
-      "Precision-engineered electrical schematics and single-line diagrams for every solar installation. Our certified engineers produce code-compliant, permit-ready documentation that keeps your project on schedule and inspectors satisfied.",
-    longDescription:
-      "Behind every successful solar installation is a set of accurate, code-compliant electrical drawings. Aibishter Solar's in-house engineering team produces single-line diagrams, load calculations, and full permit packages that satisfy AHJs on the first submission. Whether you're an installer needing fast design turnaround or a homeowner navigating the permit process, we have you covered.",
-    features: [
-      {
-        label: "Single-Line Diagrams",
-        detail:
-          "Clear, AHJ-ready single-line electrical diagrams engineered for both residential and commercial solar systems.",
-      },
-      {
-        label: "Load Calculation Reports",
-        detail:
-          "Accurate load analysis reports ensuring system sizing meets all NEC and local jurisdiction requirements.",
-      },
-      {
-        label: "NEC Code Compliance",
-        detail:
-          "Every drawing is reviewed against the current National Electrical Code edition before it leaves our desk.",
-      },
-      {
-        label: "Permit-Ready Documentation",
-        detail:
-          "Complete permit packages ready for immediate submission to your local authority having jurisdiction (AHJ).",
-      },
-    ],
-    benefits: [
-      {
-        title: "First-Pass Permit Approval",
-        description:
-          "Our documentation is engineered to satisfy inspectors on the first submission — reducing costly project delays.",
-      },
-      {
-        title: "NEC Code Compliant",
-        description:
-          "Every diagram is reviewed against the current National Electrical Code edition before delivery to your team.",
-      },
-      {
-        title: "Fast Turnaround",
-        description:
-          "Standard deliverables are completed within 3–5 business days. Rush options are available upon request.",
-      },
-      {
-        title: "Revision Guarantee",
-        description:
-          "If any item is flagged by the AHJ, we revise the documentation at absolutely no additional charge.",
-      },
-    ],
-    image:
-      "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=2070&auto=format&fit=crop",
-    heroImage:
-      "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=2070&auto=format&fit=crop",
-    iconName: "Cpu",
-    seo: {
-      metaTitle: "Electrical Design for Solar",
-      metaDescription:
-        "Permit-ready electrical design by Aibishter Solar. Single-line diagrams, load calculation reports, and NEC-compliant documentation — delivered in 3–5 business days.",
-      keywords: [
-        "solar electrical design",
-        "single-line diagram solar",
-        "solar permit documentation",
-        "NEC code compliance solar",
-        "load calculation report",
-        "AHJ permit solar",
-        "electrical engineering solar",
-        "Aibishter Solar electrical design",
-      ],
-      ogTitle: "Electrical Design – Aibishter Solar",
-      ogDescription:
-        "From single-line diagrams to full permit packages, Aibishter Solar's engineering team delivers NEC-compliant documentation that gets your project approved fast.",
-      canonical: "https://aibishter.com/services/electrical-design",
-      ogImage:
-        "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1200&auto=format&fit=crop",
     },
   },
   {
@@ -423,6 +344,85 @@ export const services: Service[] = [
       canonical: "https://aibishter.com/services/general-maintenance",
       ogImage:
         "https://images.unsplash.com/photo-1591190702780-4d56c6b4b9b1?q=80&w=1200&auto=format&fit=crop",
+    },
+  },
+  {
+    slug: "electrical-design",
+    title: "Electrical Design",
+    tagline: "Permit-ready engineering documentation for every installation.",
+    description:
+      "Precision-engineered electrical schematics and single-line diagrams for every solar installation. Our certified engineers produce code-compliant, permit-ready documentation that keeps your project on schedule and inspectors satisfied.",
+    longDescription:
+      "Behind every successful solar installation is a set of accurate, code-compliant electrical drawings. Aibishter Solar's in-house engineering team produces single-line diagrams, load calculations, and full permit packages that satisfy AHJs on the first submission. Whether you're an installer needing fast design turnaround or a homeowner navigating the permit process, we have you covered.",
+    features: [
+      {
+        label: "Single-Line Diagrams",
+        detail:
+          "Clear, AHJ-ready single-line electrical diagrams engineered for both residential and commercial solar systems.",
+      },
+      {
+        label: "Load Calculation Reports",
+        detail:
+          "Accurate load analysis reports ensuring system sizing meets all NEC and local jurisdiction requirements.",
+      },
+      {
+        label: "NEC Code Compliance",
+        detail:
+          "Every drawing is reviewed against the current National Electrical Code edition before it leaves our desk.",
+      },
+      {
+        label: "Permit-Ready Documentation",
+        detail:
+          "Complete permit packages ready for immediate submission to your local authority having jurisdiction (AHJ).",
+      },
+    ],
+    benefits: [
+      {
+        title: "First-Pass Permit Approval",
+        description:
+          "Our documentation is engineered to satisfy inspectors on the first submission — reducing costly project delays.",
+      },
+      {
+        title: "NEC Code Compliant",
+        description:
+          "Every diagram is reviewed against the current National Electrical Code edition before delivery to your team.",
+      },
+      {
+        title: "Fast Turnaround",
+        description:
+          "Standard deliverables are completed within 3–5 business days. Rush options are available upon request.",
+      },
+      {
+        title: "Revision Guarantee",
+        description:
+          "If any item is flagged by the AHJ, we revise the documentation at absolutely no additional charge.",
+      },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=2070&auto=format&fit=crop",
+    heroImage:
+      "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=2070&auto=format&fit=crop",
+    iconName: "Cpu",
+    seo: {
+      metaTitle: "Electrical Design for Solar",
+      metaDescription:
+        "Permit-ready electrical design by Aibishter Solar. Single-line diagrams, load calculation reports, and NEC-compliant documentation — delivered in 3–5 business days.",
+      keywords: [
+        "solar electrical design",
+        "single-line diagram solar",
+        "solar permit documentation",
+        "NEC code compliance solar",
+        "load calculation report",
+        "AHJ permit solar",
+        "electrical engineering solar",
+        "Aibishter Solar electrical design",
+      ],
+      ogTitle: "Electrical Design – Aibishter Solar",
+      ogDescription:
+        "From single-line diagrams to full permit packages, Aibishter Solar's engineering team delivers NEC-compliant documentation that gets your project approved fast.",
+      canonical: "https://aibishter.com/services/electrical-design",
+      ogImage:
+        "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1200&auto=format&fit=crop",
     },
   },
 ];

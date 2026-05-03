@@ -1,4 +1,13 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(gh pr *)",
+      "Bash(awk '/^diff --git a\\\\/src/,/^diff --git|^$/;')",
+      "Read(//tmp/**)",
+      "Bash(git -C /home/keith/aibishter-solar show 4383a33:src/app/api/revalidate/route.ts)",
+      "Bash(git -C /home/keith/aibishter-solar show 3cc48b3:src/app/api/revalidate/route.ts)"
+    ]
+  },
   "enabledPlugins": {
     "code-simplifier@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true

@@ -37,11 +37,11 @@ export const reviewSchema = defineType({
       type: "string",
       options: {
         list: [
-          { title: "Residential Solar", value: "residential-solar" },
-          { title: "Commercial Solar", value: "commercial-solar" },
-          { title: "Solar Storage", value: "solar-storage" },
-          { title: "Electrical Design", value: "electrical-design" },
+          { title: "Residential", value: "residential-solar" },
+          { title: "Commercial", value: "commercial-solar" },
+          { title: "Solar Battery", value: "solar-storage" },
           { title: "General Maintenance", value: "general-maintenance" },
+          { title: "Electrical Design", value: "electrical-design" },
         ],
       },
     }),

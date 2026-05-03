@@ -5,6 +5,7 @@ export const serviceSchema = defineType({
   title: "Service",
   type: "document",
   fields: [
+    defineField({ name: "order", title: "Display Order", type: "number", description: "Lower numbers appear first (1 = Residential, 2 = Commercial, 3 = Solar Battery, 4 = General Maintenance, 5 = Electrical Design)" }),
     defineField({ name: "slug", title: "Slug", type: "slug", options: { source: "title" }, validation: (r) => r.required() }),
     defineField({ name: "title", title: "Title", type: "string", validation: (r) => r.required() }),
     defineField({ name: "tagline", title: "Tagline", type: "string" }),
@@ -61,5 +62,8 @@ export const serviceSchema = defineType({
       ],
     }),
   ],
-  orderings: [{ title: "Title", name: "titleAsc", by: [{ field: "title", direction: "asc" }] }],
+  orderings: [
+    { title: "Display Order", name: "orderAsc", by: [{ field: "order", direction: "asc" }] },
+    { title: "Title", name: "titleAsc", by: [{ field: "title", direction: "asc" }] },
+  ],
 });

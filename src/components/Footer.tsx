@@ -96,6 +96,9 @@ export default function Footer() {
           </div>
           <div className="flex flex-col space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Social</h4>
+            <a href="https://www.facebook.com/aibishterengineering" target="_blank" className="text-slate-700 dark:text-slate-300 font-medium flex items-center gap-2 hover:text-accent-blue dark:hover:text-accent-blue transition-colors group">
+              <span className="font-bold font-serif mb-1 leading-none text-base">FB</span> Facebook <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+            </a>
             <a href="https://www.instagram.com/aibishter_engineering/" target="_blank" className="text-slate-700 dark:text-slate-300 font-medium flex items-center gap-2 hover:text-accent-blue dark:hover:text-accent-blue transition-colors group">
               <span className="font-bold font-serif mb-1 leading-none text-base">IG</span> Instagram <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
             </a>
