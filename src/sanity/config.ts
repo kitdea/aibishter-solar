@@ -13,7 +13,4 @@ export const sanityConfig = defineConfig({
   basePath: "/studio",
   plugins: [structureTool(), visionTool(), media()],
   schema: { types: schemaTypes },
-  auth: {
-    token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN,
-  },
 });
