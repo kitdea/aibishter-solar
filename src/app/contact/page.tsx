@@ -6,14 +6,7 @@ import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
 import { useState, useId } from "react";
 
-const SERVICE_OPTIONS = [
-  { value: "residential", label: "Residential Solar" },
-  { value: "commercial", label: "Commercial Solar" },
-  { value: "storage", label: "Battery Storage" },
-  { value: "maintenance", label: "General Maintenance" },
-] as const;
-
-type ServiceValue = (typeof SERVICE_OPTIONS)[number]["value"];
+import { SERVICE_OPTIONS, ServiceValue } from "@/lib/constants";
 
 interface FormState {
   firstName: string;

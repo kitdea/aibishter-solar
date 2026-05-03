@@ -25,9 +25,7 @@ type SizingInput = {
   monthlyBillPHP: string;
   monthlyBillKWh: string;
   phpPerKWhr: string;
-  daysPerWeek: string;
-  opHours: string;
-  pattern: "hourly" | "nighttime";
+  pattern: "grid-tied" | "with-battery";
 };
 
 // ─── Savings Calculator State ──────────────────────────────────────────────────
@@ -153,9 +151,7 @@ const defaultSizingInput: SizingInput = {
   monthlyBillPHP: "",
   monthlyBillKWh: "",
   phpPerKWhr: String(MERALCO_RATE),
-  daysPerWeek: "7",
-  opHours: "8",
-  pattern: "hourly",
+  pattern: "grid-tied",
 };
 
 function SystemSizeCalculator() {
@@ -169,10 +165,8 @@ function SystemSizeCalculator() {
 
   const calculate = () => {
     const rate = toNum(input.phpPerKWhr) || MERALCO_RATE;
-    const days = toNum(input.daysPerWeek) || 7;
-    const opHours = toNum(input.opHours) || 8;
 
-    // Determine monthly kWh
+    // Determine monthly kWh from whichever field is filled
     let monthlyKWh = 0;
     if (toNum(input.monthlyBillKWh) > 0) {
       monthlyKWh = toNum(input.monthlyBillKWh);
@@ -182,19 +176,12 @@ function SystemSizeCalculator() {
 
     if (monthlyKWh <= 0) return;
 
-    // Adjust for actual operational days in a month
     const dailyKWh = monthlyKWh / 30;
 
-    // Effective daily solar production window (capped by 6am-6pm = 12 hrs max)
-    const effectiveHours = Math.min(opHours, 12);
-
-    // System size using PH peak sun hours and performance ratio
-    // Account for nighttime pattern (battery losses ~10%)
-    const batteryFactor = input.pattern === "nighttime" ? 0.9 : 1.0;
-    const daysAdjust = days / 7;
-    const systemKWp =
-      dailyKWh /
-      (PH_PEAK_SUN_HOURS * (DEFAULT_PERF_RATIO / 100) * daysAdjust * batteryFactor * (effectiveHours / 12));
+    // Industry-standard formula: System Size (kWp) = Daily kWh ÷ (PSH × PR)
+    // With-battery systems add ~10% to cover round-trip battery losses (typical LiFePO4: 90% efficiency)
+    const batteryLossFactor = input.pattern === "with-battery" ? 1.1 : 1.0;
+    const systemKWp = (dailyKWh * batteryLossFactor) / (PH_PEAK_SUN_HOURS * (DEFAULT_PERF_RATIO / 100));
 
     setResult(Math.round(systemKWp * 100) / 100);
   };
@@ -203,16 +190,6 @@ function SystemSizeCalculator() {
     setInput(defaultSizingInput);
     setResult(null);
   };
-
-  const daysOptions = [
-    { label: "7 days (everyday)", value: "7" },
-    { label: "6 days", value: "6" },
-    { label: "5 days (weekdays)", value: "5" },
-    { label: "4 days", value: "4" },
-    { label: "3 days", value: "3" },
-    { label: "2 days (weekends)", value: "2" },
-    { label: "1 day", value: "1" },
-  ];
 
   return (
     <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg overflow-hidden">
@@ -241,71 +218,59 @@ function SystemSizeCalculator() {
             hint="Enter your total monthly electricity bill in Philippine Peso. Leave blank if entering kWh directly."
           />
           <InputField
-            label="Monthly Electricity Bill (kWhe)"
+            label="Monthly Electricity Consumption (kWh)"
             value={input.monthlyBillKWh}
             onChange={set("monthlyBillKWh")}
             placeholder="e.g. 300"
             min="0"
-            hint="Enter your monthly consumption in kilowatt-hours. Overrides the PHP bill field if filled."
+            hint="Enter your monthly consumption in kilowatt-hours from your bill. This takes priority over the PHP field."
           />
         </div>
 
         <InputField
-          label="PHP per kWhr"
+          label="PHP per kWh"
           value={input.phpPerKWhr}
           onChange={set("phpPerKWhr")}
           placeholder={String(MERALCO_RATE)}
           min="0"
           step="0.01"
-          hint="Check your Meralco or distribution utility bill. Average residential rate is PHP 16.67/kWh."
+          hint="Your distribution utility's blended rate per kWh — check your Meralco or local DU bill. Used only when computing kWh from your PHP bill."
         />
 
-        <SelectField
-          label="Operational Days per Week"
-          value={input.daysPerWeek}
-          onChange={set("daysPerWeek")}
-          options={daysOptions}
-        />
-        <InputField
-          label="Operational Hours (6am – 6pm)"
-          value={input.opHours}
-          onChange={set("opHours")}
-          placeholder="8"
-          min="1"
-          max="12"
-          step="0.5"
-          hint="How many hours per day does your household/business operate during solar production hours?"
-        />
-
-        {/* Pattern Toggle */}
+        {/* System Type Toggle */}
         <div className="flex flex-col gap-2">
           <span className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-            Operation Pattern
+            System Type
           </span>
           <div className="flex rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 w-fit">
             <button
               type="button"
-              onClick={() => set("pattern")("hourly")}
+              onClick={() => set("pattern")("grid-tied")}
               className={`px-5 py-2.5 text-sm font-bold transition-all ${
-                input.pattern === "hourly"
+                input.pattern === "grid-tied"
                   ? "bg-accent-blue text-white"
                   : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
               }`}
             >
-              Hourly
+              Grid-Tied
             </button>
             <button
               type="button"
-              onClick={() => set("pattern")("nighttime")}
+              onClick={() => set("pattern")("with-battery")}
               className={`px-5 py-2.5 text-sm font-bold transition-all ${
-                input.pattern === "nighttime"
+                input.pattern === "with-battery"
                   ? "bg-accent-blue text-white"
                   : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
               }`}
             >
-              Nighttime (Battery)
+              With Battery
             </button>
           </div>
+          <p className="text-xs text-slate-400 dark:text-slate-500">
+            {input.pattern === "with-battery"
+              ? "Adds ~10% to system size to cover battery round-trip losses (typical LiFePO₄ efficiency: 90%)."
+              : "Grid-tied systems export surplus energy to the grid via Meralco net metering (RA 9513)."}
+          </p>
         </div>
 
         {/* Actions */}
@@ -333,8 +298,12 @@ function SystemSizeCalculator() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
+            className="space-y-3"
           >
             <ResultBadge label="Recommended System Size" value={result.toFixed(2)} unit="kWp" />
+            <p className="text-xs text-slate-400 dark:text-slate-500 px-1">
+              Formula: Daily kWh ÷ (4.6 PSH × 80% PR){input.pattern === "with-battery" ? " × 1.10 battery factor" : ""}. Round up to the nearest standard panel count when purchasing.
+            </p>
           </motion.div>
         )}
       </div>
@@ -644,12 +613,12 @@ export default function SolarCalculatorPage() {
               {
                 step: "01",
                 title: "System Size Formula",
-                desc: "System Size (kWp) = Daily kWh ÷ (Peak Sun Hours × Performance Ratio). We use 4.6 hrs and 80% as Philippine defaults.",
+                desc: "System Size (kWp) = Daily kWh ÷ (Peak Sun Hours × Performance Ratio). We use PAGASA's 4.6 hrs/day and 80% PR as Philippine defaults. Battery systems add 10% to cover round-trip losses.",
               },
               {
                 step: "02",
                 title: "Savings Formula",
-                desc: "Monthly Savings = System Size × PHP/kWh × Sun Hours × 30 days × Performance Rate. Based on net metering under RA 9513.",
+                desc: "Monthly Savings (PHP) = System Size (kWp) × Peak Sun Hours × Performance Ratio × 30 days × PHP/kWh. Assumes full self-consumption under net metering (RA 9513).",
               },
               {
                 step: "03",
