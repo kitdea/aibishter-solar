@@ -114,7 +114,7 @@ export default async function Home() {
         <div className="flex justify-between items-end border-b border-slate-200 dark:border-slate-800 pb-6 mb-8">
           <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Our Recent Work</h3>
           <Link href="/projects" className="text-sm font-bold uppercase tracking-widest text-accent-blue flex items-center gap-1 hover:text-accent-yellow transition-colors">
-            View Gallery <ArrowRight size={16} />
+            View Projects <ArrowRight size={16} />
           </Link>
         </div>
         <GalleryGrid projects={galleryProjects} />

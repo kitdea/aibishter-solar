@@ -22,9 +22,9 @@ function TeamCard({ member, delay }: { member: TeamMember; delay: number }) {
         hidden: { opacity: 0, y: 30 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay } },
       }}
-      className="bg-white dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700 rounded-4xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+      className="w-full w-[500px] mx-auto bg-white dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700 rounded-4xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
     >
-      <div className="relative w-full aspect-[4/3] overflow-hidden">
+      <div className="relative w-full aspect-[3/3] overflow-hidden">
         {member.image ? (
           <Image
             src={member.image}
@@ -61,7 +61,7 @@ export default function TeamSection({
   if (leadership.length === 0 && team.length === 0) return null;
 
   return (
-    <section className="max-w-7xl mx-auto px-6 md:px-12 mt-32">
+    <section className="max-w-8xl mx-auto px-6 md:px-12 mt-32">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -79,7 +79,7 @@ export default function TeamSection({
       </motion.div>
 
       {leadership.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center max-w-2xl mx-auto mb-8">
           {leadership.map((member, idx) => (
             <TeamCard key={member.name} member={member} delay={idx * 0.1} />
           ))}
@@ -87,7 +87,7 @@ export default function TeamSection({
       )}
 
       {team.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {team.map((member, idx) => (
             <TeamCard key={member.name} member={member} delay={idx * 0.1} />
           ))}
