@@ -1,8 +1,47 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Zap, ThermometerSun } from "@/lib/icons";
 import EstimateForm from "./EstimateForm";
 import { getRecentProjectsWithImages } from "@/sanity/queries";
+
+export const metadata: Metadata = {
+  title: "Solar Panel Installation Philippines – Homes & Businesses | Aibishter Solar",
+  description:
+    "Aibishter Engineering Services installs residential and commercial solar panels across CALABARZON and Metro Manila. Certified engineers, licensed electricians, permit-ready. Get a free consultation today.",
+  keywords: [
+    "solar panel installation Philippines",
+    "solar energy CALABARZON",
+    "residential solar Lucena City",
+    "commercial solar Metro Manila",
+    "solar installer Philippines",
+    "solar panels Quezon Province",
+    "net metering Philippines",
+    "solar energy savings Philippines",
+  ],
+  alternates: { canonical: "https://aibishter.com" },
+  openGraph: {
+    title: "Solar Panel Installation Philippines – Aibishter Solar",
+    description:
+      "Certified solar installers for homes and businesses across CALABARZON and Metro Manila. Free consultation available.",
+    url: "https://aibishter.com",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop",
+        width: 1200,
+        height: 630,
+        alt: "Solar panels installed by Aibishter Engineering Services Philippines",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Solar Panel Installation Philippines – Aibishter Solar",
+    description:
+      "Certified solar installers for homes and businesses across CALABARZON and Metro Manila.",
+    images: ["https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop"],
+  },
+};
 import { HeroText, MeetExpertsSection, BentoCards, LeadCaptureSection, GalleryGrid } from "./HomeAnimations";
 
 export default async function Home() {
@@ -23,6 +62,7 @@ export default async function Home() {
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
         <div className="absolute inset-0 flex flex-col justify-end pb-10 md:pb-24 px-6 md:px-12 z-10">
+          <h1 className="sr-only">Solar Panel Installation in the Philippines – Aibishter Engineering Services</h1>
           <HeroText />
         </div>
       </section>
