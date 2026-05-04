@@ -19,8 +19,8 @@ export default function ProjectsContent({ projects, currentYear }: { projects: P
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
       <section className="relative h-[38vh] sm:h-[45vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden mb-14 md:mb-24">
         <Image
-          src="https://images.unsplash.com/photo-1620800630737-142f36caee76?q=80&w=2070&auto=format&fit=crop"
-          alt="Aibishter Solar portfolio"
+          src="https://cdn.sanity.io/images/h6b9cl6i/production/583a34b1bf12ceb766c0d03838dac2e424f39780-1280x960.jpg"
+          alt="Aibishter Solar Portfolio"
           fill
           priority
           suppressHydrationWarning

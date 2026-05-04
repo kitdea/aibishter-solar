@@ -30,7 +30,7 @@ export default function BlogContent({ posts }: { posts: Post[] }) {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
       <section className="relative h-[38vh] sm:h-[45vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden mb-14 md:mb-24">
         <Image
-          src="https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=2074&auto=format&fit=crop"
+          src="https://cdn.sanity.io/images/h6b9cl6i/production/501aed9c4442a08efffab3483c799e30b58298a2-1080x810.jpg"
           alt="Aibishter Solar news"
           fill
           priority

@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-14 md:mb-24">
       <Image
-        src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?q=80&w=2073&auto=format&fit=crop"
+        src="https://cdn.sanity.io/images/h6b9cl6i/production/31fb1c1d0234076dcb17291c74661248a1189ed8-1280x960.jpg"
         alt="Solar panels across the Philippines — Aibishter Engineering Services"
         fill
         priority
@@ -31,7 +31,7 @@ export default function HeroSection() {
             We bring solar <span className="text-white/60">to your city.</span>
           </h1>
           <p className="mt-4 md:mt-8 text-white/80 max-w-lg font-sans leading-relaxed text-sm md:text-base mx-auto md:mx-0">
-            From Lucena City to Metro Manila — covering all of CALABARZON and the National Capital Region.
+            From Lucena City to Metro Manila - covering all of CALABARZON and the National Capital Region.
           </p>
         </motion.div>
       </div>
