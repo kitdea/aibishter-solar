@@ -1,5 +1,5 @@
 import { unstable_cache } from "next/cache";
-import { client } from "./client";
+import { authedClient, client } from "./client";
 
 // Cache TTL for time-based revalidation fallback (1 hour).
 // On-demand revalidation via /api/revalidate is the primary mechanism.
@@ -152,7 +152,8 @@ export const getPostBySlug = (slug: string) =>
         `*[_type == "post" && slug.current == $slug][0] {
           title, "slug": slug.current, excerpt, date, category,
           "image": image.asset->url,
-          body
+          body,
+          seo { metaTitle, keywords }
         }`,
         { slug }
       ),
@@ -160,16 +161,30 @@ export const getPostBySlug = (slug: string) =>
     { tags: ["post", `post-${slug}`], revalidate: TTL }
   )();
 
+// ── Team Members ──────────────────────────────────────────────────────────────
+
+export const getTeamMembers = unstable_cache(
+  async () =>
+    authedClient.fetch(
+      `*[_type == "teamMember"] | order(order asc, name asc) {
+        name, title, bio, role,
+        "image": photo.asset->url
+      }`
+    ),
+  ["team-members"],
+  { tags: ["teamMember"], revalidate: TTL }
+);
+
 // ── Sitemap helpers (no cache — always fresh at build/request time) ───────────
 
-export async function getSitemapServices(): Promise<{ slug: string }[]> {
-  return client.fetch(`*[_type == "service"]{ "slug": slug.current }`);
+export async function getSitemapServices(): Promise<{ slug: string; lastModified: string }[]> {
+  return client.fetch(`*[_type == "service"]{ "slug": slug.current, "lastModified": _updatedAt }`);
 }
 
-export async function getSitemapServiceAreas(): Promise<{ slug: string }[]> {
-  return client.fetch(`*[_type == "serviceArea"]{ "slug": slug.current }`);
+export async function getSitemapServiceAreas(): Promise<{ slug: string; lastModified: string }[]> {
+  return client.fetch(`*[_type == "serviceArea"]{ "slug": slug.current, "lastModified": _updatedAt }`);
 }
 
-export async function getSitemapPosts(): Promise<{ slug: string }[]> {
-  return client.fetch(`*[_type == "post"]{ "slug": slug.current }`);
+export async function getSitemapPosts(): Promise<{ slug: string; lastModified: string }[]> {
+  return client.fetch(`*[_type == "post"]{ "slug": slug.current, "lastModified": _updatedAt }`);
 }

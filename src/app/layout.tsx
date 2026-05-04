@@ -87,13 +87,16 @@ export default async function RootLayout({
   const navServices = await getNavServices().catch(() => []);
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "ProfessionalService"],
     name: "Aibishter Engineering Services",
+    description:
+      "Top-tier solar energy panel installations for homes and businesses across CALABARZON and Metro Manila. Certified engineers, licensed electricians, and permit-ready documentation.",
     image:
       "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop",
-    "@id": "https://aibishter.com",
+    "@id": "https://aibishter.com/#business",
     url: "https://aibishter.com",
     telephone: "+639171898089",
+    email: "sales.aibishter@gmail.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "PH 6, Citta Grande, Via Lucera Street Blk 4 Lot 18",
@@ -101,6 +104,11 @@ export default async function RootLayout({
       addressRegion: "Quezon",
       postalCode: "4301",
       addressCountry: "PH",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 13.9373,
+      longitude: 121.6170,
     },
     areaServed: [
       { "@type": "AdministrativeArea", name: "Metro Manila" },
@@ -110,6 +118,17 @@ export default async function RootLayout({
       { "@type": "AdministrativeArea", name: "Batangas" },
       { "@type": "AdministrativeArea", name: "Rizal" },
     ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Solar Installation Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Residential Solar Installation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commercial Solar Installation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar Battery Storage" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electrical Design & Documentation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar Panel Maintenance" } },
+      ],
+    },
     sameAs: [
       "https://www.instagram.com/aibishter_engineering/",
       "https://x.com/AibishterES",
@@ -121,6 +140,8 @@ export default async function RootLayout({
       opens: "09:00",
       closes: "18:00",
     },
+    currenciesAccepted: "PHP",
+    paymentAccepted: "Cash, Bank Transfer, Check",
   };
 
   return (

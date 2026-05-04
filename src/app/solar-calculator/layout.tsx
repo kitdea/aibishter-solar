@@ -46,10 +46,58 @@ export const metadata: Metadata = {
   },
 };
 
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do I calculate the solar system size I need in the Philippines?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Divide your average monthly kWh consumption by 30 (days) to get your daily kWh usage. Divide by peak sun hours for your location (4–5 hours in the Philippines) and add 20% for system losses. This gives your minimum kWp system size.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much can I save on my Meralco bill with solar panels?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A typical 5kWp residential system generates 550–650 kWh per month in CALABARZON and Metro Manila. At current Meralco rates, that can translate to ₱8,000–₱12,000 in monthly savings depending on your consumption and net metering arrangement.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is net metering in the Philippines?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Net metering (under RA 9513) lets solar owners export excess electricity to the grid and receive a bill credit. Distribution utilities like Meralco must accept net metering applications from systems up to 100kWp.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How many peak sun hours does the Philippines get?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Based on PAGASA data, most Philippine regions receive 4.5–5.5 peak sun hours per day. CALABARZON averages around 4.8 hours, Metro Manila around 4.5 hours.",
+      },
+    },
+  ],
+};
+
 export default function SolarCalculatorLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+      />
+      {children}
+    </>
+  );
 }

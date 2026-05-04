@@ -6,6 +6,9 @@
       "Read(//tmp/**)",
       "Bash(git -C /home/keith/aibishter-solar show 4383a33:src/app/api/revalidate/route.ts)",
       "Bash(git -C /home/keith/aibishter-solar show 3cc48b3:src/app/api/revalidate/route.ts)"
+    ],
+    "additionalDirectories": [
+      "/home/keith/aibishter-solar/src/app/blog"
     ]
   },
   "enabledPlugins": {
