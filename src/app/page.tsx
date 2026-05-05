@@ -42,10 +42,14 @@ export const metadata: Metadata = {
     images: ["https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop"],
   },
 };
-import { HeroText, MeetExpertsSection, BentoCards, LeadCaptureSection, GalleryGrid } from "./HomeAnimations";
+import { HeroText, ImageSlideshow, MeetExpertsSection, BentoCards, LeadCaptureSection, GalleryGrid } from "./HomeAnimations";
+import { getSlideshowImages } from "@/sanity/queries";
 
 export default async function Home() {
-  const galleryProjects = await getRecentProjectsWithImages();
+  const [galleryProjects, slideshowImages] = await Promise.all([
+    getRecentProjectsWithImages(),
+    getSlideshowImages(),
+  ]);
 
   return (
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen overflow-hidden">
@@ -68,6 +72,8 @@ export default async function Home() {
       </section>
 
       <MeetExpertsSection />
+
+      <ImageSlideshow slides={slideshowImages} />
 
       <section className="px-6 md:px-12 max-w-7xl mx-auto pb-24">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-12 text-accent-blue">

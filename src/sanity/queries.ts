@@ -175,6 +175,26 @@ export const getTeamMembers = unstable_cache(
   { tags: ["teamMember"], revalidate: TTL }
 );
 
+// ── Home Slideshow ────────────────────────────────────────────────────────────
+
+export type SlideshowImage = {
+  image: string;
+  alt: string;
+  caption?: string;
+};
+
+export const getSlideshowImages = unstable_cache(
+  async (): Promise<SlideshowImage[]> =>
+    client.fetch(
+      `*[_type == "slideshow" && active == true] | order(order asc) {
+        "image": image.asset->url,
+        alt, caption
+      }`
+    ),
+  ["slideshow-images"],
+  { tags: ["slideshow"], revalidate: TTL }
+);
+
 // ── Sitemap helpers (no cache — always fresh at build/request time) ───────────
 
 export async function getSitemapServices(): Promise<{ slug: string; lastModified: string }[]> {

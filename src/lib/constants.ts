@@ -1,7 +1,7 @@
 export const SERVICE_OPTIONS = [
   { value: "residential", label: "Residential" },
   { value: "commercial", label: "Commercial" },
-  { value: "storage", label: "Battery Storage" },
+  { value: "electrical", label: "Electrical Design" },
   { value: "maintenance", label: "General Maintenance" },
 ] as const;
 

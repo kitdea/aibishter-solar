@@ -4,7 +4,7 @@ const APPS_SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL ?? "";
 const NOTIFY_EMAIL = process.env.CONTACT_NOTIFY_EMAIL ?? "";
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[+]?[\d\s\-().]{7,20}$/;
-const VALID_SERVICES = new Set(["residential", "commercial", "storage", "maintenance"]);
+const VALID_SERVICES = new Set(["residential", "commercial", "electrical", "maintenance"]);
 
 export async function POST(req: NextRequest) {
   if (!APPS_SCRIPT_URL) {

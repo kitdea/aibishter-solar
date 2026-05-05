@@ -5,7 +5,8 @@
       "Bash(awk '/^diff --git a\\\\/src/,/^diff --git|^$/;')",
       "Read(//tmp/**)",
       "Bash(git -C /home/keith/aibishter-solar show 4383a33:src/app/api/revalidate/route.ts)",
-      "Bash(git -C /home/keith/aibishter-solar show 3cc48b3:src/app/api/revalidate/route.ts)"
+      "Bash(git -C /home/keith/aibishter-solar show 3cc48b3:src/app/api/revalidate/route.ts)",
+      "Bash(Remove-Item \"c:\\\\Users\\\\franc\\\\Documents\\\\aibishter-solar\\\\src\\\\sanity\\\\schemas\\\\heroSlide.ts\")"
     ],
     "additionalDirectories": [
       "/home/keith/aibishter-solar/src/app/blog"
