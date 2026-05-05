@@ -3,7 +3,73 @@ import Image from "next/image";
 import Link from "next/link";
 import { getPostBySlug } from "@/sanity/queries";
 import { ArrowRight, Sun } from "@/lib/icons";
-import { PortableText } from "@portabletext/react";
+import { PortableText, type PortableTextComponents } from "@portabletext/react";
+
+const portableTextComponents: PortableTextComponents = {
+  list: {
+    bullet: ({ children }) => (
+      <ul className="list-disc pl-6 my-4 space-y-2 text-slate-700 dark:text-slate-300">
+        {children}
+      </ul>
+    ),
+    number: ({ children }) => (
+      <ol className="list-decimal pl-6 my-4 space-y-2 text-slate-700 dark:text-slate-300">
+        {children}
+      </ol>
+    ),
+  },
+  listItem: {
+    bullet: ({ children }) => (
+      <li className="leading-relaxed">{children}</li>
+    ),
+    number: ({ children }) => (
+      <li className="leading-relaxed">{children}</li>
+    ),
+  },
+  block: {
+    normal: ({ children }) => (
+      <p className="text-slate-700 dark:text-slate-300 leading-relaxed my-4">
+        {children}
+      </p>
+    ),
+    h1: ({ children }) => (
+      <h1 className="font-poppins text-4xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight tracking-tight mt-12 mb-4">
+        {children}
+      </h1>
+    ),
+    h2: ({ children }) => (
+      <h2 className="font-poppins text-3xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight tracking-tight mt-10 mb-4">
+        {children}
+      </h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="font-poppins text-2xl md:text-3xl font-bold text-slate-900 dark:text-white leading-snug mt-8 mb-3">
+        {children}
+      </h3>
+    ),
+    h4: ({ children }) => (
+      <h4 className="font-poppins text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-snug mt-6 mb-2">
+        {children}
+      </h4>
+    ),
+  },
+  marks: {
+    link: ({ value, children }) => {
+      const href: string = value?.href ?? "#";
+      const isExternal = href.startsWith("http");
+      return (
+        <a
+          href={href}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          className="text-accent-blue underline underline-offset-4 decoration-accent-blue/40 hover:decoration-accent-blue font-semibold transition-colors hover:text-accent-blue/80"
+        >
+          {children}
+        </a>
+      );
+    },
+  },
+};
 
 function formatDate(raw: string) {
   if (!raw) return "";
@@ -51,7 +117,7 @@ export default async function BlogPostPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <article className="max-w-3xl mx-auto px-6 md:px-12">
+      <article className="max-w-7xl mx-auto px-6 md:px-16">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 mb-8">
           <Sun size={16} className="text-accent-yellow" />
@@ -94,7 +160,7 @@ export default async function BlogPostPage({
 
         {post.body && (
           <div className="prose prose-slate dark:prose-invert prose-lg max-w-none font-sans">
-            <PortableText value={post.body} />
+            <PortableText value={post.body} components={portableTextComponents} />
           </div>
         )}
 

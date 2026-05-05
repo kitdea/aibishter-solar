@@ -15,6 +15,7 @@ const TYPE_MAP: Record<string, { tags: string[]; paths: string[] }> = {
   project:     { tags: ["project"],     paths: ["/projects", "/"] },
   review:      { tags: ["review"],      paths: ["/"] },
   teamMember:  { tags: ["teamMember"],  paths: ["/about"] },
+  slideshow:   { tags: ["slideshow"],   paths: ["/"] },
 };
 
 export async function POST(request: NextRequest) {

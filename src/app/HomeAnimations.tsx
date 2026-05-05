@@ -1,11 +1,136 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Leaf, Sun, ShieldCheck } from "@/lib/icons";
 import { fadeUpVariant } from "@/lib/animations";
+import type { SlideshowImage } from "@/sanity/queries";
 
 type GalleryProject = { title?: string; image: string };
+
+// ── Image Slideshow ────────────────────────────────────────────────────────────
+
+const SLIDE_INTERVAL = 5000;
+
+const FALLBACK_SLIDES: SlideshowImage[] = [
+  {
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop",
+    alt: "Solar panels on a rooftop installation",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2072&auto=format&fit=crop",
+    alt: "Commercial solar panel array",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?q=80&w=2072&auto=format&fit=crop",
+    alt: "Residential solar installation Philippines",
+  },
+];
+
+export function ImageSlideshow({ slides }: { slides: SlideshowImage[] }) {
+  const active = slides.length > 0 ? slides : FALLBACK_SLIDES;
+  const [index, setIndex] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const count = active.length;
+
+  const go = useCallback(
+    (next: number) => setIndex(((next % count) + count) % count),
+    [count]
+  );
+
+  useEffect(() => {
+    if (count < 2) return;
+    timerRef.current = setInterval(() => setIndex((i) => (i + 1) % count), SLIDE_INTERVAL);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [count]);
+
+  const slide = active[index];
+
+  return (
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-80px" }}
+      variants={fadeUpVariant}
+      className="px-6 md:px-12 max-w-7xl mx-auto pb-24"
+    >
+      <div
+        className="relative w-full aspect-[16/7] rounded-4xl overflow-hidden shadow-lg bg-slate-200 dark:bg-slate-800"
+        role="region"
+        aria-label="Image slideshow"
+      >
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={slide.image}
+              alt={slide.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 90vw"
+              className="object-cover"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Caption */}
+        {slide.caption && (
+          <div className="absolute bottom-0 inset-x-0 bg-linear-to-t from-black/60 to-transparent px-8 py-6 pointer-events-none">
+            <p className="text-white text-sm md:text-base font-sans">{slide.caption}</p>
+          </div>
+        )}
+
+        {/* Prev / Next */}
+        {count > 1 && (
+          <>
+            <button
+              onClick={() => go(index - 1)}
+              aria-label="Previous slide"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-black/30 backdrop-blur hover:bg-black/50 text-white flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button
+              onClick={() => go(index + 1)}
+              aria-label="Next slide"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-black/30 backdrop-blur hover:bg-black/50 text-white flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </>
+        )}
+
+        {/* Dot indicators */}
+        {count > 1 && (
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2" role="tablist" aria-label="Slide indicators">
+            {active.map((_, i) => (
+              <button
+                key={i}
+                role="tab"
+                aria-selected={i === index}
+                aria-label={`Slide ${i + 1} of ${count}`}
+                onClick={() => go(i)}
+                className={`h-1.5 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${
+                  i === index ? "w-8 bg-white" : "w-2 bg-white/40 hover:bg-white/70"
+                }`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </motion.section>
+  );
+}
 
 export function HeroText() {
   return (
