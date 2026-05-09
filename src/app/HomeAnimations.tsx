@@ -139,8 +139,8 @@ export function HeroText() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
     >
-      <h1 className="text-[14vw] md:text-[min(10rem,12vw)] font-bold text-white leading-[0.88] md:leading-[0.85] tracking-tighter mix-blend-overlay opacity-90 font-poppins">
-        AIBISHTER<br /><span className="text-[11vw] md:text-[min(8rem,10vw)] text-white/70">SOLAR</span>
+      <h1 className="text-[14vw] md:text-[min(10rem,12vw)] font-bold text-white leading-[0.88] md:leading-[0.85] tracking-tighter opacity-90 font-poppins">
+        Go Solar. Save Money.<br /><span className="text-[11vw] md:text-[min(8rem,10vw)] text-white/70">Reduce Bills.</span>
       </h1>
       <div className="flex flex-col md:flex-row md:items-end justify-between mt-5 md:mt-8 gap-4 md:gap-0">
         <p className="text-white/90 max-w-sm text-base md:text-2xl leading-relaxed">
