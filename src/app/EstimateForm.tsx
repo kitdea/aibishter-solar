@@ -10,6 +10,7 @@ interface EstimateFormState {
   lastName: string;
   email: string;
   phone: string;
+  location: string;
   service: ServiceValue;
   message: string;
   _honey: string;
@@ -20,6 +21,7 @@ const INITIAL_ESTIMATE: EstimateFormState = {
   lastName: "",
   email: "",
   phone: "",
+  location: "",
   service: "residential",
   message: "",
   _honey: "",
@@ -157,6 +159,7 @@ export default function EstimateForm() {
             name="phone"
             type="tel"
             autoComplete="tel"
+            required
             value={form.phone}
             onChange={handleChange}
             className={inputClass}
@@ -166,10 +169,26 @@ export default function EstimateForm() {
       </div>
 
       <div className="space-y-1">
+        <label htmlFor={`${id}-location`} className={labelClass}>Location</label>
+        <input
+          id={`${id}-location`}
+          name="location"
+          type="text"
+          autoComplete="address-level2"
+          required
+          value={form.location}
+          onChange={handleChange}
+          className={inputClass}
+          placeholder="Lucena City, Quezon"
+        />
+      </div>
+
+      <div className="space-y-1">
         <label htmlFor={`${id}-service`} className={labelClass}>Interested Service</label>
         <select
           id={`${id}-service`}
           name="service"
+          required
           value={form.service}
           onChange={handleChange}
           className={`${inputClass} appearance-none`}
