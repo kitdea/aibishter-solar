@@ -22,6 +22,11 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aibishter.com"),
+  icons: {
+    icon: "/aibishter-logo-white.svg",
+    shortcut: "/aibishter-logo-white.svg",
+    apple: "/aibishter-logo-white.svg",
+  },
   title: {
     default: "Aibishter Solar – Clean, Sustainable Solar Solutions",
     template: "%s | Aibishter Solar",
@@ -76,6 +81,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://aibishter.com",
+  },
+  verification: {
+    google: "uNm_2WFb9zXVii2IH_8C4c8SQI5oA0T57dt8i4c0M7g",
   },
 };
 

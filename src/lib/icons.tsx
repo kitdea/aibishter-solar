@@ -10,21 +10,26 @@ import {
   ArrowRight as _ArrowRight,
   ArrowUpRight as _ArrowUpRight,
   Award as _Award,
+  BadgeCheck as _BadgeCheck,
   Battery as _Battery,
   Calculator as _Calculator,
+  CalendarClock as _CalendarClock,
   Check as _Check,
   CheckCircle2 as _CheckCircle2,
   ChevronDown as _ChevronDown,
   ChevronRight as _ChevronRight,
   Clock as _Clock,
   Cpu as _Cpu,
+  HardHat as _HardHat,
   Info as _Info,
   Leaf as _Leaf,
   Mail as _Mail,
   MapPin as _MapPin,
+  Medal as _Medal,
   Menu as _Menu,
   Moon as _Moon,
   Phone as _Phone,
+  PhoneCall as _PhoneCall,
   Play as _Play,
   RefreshCw as _RefreshCw,
   ShieldCheck as _ShieldCheck,
@@ -49,21 +54,26 @@ function wrap(Icon: ComponentType<LucideProps>) {
 export const ArrowRight    = wrap(_ArrowRight);
 export const ArrowUpRight  = wrap(_ArrowUpRight);
 export const Award         = wrap(_Award);
+export const BadgeCheck    = wrap(_BadgeCheck);
 export const Battery       = wrap(_Battery);
 export const Calculator    = wrap(_Calculator);
+export const CalendarClock = wrap(_CalendarClock);
 export const Check         = wrap(_Check);
 export const CheckCircle2  = wrap(_CheckCircle2);
 export const ChevronDown   = wrap(_ChevronDown);
 export const ChevronRight  = wrap(_ChevronRight);
 export const Clock         = wrap(_Clock);
 export const Cpu           = wrap(_Cpu);
+export const HardHat       = wrap(_HardHat);
 export const Info          = wrap(_Info);
 export const Leaf          = wrap(_Leaf);
 export const Mail          = wrap(_Mail);
 export const MapPin        = wrap(_MapPin);
+export const Medal         = wrap(_Medal);
 export const Menu          = wrap(_Menu);
 export const Moon          = wrap(_Moon);
 export const Phone         = wrap(_Phone);
+export const PhoneCall     = wrap(_PhoneCall);
 export const Play          = wrap(_Play);
 export const RefreshCw     = wrap(_RefreshCw);
 export const ShieldCheck   = wrap(_ShieldCheck);

@@ -6,7 +6,12 @@
       "Read(//tmp/**)",
       "Bash(git -C /home/keith/aibishter-solar show 4383a33:src/app/api/revalidate/route.ts)",
       "Bash(git -C /home/keith/aibishter-solar show 3cc48b3:src/app/api/revalidate/route.ts)",
-      "Bash(Remove-Item \"c:\\\\Users\\\\franc\\\\Documents\\\\aibishter-solar\\\\src\\\\sanity\\\\schemas\\\\heroSlide.ts\")"
+      "Bash(Remove-Item \"c:\\\\Users\\\\franc\\\\Documents\\\\aibishter-solar\\\\src\\\\sanity\\\\schemas\\\\heroSlide.ts\")",
+      "Bash(ls -la c:\\\\\\\\Users\\\\\\\\franc\\\\\\\\Documents\\\\\\\\aibishter-solar\\\\\\\\public)",
+      "Bash(find c:\\\\\\\\Users\\\\\\\\franc\\\\\\\\Documents\\\\\\\\aibishter-solar -maxdepth 1 -name \"*.config.*\" -type f)",
+      "Bash(find c:\\\\\\\\Users\\\\\\\\franc\\\\\\\\Documents\\\\\\\\aibishter-solar\\\\\\\\src -maxdepth 1 -name \"*.css\" -type f)",
+      "Bash(wc -l c:\\\\\\\\Users\\\\\\\\franc\\\\\\\\Documents\\\\\\\\aibishter-solar\\\\\\\\src\\\\\\\\app\\\\\\\\HomeAnimations.tsx)",
+      "Bash(find c:\\\\\\\\Users\\\\\\\\franc\\\\\\\\Documents\\\\\\\\aibishter-solar\\\\\\\\src -name \"*.tsx\" -not -path \"*/node_modules/*\")"
     ],
     "additionalDirectories": [
       "/home/keith/aibishter-solar/src/app/blog"
@@ -14,6 +19,7 @@
   },
   "enabledPlugins": {
     "code-simplifier@claude-plugins-official": true,
-    "security-guidance@claude-plugins-official": true
+    "security-guidance@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true
   }
 }
