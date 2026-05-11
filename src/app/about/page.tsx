@@ -67,9 +67,9 @@ export default async function AboutPage() {
 
         <div className="grid grid-cols-2 gap-4">
           {[
-            { icon: Users, stat: "10k+", label: "Happy Customers", bg: "bg-white dark:bg-slate-800", text: "text-slate-900 dark:text-white" },
-            { icon: TrendingUp, stat: "50MW+", label: "Energy Installed", bg: "bg-white dark:bg-slate-800", text: "text-slate-900 dark:text-white" },
-            { icon: Award, stat: "15+", label: "Years Experience", bg: "bg-accent-blue", text: "text-white" },
+            { icon: Users, stat: "500+", label: "Happy Customers", bg: "bg-white dark:bg-slate-800", text: "text-slate-900 dark:text-white" },
+            { icon: TrendingUp, stat: "20MW+", label: "Energy Installed", bg: "bg-white dark:bg-slate-800", text: "text-slate-900 dark:text-white" },
+            { icon: Award, stat: "6", label: "Years Experience", bg: "bg-accent-blue", text: "text-white" },
             { icon: CheckCircle2, stat: "100%", label: "Satisfaction", bg: "bg-white dark:bg-slate-800", text: "text-slate-900 dark:text-white" },
           ].map((item, idx) => (
             <div

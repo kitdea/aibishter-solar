@@ -13,6 +13,7 @@ interface FormState {
   lastName: string;
   email: string;
   phone: string;
+  location: string;
   service: ServiceValue;
   message: string;
   _honey: string;
@@ -23,6 +24,7 @@ const INITIAL_FORM: FormState = {
   lastName: "",
   email: "",
   phone: "",
+  location: "",
   service: "residential",
   message: "",
   _honey: "",
@@ -297,19 +299,37 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-2">
                   <label htmlFor={`${id}-phone`} className={labelClass}>
-                    Phone Number
+                    Phone Number <span className="text-red-400" aria-hidden="true">*</span>
                   </label>
                   <input
                     id={`${id}-phone`}
                     name="phone"
                     type="tel"
                     autoComplete="tel"
+                    required
                     value={form.phone}
                     onChange={handleChange}
                     className={inputClass}
                     placeholder="(555) 123-4567"
                   />
                 </div>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor={`${id}-location`} className={labelClass}>
+                  Location <span className="text-red-400" aria-hidden="true">*</span>
+                </label>
+                <input
+                  id={`${id}-location`}
+                  name="location"
+                  type="text"
+                  autoComplete="address-level2"
+                  required
+                  value={form.location}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="Lucena City, Quezon"
+                />
               </div>
 
               <div className="space-y-2">
