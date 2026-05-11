@@ -153,7 +153,7 @@ export default function EstimateForm() {
           />
         </div>
         <div className="space-y-1">
-          <label htmlFor={`${id}-phone`} className={labelClass}>Phone Number</label>
+          <label htmlFor={`${id}-phone`} className={labelClass}>Phone Number <span className="text-red-400" aria-hidden="true">*</span></label>
           <input
             id={`${id}-phone`}
             name="phone"
@@ -169,7 +169,7 @@ export default function EstimateForm() {
       </div>
 
       <div className="space-y-1">
-        <label htmlFor={`${id}-location`} className={labelClass}>Location</label>
+        <label htmlFor={`${id}-location`} className={labelClass}>Location <span className="text-red-400" aria-hidden="true">*</span></label>
         <input
           id={`${id}-location`}
           name="location"
