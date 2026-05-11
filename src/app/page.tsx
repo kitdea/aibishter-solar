@@ -44,6 +44,7 @@ export const metadata: Metadata = {
 };
 import { HeroText, ImageSlideshow, MeetExpertsSection, BentoCards, LeadCaptureSection, GalleryGrid } from "./HomeAnimations";
 import { getSlideshowImages } from "@/sanity/queries";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export default async function Home() {
   const [galleryProjects, slideshowImages] = await Promise.all([
@@ -82,6 +83,8 @@ export default async function Home() {
         <BentoCards />
       </section>
 
+      <BenefitsSection />
+
       <LeadCaptureSection>
         <div className="bg-slate-900 rounded-[3rem] overflow-hidden relative shadow-2xl flex flex-col lg:flex-row">
           <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-10 blur-3xl rounded-full w-200 h-200 bg-accent-yellow pointer-events-none"></div>
@@ -95,12 +98,12 @@ export default async function Home() {
               <div className="space-y-2">
                 <div className="text-accent-yellow"><Zap size={24} /></div>
                 <h4 className="font-bold">Instant Savings</h4>
-                <p className="text-sm text-slate-400 dark:text-slate-500">Lock in your rates against inflation.</p>
+                <p className="text-m text-slate-400 dark:text-slate-500">Lock in your rates against inflation.</p>
               </div>
               <div className="space-y-2">
                 <div className="text-accent-blue"><ThermometerSun size={24} /></div>
                 <h4 className="font-bold">Tax Incentives</h4>
-                <p className="text-sm text-slate-400 dark:text-slate-500">Utilize federal and local rebates.</p>
+                <p className="text-m text-slate-400 dark:text-slate-500">Utilize local rebates.</p>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CheckCircle2, Award, Users, TrendingUp, Sun } from "@/lib/icons";
 import { getTeamMembers } from "@/sanity/queries";
 import TeamSection, { type TeamMember } from "./TeamSection";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export default async function AboutPage() {
   const all: TeamMember[] = await getTeamMembers();
@@ -33,7 +34,7 @@ export default async function AboutPage() {
               <span className="uppercase tracking-widest text-xs font-bold text-white/80">Aibishter Solar / About Us</span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] md:leading-[1.1]">
-              We are increasing the productivity and quality of <span className="text-white/60">global energy.</span>
+              We are increasing the productivity and quality of <span className="text-white/60">local energy.</span>
             </h1>
           </div>
         </div>
@@ -48,7 +49,8 @@ export default async function AboutPage() {
             Building a Brighter Tomorrow with Tomorrow&apos;s Technology.
           </h2>
           <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed mb-6 font-sans">
-            Founded on the principle that clean energy should be highly accessible and affordable, Aibishter Engineering Services has grown into a leading solar provider. Over the past decade, we have empowered thousands of homes and businesses to take complete control of their energy structures while protecting the environment.
+            At Aibishter Engineering Services, we're dedicated to bringing sustainable energy solutions to the forefront of the Philippines' renewable energy landscape. As a leading solar installer in the Philippines, we specialize in designing, installing, and maintaining top-quality solar energy systems tailored to meet the unique needs of residential, commercial, and industrial clients across the nation.
+            Founded on the principle that clean energy should be highly accessible and affordable, Aibishter Engineering Services has grown into a leading solar provider. Over the past few years, we have empowered hundred of homes and businesses to take complete control of their energy structures while protecting the environment.
           </p>
           <div className="grid grid-cols-2 gap-6 mt-12">
             {[
@@ -68,7 +70,7 @@ export default async function AboutPage() {
         <div className="grid grid-cols-2 gap-4">
           {[
             { icon: Users, stat: "500+", label: "Happy Customers", bg: "bg-white dark:bg-slate-800", text: "text-slate-900 dark:text-white" },
-            { icon: TrendingUp, stat: "20MW+", label: "Energy Installed", bg: "bg-white dark:bg-slate-800", text: "text-slate-900 dark:text-white" },
+            { icon: TrendingUp, stat: "5MW+", label: "Energy Installed", bg: "bg-white dark:bg-slate-800", text: "text-slate-900 dark:text-white" },
             { icon: Award, stat: "6", label: "Years Experience", bg: "bg-accent-blue", text: "text-white" },
             { icon: CheckCircle2, stat: "100%", label: "Satisfaction", bg: "bg-white dark:bg-slate-800", text: "text-slate-900 dark:text-white" },
           ].map((item, idx) => (
@@ -83,6 +85,8 @@ export default async function AboutPage() {
           ))}
         </div>
       </section>
+
+      <BenefitsSection />
 
       {/* Meet the Team */}
       <TeamSection leadership={leadership} team={team} />

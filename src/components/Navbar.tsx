@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Sun, Moon, ChevronDown } from "@/lib/icons";
 import { motion, AnimatePresence } from "framer-motion";
@@ -65,7 +66,13 @@ export default function Navbar({ navServices }: { navServices?: NavService[] }) 
 
           {/* Left: Logo/Brand */}
           <Link href="/" className="shrink-0 flex items-center gap-3">
-            <Sun className={!isWhiteText ? "text-accent-blue" : "text-accent-yellow"} size={28} />
+            <Image
+              src="/aibishter-logo-white.svg"
+              alt="Aibishter logo"
+              width={32}
+              height={32}
+              className={!isWhiteText ? "brightness-0 dark:brightness-100" : "brightness-100"}
+            />
             <div className={`flex flex-col leading-none ${!isWhiteText ? "text-slate-900 dark:text-white" : "text-white"}`}>
               <span className="text-lg font-bold tracking-widest uppercase font-poppins">Aibishter</span>
               <span className="text-[10px] tracking-[0.2em] font-medium uppercase">Engineering Services</span>

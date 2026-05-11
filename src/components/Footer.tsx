@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Sun, ArrowRight } from "@/lib/icons";
+import Image from "next/image";
+import { ArrowRight } from "@/lib/icons";
 
 export default function Footer() {
   return (
@@ -11,28 +12,32 @@ export default function Footer() {
         {/* Top Footer Section (Newsletter + Massive Logo) */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-20">
           
-          <div className="max-w-md">
-            <h3 className="text-3xl font-bold font-poppins text-slate-900 dark:text-white mb-6 tracking-tight">Stay ahead of the energy transition.</h3>
-            <form className="flex rounded-full overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm focus-within:ring-2 focus-within:ring-accent-blue transition-all bg-white dark:bg-slate-900" onSubmit={(e) => e.preventDefault()}>
-              <input 
-                type="email" 
-                placeholder="Join our newsletter" 
-                className="bg-transparent text-slate-900 dark:text-white px-6 py-4 flex-grow focus:outline-none w-full font-sans text-sm"
-                aria-label="Email address"
-                required
-                data-lpignore="true"
-              />
-              <button 
-                type="submit" 
-                className="bg-accent-blue text-white px-6 py-4 hover:bg-slate-900 transition-colors font-bold uppercase tracking-widest text-xs flex items-center justify-center min-w-max"
-              >
-                Subscribe
-              </button>
-            </form>
+          <div className="flex flex-col gap-4">
+            <p className="text-xs uppercase tracking-widest font-bold text-slate-400 dark:text-slate-500 mb-2">Accreditation</p>
+            <div className="flex items-center gap-6">
+              <div className="flex flex-col items-center gap-2">
+                <Image
+                  src="/DOE.svg"
+                  alt="Department of Energy Philippines logo"
+                  width={72}
+                  height={72}
+                  className="object-contain"
+                />
+                <span className="text-xs font-bold text-slate-600 dark:text-slate-400 text-center leading-tight max-w-[80px]">Official DOE Solar PV Installer</span>
+              </div>
+              <div className="w-px h-16 bg-slate-200 dark:bg-slate-700" />
+              
+            </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <Sun size={48} className="text-accent-blue" strokeWidth={1.5} />
+            <Image
+              src="/aibishter-logo-white.svg"
+              alt="Aibishter logo"
+              width={52}
+              height={52}
+              className="object-contain"
+            />
             <div className="flex flex-col leading-none">
               <span className="text-4xl md:text-5xl font-bold tracking-tighter uppercase font-poppins text-slate-900 dark:text-white">Aibishter</span>
               <span className="text-xs md:text-sm tracking-[0.3em] font-bold uppercase text-slate-500 dark:text-slate-400 mt-1">Engineering Services</span>
