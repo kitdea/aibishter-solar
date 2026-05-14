@@ -93,9 +93,14 @@ export default function Footer() {
           </div>
           <div className="flex flex-col space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Legal</h4>
-            {["Privacy Policy", "Terms of Service", "Cookie Policy", "Sitemap"].map((link, i) => (
-              <Link key={i} href="#" className="text-slate-700 dark:text-slate-300 font-medium hover:text-accent-blue dark:hover:text-accent-blue hover:translate-x-1 transition-all">
-                {link}
+            {[
+              { label: "Privacy Policy", href: "/privacy-policy" },
+              { label: "Terms of Service", href: "/terms-of-service" },
+              { label: "Cookie Policy", href: "/cookie-policy" },
+              { label: "Sitemap", href: "/sitemap-page" },
+            ].map((item, i) => (
+              <Link key={i} href={item.href} className="text-slate-700 dark:text-slate-300 font-medium hover:text-accent-blue dark:hover:text-accent-blue hover:translate-x-1 transition-all">
+                {item.label}
               </Link>
             ))}
           </div>
@@ -109,9 +114,6 @@ export default function Footer() {
             </a>
             <a href="https://x.com/AibishterES" target="_blank" className="text-slate-700 dark:text-slate-300 font-medium flex items-center gap-2 hover:text-accent-blue dark:hover:text-accent-blue transition-colors group">
               <span className="font-bold font-serif mb-1 leading-none text-base">X</span> Twitter <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-            </a>
-            <a href="#" target="_blank" className="text-slate-700 dark:text-slate-300 font-medium flex items-center gap-2 hover:text-accent-blue dark:hover:text-accent-blue transition-colors group">
-              <span className="font-bold font-serif mb-1 leading-none text-base">IN</span> LinkedIn <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
             </a>
           </div>
         </div>

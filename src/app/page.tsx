@@ -6,9 +6,9 @@ import EstimateForm from "./EstimateForm";
 import { getRecentProjectsWithImages } from "@/sanity/queries";
 
 export const metadata: Metadata = {
-  title: "Solar Panel Installation Philippines – Homes & Businesses | Aibishter Solar",
+  title: "Solar Panel Installation Philippines | Aibishter Engineering",
   description:
-    "Aibishter Engineering Services installs residential and commercial solar panels across CALABARZON and Metro Manila. Certified engineers, licensed electricians, permit-ready. Get a free consultation today.",
+    "Aibishter Engineering Services installs residential and commercial solar panels across the Philippines. Certified engineers. Get a free consultation today.",
   keywords: [
     "solar panel installation Philippines",
     "solar energy CALABARZON",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://aibishter.com" },
   openGraph: {
-    title: "Solar Panel Installation Philippines – Aibishter Solar",
+    title: "Solar Panel Installation Philippines – Aibishter Engineering",
     description:
-      "Certified solar installers for homes and businesses across CALABARZON and Metro Manila. Free consultation available.",
+      "Aibishter Engineering Services installs residential and commercial solar panels across the Philippines. Certified engineers. Get a free consultation today.",
     url: "https://aibishter.com",
     images: [
       {
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Solar Panel Installation Philippines – Aibishter Solar",
+    title: "Solar Panel Installation Philippines – Aibishter Engineering",
     description:
-      "Certified solar installers for homes and businesses across CALABARZON and Metro Manila.",
+      "Aibishter Engineering Services installs residential and commercial solar panels across the Philippines.",
     images: ["https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop"],
   },
 };

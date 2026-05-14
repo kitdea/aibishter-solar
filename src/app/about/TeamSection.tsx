@@ -41,11 +41,11 @@ function TeamCard({ member, delay }: { member: TeamMember; delay: number }) {
       </div>
 
       <div className="p-6 flex flex-col items-center text-center">
+        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{member.name}</h3>
         <span className="inline-block bg-blue-50 dark:bg-blue-900/30 text-accent-blue text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
           {member.title}
         </span>
-        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{member.name}</h3>
-        <p className="text-sm text-slate-500 dark:text-slate-400 font-sans leading-relaxed">{member.bio}</p>
+        <p className="text-m text-slate-500 dark:text-slate-400 font-sans leading-relaxed">{member.bio}</p>
       </div>
     </motion.div>
   );
@@ -74,12 +74,12 @@ export default function TeamSection({
           The people behind <span className="text-slate-400 dark:text-slate-500">the panels.</span>
         </h2>
         <p className="mt-6 text-lg text-slate-500 dark:text-slate-400 font-sans max-w-2xl mx-auto leading-relaxed">
-          A dedicated team of engineers, tradespeople, and industry professionals committed to delivering world-class solar solutions.
+          A dedicated team of engineers and industry professionals committed to delivering world-class solar solutions.
         </p>
       </motion.div>
 
       {leadership.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center max-w-2xl mx-auto mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center max-w-5xl mx-auto mb-8">
           {leadership.map((member, idx) => (
             <TeamCard key={member.name} member={member} delay={idx * 0.1} />
           ))}
