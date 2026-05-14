@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 850" width="100%" height="100%">
+  <defs>
+    <style>
+      .text-main {
+        font-family: 'Montserrat', 'Arial Black', sans-serif;
+        font-weight: 900;
+        font-size: 115px;
+        fill: #FFFFFF;
+        text-anchor: middle;
+      }
+      .text-sub {
+        font-family: 'Montserrat', 'Arial Black', sans-serif;
+        font-weight: 800;
+        font-size: 45px;
+        fill: #FFFFFF;
+        text-anchor: middle;
+        letter-spacing: 3px;
+      }
+      .white-fill {
+        fill: #FFFFFF;
+      }
+      .white-stroke {
+        stroke: #FFFFFF;
+        fill: none;
+      }
+    </style>
+  </defs>
+
+  <g class="white-stroke" stroke-width="9" stroke-linecap="butt" stroke-linejoin="miter">
+    <line x1="400" y1="180" x2="400" y2="550" />
+    <line x1="400" y1="180" x2="310" y2="550" />
+    <line x1="400" y1="180" x2="490" y2="550" />
+    
+    <line x1="270" y1="260" x2="530" y2="260" />
+    <line x1="230" y1="340" x2="570" y2="340" />
+    <line x1="260" y1="420" x2="540" y2="420" />
+    
+    <line x1="375" y1="260" x2="400" y2="300" />
+    <line x1="425" y1="260" x2="400" y2="300" />
+    <line x1="360" y1="340" x2="400" y2="300" />
+    <line x1="440" y1="340" x2="400" y2="300" />
+    <line x1="360" y1="340" x2="400" y2="380" />
+    <line x1="440" y1="340" x2="400" y2="380" />
+    <line x1="345" y1="420" x2="400" y2="380" />
+    <line x1="455" y1="420" x2="400" y2="380" />
+    <line x1="345" y1="420" x2="400" y2="485" />
+    <line x1="455" y1="420" x2="400" y2="485" />
+    <line x1="325" y1="550" x2="400" y2="485" />
+    <line x1="475" y1="550" x2="400" y2="485" />
+    
+    <polygon points="310,550 490,550 475,485 325,485" class="white-stroke" stroke-width="9"/>
+  </g>
+
+  <g class="white-stroke" stroke-width="5">
+    <line x1="290" y1="260" x2="290" y2="305" />
+    <line x1="280" y1="275" x2="300" y2="275" />
+    <line x1="280" y1="290" x2="300" y2="290" />
+    <line x1="280" y1="305" x2="300" y2="305" />
+
+    <line x1="510" y1="260" x2="510" y2="305" />
+    <line x1="500" y1="275" x2="520" y2="275" />
+    <line x1="500" y1="290" x2="520" y2="290" />
+    <line x1="500" y1="305" x2="520" y2="305" />
+
+    <line x1="250" y1="340" x2="250" y2="385" />
+    <line x1="240" y1="355" x2="260" y2="355" />
+    <line x1="240" y1="370" x2="260" y2="370" />
+    <line x1="240" y1="385" x2="260" y2="385" />
+
+    <line x1="550" y1="340" x2="550" y2="385" />
+    <line x1="540" y1="355" x2="560" y2="355" />
+    <line x1="540" y1="370" x2="560" y2="370" />
+    <line x1="540" y1="385" x2="560" y2="385" />
+  </g>
+
+  <path d="M 430 560 A 210 210 0 1 1 580 340" class="white-stroke" stroke-width="45" stroke-linecap="butt" />
+  <polygon points="530,335 630,335 580,430" class="white-fill" />
+
+  <g class="white-fill" transform="translate(400,360)">
+    <polygon points="-25,-240 25,-240 0,-340" transform="rotate(-130)" />
+    <polygon points="-25,-240 25,-240 0,-340" transform="rotate(-95)" />
+    <polygon points="-25,-240 25,-240 0,-340" transform="rotate(-60)" />
+    <polygon points="-25,-240 25,-240 0,-340" transform="rotate(-25)" />
+    <polygon points="-25,-240 25,-240 0,-340" transform="rotate(10)" />
+    <polygon points="-25,-240 25,-240 0,-340" transform="rotate(45)" />
+    <polygon points="-25,-240 25,-240 0,-340" transform="rotate(80)" />
+  </g>
+
+  <path d="M 470 470 C 510 510, 560 450, 610 490 C 660 530, 710 470, 770 420 L 770 460 C 710 520, 660 580, 610 530 C 560 490, 510 550, 470 510 Z" class="white-fill" />
+  <path d="M 490 530 C 530 570, 580 510, 630 550 C 680 590, 730 530, 770 490 L 770 530 C 730 580, 680 640, 630 590 C 580 550, 530 610, 490 570 Z" class="white-fill" />
+
+  <text x="400" y="710" class="text-main">AIBISHTER</text>
+  <text x="400" y="780" class="text-sub">ENGINEERING SERVICES</text>
+
+</svg>

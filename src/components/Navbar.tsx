@@ -67,10 +67,10 @@ export default function Navbar({ navServices }: { navServices?: NavService[] }) 
           {/* Left: Logo/Brand */}
           <Link href="/" className="shrink-0 flex items-center gap-3">
             <Image
-              src="/aibishter-logo-white.svg"
+              src="/aes_logo.svg"
               alt="Aibishter logo"
-              width={32}
-              height={32}
+              width={52}
+              height={52}
               className={!isWhiteText ? "brightness-0 dark:brightness-100" : "brightness-100"}
             />
             <div className={`flex flex-col leading-none ${!isWhiteText ? "text-slate-900 dark:text-white" : "text-white"}`}>
