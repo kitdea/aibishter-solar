@@ -80,7 +80,7 @@ export default async function AboutPage() {
             >
               <item.icon size={36} className={`${item.bg === 'bg-accent-blue' ? 'text-accent-yellow' : 'text-accent-blue'} mb-4`} />
               <span className="text-4xl font-extrabold tracking-tighter mb-2">{item.stat}</span>
-              <span className={`text-sm font-bold tracking-widest uppercase ${item.bg === 'bg-accent-blue' ? 'text-blue-200' : 'text-slate-400 dark:text-slate-500'}`}>{item.label}</span>
+              <span className={`text-m font-bold tracking-widest uppercase ${item.bg === 'bg-accent-blue' ? 'text-blue-200' : 'text-slate-400 dark:text-slate-500'}`}>{item.label}</span>
             </div>
           ))}
         </div>
