@@ -144,7 +144,7 @@ export function HeroText() {
       </h1>
       <div className="flex flex-col md:flex-row md:items-end justify-between mt-5 md:mt-8 gap-4 md:gap-0">
         <p className="text-white/90 max-w-sm text-base md:text-2xl leading-relaxed">
-          From precision solar panel installations to remote energy monitoring, fulfilling the promise of tomorrow&apos;s clean future.
+          From precision solar panel installations to remote energy monitoring, powering the Philippines clean, bright tomorrow.
         </p>
       </div>
     </motion.div>

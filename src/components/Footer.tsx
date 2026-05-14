@@ -32,11 +32,11 @@ export default function Footer() {
 
           <div className="flex items-center gap-3">
             <Image
-              src="/aibishter-logo-white.svg"
+              src="/aes_logo.svg"
               alt="Aibishter logo"
-              width={52}
-              height={52}
-              className="object-contain"
+              width={152}
+              height={152}
+              className="object-contain invert dark:invert-0"
             />
             <div className="flex flex-col leading-none">
               <span className="text-4xl md:text-5xl font-bold tracking-tighter uppercase font-poppins text-slate-900 dark:text-white">Aibishter</span>

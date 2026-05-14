@@ -30,8 +30,8 @@ export default function HeroSection() {
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] md:leading-[1.1] font-poppins">
             We bring solar <span className="text-white/60">to your city.</span>
           </h1>
-          <p className="mt-4 md:mt-8 text-white/80 max-w-lg font-sans leading-relaxed text-sm md:text-base mx-auto md:mx-0">
-            From Lucena City to Metro Manila - covering all of CALABARZON and the National Capital Region.
+          <p className="mt-4 md:mt-8 text-white/80 max-w-lg font-sans leading-relaxed text-m md:text-base mx-auto md:mx-0">
+            Serving Lucena City, the National Capital Region, and communities all over the Philippines.
           </p>
         </motion.div>
       </div>
