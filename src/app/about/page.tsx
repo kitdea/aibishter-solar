@@ -19,11 +19,11 @@ export default async function AboutPage() {
       {/* Inner Page Hero Banner */}
       <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-14 md:mb-20">
         <Image
-          src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2058&auto=format&fit=crop"
+          src="https://cdn.sanity.io/images/h6b9cl6i/production/d34588664e58ac58e0d0555d2d238c8bf056a09e-4000x3000.jpg"
           alt="Aibishter Solar professionals"
           fill
           priority
-          className="object-cover scale-105"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10"></div>
 

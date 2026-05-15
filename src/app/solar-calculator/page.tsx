@@ -500,13 +500,13 @@ export default function SolarCalculatorPage() {
       {/* Hero Banner */}
       <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-14 md:mb-24">
         <Image
-          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop"
+          src="https://cdn.sanity.io/images/h6b9cl6i/production/0b77af68beccd711c2dd63d76951749d8479fdae-4000x3000.jpg"
           alt="Solar panels on rooftop in the Philippines — Aibishter Solar Calculator"
           fill
           priority
           sizes="(max-width: 1280px) 98vw, 1280px"
           suppressHydrationWarning
-          className="object-cover object-center scale-105"
+          className="object-cover"
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10" />
