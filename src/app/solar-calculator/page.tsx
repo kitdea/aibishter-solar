@@ -528,7 +528,7 @@ export default function SolarCalculatorPage() {
               Know your numbers<br />
               <span className="text-white/60">before you invest.</span>
             </h1>
-            <p className="mt-4 md:mt-6 text-white/80 max-w-lg font-sans leading-relaxed text-sm md:text-base hidden sm:block">
+            <p className="mt-4 md:mt-6 text-white/80 max-w-lg font-sans leading-relaxed text-m md:text-base hidden sm:block">
               Use our free, Philippines-specific solar calculators to estimate the right system
               size and projected monthly savings - powered by PAGASA sun-hour data and Meralco
               reference rates.

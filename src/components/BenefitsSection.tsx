@@ -75,7 +75,7 @@ export default function BenefitsSection() {
             <div className="mb-5 p-4 rounded-2xl bg-slate-50 dark:bg-slate-900">
               <Icon size={32} className="text-accent-blue" />
             </div>
-            <h3 className="text-lg font-bold text-accent-yellow mb-3">{title}</h3>
+            <h3 className="text-lg font-bold text-accent-yellow dark:text-white mb-3">{title}</h3>
             <p className="text-slate-500 dark:text-slate-400 text-m leading-relaxed font-sans">
               {description}
             </p>

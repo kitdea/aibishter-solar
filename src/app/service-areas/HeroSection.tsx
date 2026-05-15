@@ -31,7 +31,7 @@ export default function HeroSection() {
             We bring solar <span className="text-white/60">to your city.</span>
           </h1>
           <p className="mt-4 md:mt-8 text-white/80 max-w-lg font-sans leading-relaxed text-m md:text-base mx-auto md:mx-0">
-            Serving Lucena City, the National Capital Region, and communities all over the Philippines.
+            Serving Lucena City, CALABARZON, the National Capital Region, and communities all over the Philippines.
           </p>
         </motion.div>
       </div>
