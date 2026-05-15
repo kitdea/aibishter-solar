@@ -23,12 +23,12 @@ export default function ServicesContent({ services }: { services: ServiceCard[] 
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
       <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-14 md:mb-24">
         <Image
-          src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop"
+          src="https://cdn.sanity.io/images/h6b9cl6i/production/05f8e054c07ae9b994ceec5995d4cea9794baa65-4000x3000.jpg"
           alt="Aibishter Solar services"
           fill
           priority
           suppressHydrationWarning
-          className="object-cover scale-105"
+          className="object-cover scale-105 object-bottom"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10" />
         <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-20 px-6 md:px-12 z-10 text-center md:text-left">
