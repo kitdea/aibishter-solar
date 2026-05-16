@@ -57,7 +57,7 @@ export default async function Home() {
 
       <section className="relative h-[70vh] md:h-screen w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop"
+          src="https://cdn.sanity.io/images/h6b9cl6i/production/97acacd6486fbc9d3bad72e6c81b8b1bade891cb-2070x1377.jpg"
           alt="Solar panels filling the sky"
           fill
           priority
