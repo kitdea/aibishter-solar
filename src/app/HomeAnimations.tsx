@@ -214,8 +214,8 @@ export function BentoCards() {
           <Sun size={14} className="text-accent-yellow" /> Solar Irradiation
         </div>
         <Image
-          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop"
-          alt="Solar Detail"
+          src="https://cdn.sanity.io/images/h6b9cl6i/production/4070d9d95c69e0519d7aa1ab92815a8d50d2cd06-2048x1536.jpg"
+          alt="Residential Solar Panel Installation"
           fill
           suppressHydrationWarning
           className="object-cover group-hover:scale-110 transition-transform duration-1000"

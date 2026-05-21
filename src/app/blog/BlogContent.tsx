@@ -90,7 +90,7 @@ export default function BlogContent({ posts }: { posts: Post[] }) {
                   alt={post.title}
                   fill
                   suppressHydrationWarning
-                  className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out filter grayscale group-hover:grayscale-0"
+                  className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
                 />
               </div>
             </motion.article>

@@ -64,7 +64,7 @@ export const metadata: Metadata = {
       "Top-tier solar energy panel installations for homes and businesses. Save money and help the environment with Aibishter Engineering Services.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop",
+        url: "https://cdn.sanity.io/images/h6b9cl6i/production/97acacd6486fbc9d3bad72e6c81b8b1bade891cb-2070x1377.jpg",
         width: 1200,
         height: 630,
         alt: "Aibishter Solar – Clean Energy",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     description:
       "Top-tier solar energy panel installations for homes and businesses.",
     images: [
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop",
+      "https://cdn.sanity.io/images/h6b9cl6i/production/97acacd6486fbc9d3bad72e6c81b8b1bade891cb-2070x1377.jpg",
     ],
   },
   alternates: {
@@ -101,7 +101,7 @@ export default async function RootLayout({
     description:
       "Top-tier solar energy panel installations for homes and businesses across CALABARZON and Metro Manila. Certified engineers, licensed electricians, and permit-ready documentation.",
     image:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop",
+      "https://cdn.sanity.io/images/h6b9cl6i/production/97acacd6486fbc9d3bad72e6c81b8b1bade891cb-2070x1377.jpg",
     "@id": "https://aibishter.com/#business",
     url: "https://aibishter.com",
     telephone: "+639171898089",
