@@ -43,7 +43,7 @@ export default function ServicesContent({ services }: { services: ServiceCard[] 
               <span className="uppercase tracking-widest text-xs font-bold text-white/80">Aibishter Solar / Services</span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] md:leading-[1.1] font-poppins">
-              Comprehensive solar <span className="text-white/60">energy solutions.</span>
+              Solar <span className="text-white/80">energy solutions.</span>
             </h1>
             <p className="mt-4 md:mt-8 text-white/80 max-w-lg font-sans leading-relaxed text-sm md:text-base mx-auto md:mx-0">
               Designed for efficiency, durability, and maximum savings. We handle the engineering while you reap the rewards.
