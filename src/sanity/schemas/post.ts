@@ -7,6 +7,13 @@ export const postSchema = defineType({
   fields: [
     defineField({ name: "title", title: "Title", type: "string", validation: (r) => r.required() }),
     defineField({ name: "slug", title: "Slug", type: "slug", options: { source: "title" }, validation: (r) => r.required() }),
+    defineField({
+      name: "previousSlugs",
+      title: "Previous Slugs (for redirects)",
+      type: "array",
+      of: [{ type: "string" }],
+      description: "Add old slugs here when you change the URL. Each old slug will automatically redirect to the new one.",
+    }),
     defineField({ name: "excerpt", title: "Excerpt / Meta Description", type: "text", rows: 3, description: "Used as the page meta description and blog card summary. Keep under 160 characters.", validation: (r) => r.required().max(160) }),
     defineField({ name: "date", title: "Date", type: "date", validation: (r) => r.required() }),
     defineField({

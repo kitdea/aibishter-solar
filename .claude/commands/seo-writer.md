@@ -66,7 +66,7 @@ Produce the following elements. Follow every rule exactly.
 ## [H2 — another sub-topic]
 [150–200 words]
 
-## [H2 — local angle: Aibishter Solar in Quezon / Calabarzon / Southern Luzon]
+## [H2 — local angle: Aibishter Solar in Philippines (Quezon / Calabarzon / Southern Luzon)]
 [100–150 words. Mention service areas naturally.]
 
 ## Frequently Asked Questions
