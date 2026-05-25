@@ -70,7 +70,7 @@ Format your output exactly like this:
 - Unactioned gaps: [N keywords, or "none"]
 ```
 
-If all queues are empty and everything is up to date, say so clearly and suggest running `/keyword-researcher` with a new solar topic relevant to Aibishter Solar's service areas (Lucena City, Quezon Province, Calabarzon, Southern Luzon).
+If all queues are empty and everything is up to date, say so clearly and suggest running `/keyword-researcher` with a new solar topic relevant to Aibishter Solar's service areas across Philippines (Lucena City, Quezon Province, Calabarzon, Southern Luzon).
 
 ## Important
 
