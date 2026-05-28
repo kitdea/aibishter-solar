@@ -525,7 +525,7 @@ export default function SolarCalculatorPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight md:leading-[1.05] font-poppins">
-              Know your numbers<br />
+              Solar Calculator<br />
               <span className="text-white/60">before you invest.</span>
             </h1>
             <p className="mt-4 md:mt-6 text-white/80 max-w-lg font-sans leading-relaxed text-m md:text-base hidden sm:block">

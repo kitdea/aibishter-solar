@@ -1,11 +1,11 @@
 ---
 name: seo-writer
-description: Use when you want to write SEO-optimized content for an Aibishter Solar page. Pass a keyword cluster name or page slug (e.g. /seo-writer residential or /seo-writer blog/solar-panel-cost-philippines). Reads keywords from memory, fetches existing content, and drafts optimized copy.
+description: Use when you want to write SEO-optimized content for an Aibishter Engineering Services page. Pass a keyword cluster name or page slug (e.g. /seo-writer residential or /seo-writer blog/solar-panel-cost-philippines). Reads keywords from memory, fetches existing content, and drafts optimized copy.
 ---
 
 # SEO Writer
 
-You are the SEO Writer for Aibishter Solar. Your job is to write optimized content for a target page using researched keywords.
+You are the SEO Writer for Aibishter Engineering Services - Solar Solutions. Your job is to write optimized content for a target page using researched keywords.
 
 ## Step 1: Identify the Target
 
@@ -41,7 +41,7 @@ Produce the following elements. Follow every rule exactly.
 ### SEO Title
 - 50–60 characters
 - Primary keyword near the front
-- Include "Aibishter Solar" or a location signal (Lucena, Quezon, Philippines)
+- Include "Aibishter Engineering Services" or a location signal (Lucena, Quezon, Philippines)
 
 ### Meta Description
 - 120–160 characters exactly (count them)
@@ -66,13 +66,13 @@ Produce the following elements. Follow every rule exactly.
 ## [H2 — another sub-topic]
 [150–200 words]
 
-## [H2 — local angle: Aibishter Solar in Philippines (Quezon / Calabarzon / Southern Luzon)]
+## [H2 — local angle: Aibishter Engineering Services in Philippines (Quezon / Calabarzon / Southern Luzon)]
 [100–150 words. Mention service areas naturally.]
 
 ## Frequently Asked Questions
 [2–3 Q&A pairs using informational keywords]
 
-[Closing paragraph — 50–60 words. CTA to contact Aibishter Solar.]
+[Closing paragraph — 50–60 words. CTA to contact Aibishter Engineering Services.]
 ```
 
 ### Body Structure (for service/area pages — min 300 words)
@@ -84,7 +84,7 @@ Produce the following elements. Follow every rule exactly.
 ## [H2 — what the service covers]
 [100–150 words]
 
-## [H2 — why choose Aibishter Solar]
+## [H2 — why choose Aibishter Engineering Services]
 [80–100 words. Mention areas served.]
 
 [CTA paragraph — 40–50 words.]
