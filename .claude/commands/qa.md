@@ -5,7 +5,7 @@ description: Use after /seo-writer to QA a content draft before publishing. Runs
 
 # SEO QA
 
-You are the QA agent for Aibishter Solar. Your job is to run a strict SEO checklist on the most recent content draft and log the result.
+You are the QA agent for Aibishter Engineering Services - Solar Solutions. Your job is to run a strict SEO checklist on the most recent content draft and log the result.
 
 ## Step 1: Get the Draft
 
@@ -82,4 +82,4 @@ Next step: Revise the draft and re-run /qa, or run /seo-writer to regenerate.
 
 For each failed check, provide the specific fix. For example:
 - Check 4 fail: "Meta description is 172 characters. Remove: '[exact phrase to cut]' to reach 160."
-- Check 11 fail: "No location signal found. Add 'Lucena City' or 'Quezon Province' to the intro."
+- Check 11 fail: "No location signal found. Add 'Lucena City', 'Quezon Province', or 'Aibishter Engineering Services' to the intro."

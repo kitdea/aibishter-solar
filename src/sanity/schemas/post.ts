@@ -6,13 +6,27 @@ export const postSchema = defineType({
   type: "document",
   fields: [
     defineField({ name: "title", title: "Title", type: "string", validation: (r) => r.required() }),
-    defineField({ name: "slug", title: "Slug", type: "slug", options: { source: "title" }, validation: (r) => r.required() }),
     defineField({
-      name: "previousSlugs",
-      title: "Previous Slugs (for redirects)",
-      type: "array",
-      of: [{ type: "string" }],
-      description: "Add old slugs here when you change the URL. Each old slug will automatically redirect to the new one.",
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+        slugify: (input: string) =>
+          input
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/[^\w-]+/g, "")
+            .replace(/--+/g, "-")
+            .replace(/^-+|-+$/g, ""),
+      },
+      validation: (r) =>
+        r.required().custom((slug: { current?: string } | undefined) => {
+          if (!slug?.current) return true;
+          return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug.current)
+            ? true
+            : "Slug must be lowercase letters, numbers, and hyphens only — no spaces or uppercase.";
+        }),
     }),
     defineField({ name: "excerpt", title: "Excerpt / Meta Description", type: "text", rows: 3, description: "Used as the page meta description and blog card summary. Keep under 160 characters.", validation: (r) => r.required().max(160) }),
     defineField({ name: "date", title: "Date", type: "date", validation: (r) => r.required() }),

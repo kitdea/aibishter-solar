@@ -146,20 +146,15 @@ export const getAllPosts = unstable_cache(
 );
 
 export const getPostBySlug = (slug: string) =>
-  unstable_cache(
-    async () =>
-      client.fetch(
-        `*[_type == "post" && slug.current == $slug][0] {
-          title, "slug": slug.current, excerpt, date, category,
-          "image": image.asset->url,
-          body,
-          seo { metaTitle, keywords }
-        }`,
-        { slug }
-      ),
-    [`post-${slug}`],
-    { tags: ["post", `post-${slug}`], revalidate: TTL }
-  )();
+  client.withConfig({ useCdn: false }).fetch(
+    `*[_type == "post" && slug.current == $slug][0] {
+      title, "slug": slug.current, excerpt, date, category,
+      "image": image.asset->url,
+      body,
+      seo { metaTitle, keywords }
+    }`,
+    { slug: slug.trim() }
+  );
 
 // ── Team Members ──────────────────────────────────────────────────────────────
 

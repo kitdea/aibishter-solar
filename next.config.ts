@@ -21,41 +21,25 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   async redirects() {
-    try {
-      const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-      const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
-      const token = process.env.SANITY_API_READ_TOKEN;
-
-      if (!projectId || !token) {
-        console.warn("Sanity credentials missing, skipping redirects");
-        return [];
-      }
-
-      const response = await fetch(
-        `https://${projectId}.api.sanity.io/v2024-01-01/data/query/${dataset}?query=*[_type=="post"]{slug,previousSlugs}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-
-      const data = await response.json();
-      const redirects = [];
-
-      data.result?.forEach((post: any) => {
-        post.previousSlugs?.forEach((oldSlug: string) => {
-          redirects.push({
-            source: `/blog/${oldSlug}`,
-            destination: `/blog/${post.slug.current}`,
-            permanent: true,
-          });
-        });
-      });
-
-      return redirects;
-    } catch (error) {
-      console.warn("Failed to fetch redirects from Sanity:", error);
-      return [];
-    }
+    return [
+      {
+        source: "/how-much-is-solar-installation-in-the-philippines",
+        destination:
+          "/blog/how-much-is-solar-panel-installation-in-the-philippines-2026",
+        permanent: true,
+      },
+      {
+        source: "/solar-projects",
+        destination: "/projects",
+        permanent: true,
+      },
+      {
+        source: "/the-fundamentals-of-solar-panel-installation",
+        destination:
+          "/blog/how-much-is-solar-panel-installation-in-the-philippines-2026",
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [

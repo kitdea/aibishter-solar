@@ -9,13 +9,14 @@ export default function Footer() {
     <footer className="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 mt-20 md:mt-32 pt-20 pb-12 overflow-hidden relative">
       <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Top Footer Section (Newsletter + Massive Logo) */}
+        {/* Top Footer Section (Accreditation + Massive Logo) */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-20">
           
           <div className="flex flex-col gap-4">
-            <p className="text-xs uppercase tracking-widest font-bold text-slate-400 dark:text-slate-500 mb-2">Accreditation</p>
+            <p className="text-m uppercase tracking-widest font-bold text-slate-900 dark:text-slate-300 mb-2">Accreditation</p>
             <div className="flex items-center gap-6">
               <div className="flex flex-col items-center gap-2">
+              <Link href="https://doe.gov.ph/site/eumb/articles/1855621--official-doe-solar-pv-installer-registry-2?qResult=Official%20DOE%20Solar%20PV%20Installer%20Registry%3Ftitle%3DOfficial%20DOE%20Solar%20PV%20Installer%20Registry" target="_blank" rel="nofollow"> 
                 <Image
                   src="/DOE.svg"
                   alt="Department of Energy Philippines logo"
@@ -23,7 +24,9 @@ export default function Footer() {
                   height={72}
                   className="object-contain"
                 />
+              </Link>
                 <span className="text-xs font-bold text-slate-600 dark:text-slate-400 text-center leading-tight max-w-[80px]">Official DOE Solar PV Installer</span>
+             
               </div>
               <div className="w-px h-16 bg-slate-200 dark:bg-slate-700" />
               
