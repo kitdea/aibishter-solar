@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { MapPin, Phone, Mail, Clock, ArrowRight, Sun, CheckCircle2 } from "@/lib/icons";
+import DOEBadgeMarquee from "@/components/DOEBadgeMarquee";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
 import { useState, useId } from "react";
@@ -83,7 +84,7 @@ export default function ContactPage() {
       {/* Hero Banner */}
       <section
         aria-label="Contact page hero"
-        className="relative h-[38vh] sm:h-[45vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden mb-14 md:mb-24"
+        className="relative h-[38vh] sm:h-[45vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden"
       >
         <Image
           src="https://cdn.sanity.io/images/h6b9cl6i/production/0e0756d5554249d9928d77dcb5f7b7d09ec573f4-1242x691.jpg"
@@ -114,6 +115,8 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </section>
+
+      <DOEBadgeMarquee />
 
       {/* Main Content */}
       <section

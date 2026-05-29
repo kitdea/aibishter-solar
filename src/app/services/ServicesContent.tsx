@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Check, Zap, Battery, Wrench, ArrowRight, Sun, Cpu, ShieldCheck } from "@/lib/icons";
+import DOEBadgeMarquee from "@/components/DOEBadgeMarquee";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
@@ -21,7 +22,7 @@ interface ServiceCard {
 export default function ServicesContent({ services }: { services: ServiceCard[] }) {
   return (
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
-      <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-14 md:mb-24">
+      <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden">
         <Image
           src="https://cdn.sanity.io/images/h6b9cl6i/production/05f8e054c07ae9b994ceec5995d4cea9794baa65-4000x3000.jpg"
           alt="Aibishter Solar services"
@@ -51,6 +52,8 @@ export default function ServicesContent({ services }: { services: ServiceCard[] 
           </motion.div>
         </div>
       </section>
+
+      <DOEBadgeMarquee />
 
       <section className="max-w-7xl mx-auto px-6 md:px-12 space-y-32">
         {services.map((service, index) => {

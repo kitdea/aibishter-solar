@@ -161,14 +161,11 @@ export function MeetExpertsSection() {
       className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto"
     >
       <div className="gap-8 items-start mb-8">
-        <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full py-1 px-4 flex items-center gap-2 shadow-sm">
-          <div className="flex -space-x-2">
-            <div className="w-6 h-6 rounded-full bg-accent-blue border border-white"></div>
-            <div className="w-6 h-6 rounded-full bg-accent-yellow border border-white"></div>
-            <div className="w-6 h-6 rounded-full bg-slate-400 border border-white"></div>
-          </div>
-          <span className="text-base uppercase font-bold tracking-wider ml-2 text-slate-400 dark:text-slate-500">Meet Our Experts</span>
-        </div>
+        {/* <div className="border-slate-200 dark:border-slate-700 rounded-full py-1 px-4 flex items-center gap-2 shadow-sm">
+          
+          <span className="text-3xl font-bold tracking-wider text-slate-900 dark:text-white">About Us</span>
+        </div> */}
+        <h3 className="text-base font-bold uppercase tracking-tight text-slate-900 dark:text-slate-200">About Us</h3>
       </div>
       <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight text-slate-900 dark:text-slate-50 max-w-5xl">
         From high-efficiency residential arrays to robust commercial grids,{" "}
@@ -244,6 +241,7 @@ export function BentoCards() {
     </div>
   );
 }
+
 
 export function LeadCaptureSection({ children }: { children: React.ReactNode }) {
   return (

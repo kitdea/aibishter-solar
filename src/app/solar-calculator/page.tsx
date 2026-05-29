@@ -14,6 +14,7 @@ import {
   Sun,
   Zap,
 } from "@/lib/icons";
+import DOEBadgeMarquee from "@/components/DOEBadgeMarquee";
 
 // ─── Philippines Solar Constants ──────────────────────────────────────────────
 const PH_PEAK_SUN_HOURS = 4.6; // avg peak sun hours / day (PAGASA data)
@@ -498,7 +499,7 @@ export default function SolarCalculatorPage() {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
 
       {/* Hero Banner */}
-      <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-14 md:mb-24">
+      <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden">
         <Image
           src="https://cdn.sanity.io/images/h6b9cl6i/production/0b77af68beccd711c2dd63d76951749d8479fdae-4000x3000.jpg"
           alt="Solar panels on rooftop in the Philippines — Aibishter Solar Calculator"
@@ -536,6 +537,8 @@ export default function SolarCalculatorPage() {
           </motion.div>
         </div>
       </section>
+
+      <DOEBadgeMarquee />
 
       {/* Quick Stats Banner */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-20">

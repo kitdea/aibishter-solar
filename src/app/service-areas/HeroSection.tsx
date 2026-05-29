@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-14 md:mb-24">
+    <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden">
       <Image
         src="https://cdn.sanity.io/images/h6b9cl6i/production/31fb1c1d0234076dcb17291c74661248a1189ed8-1280x960.jpg"
         alt="Solar panels across the Philippines — Aibishter Engineering Services"
