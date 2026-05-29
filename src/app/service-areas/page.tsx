@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAllServiceAreas } from "@/sanity/queries";
 import { MapPin, ArrowRight } from "@/lib/icons";
 import HeroSection from "./HeroSection";
+import DOEBadgeMarquee from "@/components/DOEBadgeMarquee";
 
 export const revalidate = 3600;
 
@@ -68,6 +69,8 @@ export default async function AreasPage() {
       <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
 
         <HeroSection />
+
+        <DOEBadgeMarquee />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="space-y-20">

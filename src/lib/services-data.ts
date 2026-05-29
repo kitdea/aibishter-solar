@@ -34,53 +34,53 @@ export const services: Service[] = [
   {
     slug: "residential-solar",
     title: "Residential",
-    tagline: "Power your home with clean, renewable energy.",
+    tagline: "Solar panels for your home — cut your electricity bill and power your aircon for free.",
     description:
-      "Transform your home into a clean energy powerhouse. We design scalable and aesthetic solar arrays tailored to your roof, maximizing energy production.",
+      "Turn your roof into a power plant. We design and install solar panel systems for homes across the Philippines — custom-sized to your actual energy consumption, roof layout, and budget.",
     longDescription:
-      "Every home is unique — and so is every solar system we install. Our residential solar process starts with a detailed energy audit and satellite roof analysis, ensuring the panels we place are perfectly oriented for your local sun hours. From permit acquisition through final inspection, our team manages every step so you can focus on the savings.",
+      "With electricity rates among the highest in Southeast Asia, Filipino homeowners are switching to solar faster than ever. Our residential solar process starts with a free energy audit where we analyze your consumption history and roof orientation to size a system that covers your real usage — including air conditioners and high-load appliances. We offer grid-tied systems with net metering support, hybrid setups with battery backup, and fully off-grid systems for areas with unreliable power. From permit filing to distribution utility applications, our team handles every step so you can focus on the savings.",
     features: [
       {
         label: "Custom System Design",
         detail:
-          "Roof-specific array layouts optimized for your local sun hours and energy usage patterns.",
+          "Roof-specific array layouts sized to your actual consumption — choose grid-tied, hybrid, or off-grid depending on your energy goals and location.",
       },
       {
-        label: "Permit Acquisition",
+        label: "Net Metering & Permit Filing",
         detail:
-          "We prepare and file all required permits so your installation stays on schedule without paperwork headaches.",
+          "We prepare and submit your net metering application to your distribution utility, plus file all required permits so excess solar you generate earns real bill credits.",
       },
       {
         label: "Professional Installation",
         detail:
-          "Certified crews complete your installation safely, neatly, and on time — with zero mess left behind.",
+          "PEC-accredited crews complete your installation safely and cleanly — with full inspection support and zero paperwork left for you to handle.",
       },
       {
         label: "System Monitoring App",
         detail:
-          "Track real-time energy production and consumption from your smartphone, day or night.",
+          "Track real-time energy production and consumption from your smartphone, day or night, so you always know exactly how much you're saving.",
       },
     ],
     benefits: [
       {
-        title: "Maximize Roof Potential",
+        title: "Cut Your Electricity Bill",
         description:
-          "We design arrays specific to your roof orientation and local sun hours — not a one-size-fits-all solution.",
+          "A properly sized system can reduce your monthly electricity bill by 60–90%. Most homeowners recover their investment in 5–7 years — then generate free power for 20+ more.",
       },
       {
-        title: "No Surprises",
+        title: "Run Your Aircon on Solar",
         description:
-          "All permits are handled end-to-end. We manage inspections so you never deal with paperwork.",
+          "Air conditioning is the number one electricity cost in Filipino homes. We size every system to cover your aircon load so you stay cool without the bill shock.",
       },
       {
-        title: "Warranty Backed",
+        title: "25-Year Panel Warranty",
         description:
-          "25-year panel warranty and a 10-year workmanship guarantee for your complete peace of mind.",
+          "We install monocrystalline solar panels with a 25-year performance warranty and a 10-year workmanship guarantee for complete peace of mind.",
       },
       {
         title: "Monitored 24/7",
         description:
-          "Real-time system monitoring via our mobile app alerts you the moment performance dips.",
+          "Real-time system monitoring via our mobile app alerts you the moment performance dips — so your investment is always working at its best.",
       },
     ],
     image:
@@ -89,21 +89,26 @@ export const services: Service[] = [
       "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop",
     iconName: "Zap",
     seo: {
-      metaTitle: "Residential Solar Installation",
+      metaTitle: "Residential Solar Panel Installation Philippines | Aibishter Solar",
       metaDescription:
-        "Custom residential solar panel installations by Aibishter Solar. From system design to final inspection, we handle everything — maximizing your home's clean energy output.",
+        "Solar panels for your home in the Philippines. Aibishter Solar installs grid-tied and off-grid solar systems sized to cut your electricity bill — including solar for aircon. Free consultation.",
       keywords: [
-        "residential solar installation",
+        "solar panels for home philippines",
+        "residential solar installation philippines",
+        "solar panel price philippines",
+        "solar for aircon",
+        "solar panel installation cost",
+        "grid tied solar system",
+        "off grid solar system",
+        "monocrystalline solar panel",
+        "net metering philippines",
+        "solar panel roof",
         "home solar panels",
-        "solar panel installation",
-        "rooftop solar",
-        "home energy savings",
-        "solar permit",
         "Aibishter Solar residential",
       ],
-      ogTitle: "Residential Solar – Aibishter Solar",
+      ogTitle: "Residential Solar Installation Philippines – Aibishter Solar",
       ogDescription:
-        "Custom residential solar solutions designed for your roof, your budget, and your energy goals. Professional installation backed by a 25-year warranty.",
+        "Cut your electricity bill by up to 90%. Aibishter Solar installs custom solar panel systems for homes across the Philippines — with net metering, solar for aircon, and 25-year warranties.",
       canonical: "https://aibishter.com/services/residential-solar",
       ogImage:
         "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1200&auto=format&fit=crop",

@@ -3,6 +3,7 @@ import { CheckCircle2, Award, Users, TrendingUp, Sun } from "@/lib/icons";
 import { getTeamMembers } from "@/sanity/queries";
 import TeamSection, { type TeamMember } from "./TeamSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import DOEBadgeMarquee from "@/components/DOEBadgeMarquee";
 
 export default async function AboutPage() {
   const all: TeamMember[] = await getTeamMembers();
@@ -17,7 +18,7 @@ export default async function AboutPage() {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
 
       {/* Inner Page Hero Banner */}
-      <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden mb-14 md:mb-20">
+      <section className="relative h-[40vh] sm:h-[48vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-5xl overflow-hidden">
         <Image
           src="https://cdn.sanity.io/images/h6b9cl6i/production/d34588664e58ac58e0d0555d2d238c8bf056a09e-4000x3000.jpg"
           alt="Aibishter Solar professionals"
@@ -39,6 +40,8 @@ export default async function AboutPage() {
           </div>
         </div>
       </section>
+
+      <DOEBadgeMarquee />
 
       {/* Our Story & Stats - Split Layout */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">

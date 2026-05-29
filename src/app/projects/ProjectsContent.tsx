@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Sun } from "@/lib/icons";
+import DOEBadgeMarquee from "@/components/DOEBadgeMarquee";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
 
@@ -17,7 +18,7 @@ interface Project {
 export default function ProjectsContent({ projects, currentYear }: { projects: Project[]; currentYear: number }) {
   return (
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
-      <section className="relative h-[38vh] sm:h-[45vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden mb-14 md:mb-24">
+      <section className="relative h-[38vh] sm:h-[45vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden">
         <Image
           src="https://cdn.sanity.io/images/h6b9cl6i/production/583a34b1bf12ceb766c0d03838dac2e424f39780-1280x960.jpg"
           alt="Aibishter Solar Portfolio"
@@ -44,6 +45,8 @@ export default function ProjectsContent({ projects, currentYear }: { projects: P
           </motion.div>
         </div>
       </section>
+
+      <DOEBadgeMarquee />
 
       <section className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-24">

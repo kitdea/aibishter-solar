@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Sun } from "@/lib/icons";
+import DOEBadgeMarquee from "@/components/DOEBadgeMarquee";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/animations";
 
@@ -28,7 +29,7 @@ function formatDate(raw: string) {
 export default function BlogContent({ posts }: { posts: Post[] }) {
   return (
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pt-32 pb-24 overflow-hidden">
-      <section className="relative h-[38vh] sm:h-[45vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden mb-14 md:mb-24">
+      <section className="relative h-[38vh] sm:h-[45vh] md:h-[60vh] w-full mt-2 lg:mt-4 mx-auto max-w-[98%] rounded-4xl md:rounded-[3rem] overflow-hidden">
         <Image
           src="https://cdn.sanity.io/images/h6b9cl6i/production/501aed9c4442a08efffab3483c799e30b58298a2-1080x810.jpg"
           alt="Aibishter Solar news"
@@ -55,6 +56,8 @@ export default function BlogContent({ posts }: { posts: Post[] }) {
           </motion.div>
         </div>
       </section>
+
+      <DOEBadgeMarquee />
 
       <section className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="space-y-12">
