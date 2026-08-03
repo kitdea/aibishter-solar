@@ -2,12 +2,12 @@
 
 ## Status
 - Total keywords tracked: 190
-- Published pages: 0
-- Last QA run: 2026-05-28 (go-solar-philippines — FAIL)
-- Last content published: never
+- Published pages: 1
+- Last QA run: 2026-08-03 (solar_companies — PASS after adding schema note)
+- Last content published: 2026-08-03 — top-solar-companies-in-the-philippines
 
 ## Active Clusters
-- solar_companies (28 keywords — 14 written, 1 qa-failed, 13 competitor_gap)
+- solar_companies (28 keywords — 15 published, 13 competitor_gap)
 - solar_pricing_calculators (36 keywords — competitor_gap)
 - solar_batteries_inverters (27 keywords — competitor_gap)
 - solar_lights_accessories (24 keywords — competitor_gap)

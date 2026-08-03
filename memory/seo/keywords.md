@@ -4,21 +4,21 @@
 
 | Keyword | Intent | Cluster | Status | Date Added | Volume | KD |
 |---------|--------|---------|--------|------------|--------|----|
-| solar panel installation | transactional | solar_companies | written | 2026-05-23 | 6600 | 0.23 |
-| solar philippines | informational | solar_companies | written | 2026-05-23 | 2400 | 0.32 |
-| solar panel philippines | local | solar_companies | written | 2026-05-23 | 1600 | 0.78 |
-| go solar philippines | local | solar_companies | qa-failed | 2026-05-23 | 1600 | 0.51 |
-| solar energy in the philippines | informational | solar_companies | written | 2026-05-23 | 1000 | 0.47 |
-| solar companies in the philippines | commercial | solar_companies | written | 2026-05-23 | 720 | 0.38 |
-| solar installation | transactional | solar_companies | written | 2026-05-23 | 720 | 0.78 |
-| solar store near me | commercial | solar_companies | written | 2026-05-23 | 720 | 0.49 |
-| solar power companies | commercial | solar_companies | written | 2026-05-23 | 590 | 0.24 |
-| solar power philippines | informational | solar_companies | written | 2026-05-23 | 480 | 0.73 |
-| solar companies | commercial | solar_companies | written | 2026-05-23 | 480 | 0.24 |
-| solar panels near me | commercial | solar_companies | written | 2026-05-23 | 480 | 0.44 |
-| solar energy companies | commercial | solar_companies | written | 2026-05-23 | 390 | 0.11 |
-| solar panel store near me | commercial | solar_companies | written | 2026-05-23 | 320 | 0.84 |
-| solar shop near me | commercial | solar_companies | written | 2026-05-23 | 320 | 0.47 |
+| solar panel installation | transactional | solar_companies | published | 2026-05-23 | 6600 | 0.23 |
+| solar philippines | informational | solar_companies | published | 2026-05-23 | 2400 | 0.32 |
+| solar panel philippines | local | solar_companies | published | 2026-05-23 | 1600 | 0.78 |
+| go solar philippines | local | solar_companies | published | 2026-05-23 | 1600 | 0.51 |
+| solar energy in the philippines | informational | solar_companies | published | 2026-05-23 | 1000 | 0.47 |
+| solar companies in the philippines | commercial | solar_companies | published | 2026-05-23 | 720 | 0.38 |
+| solar installation | transactional | solar_companies | published | 2026-05-23 | 720 | 0.78 |
+| solar store near me | commercial | solar_companies | published | 2026-05-23 | 720 | 0.49 |
+| solar power companies | commercial | solar_companies | published | 2026-05-23 | 590 | 0.24 |
+| solar power philippines | informational | solar_companies | published | 2026-05-23 | 480 | 0.73 |
+| solar companies | commercial | solar_companies | published | 2026-05-23 | 480 | 0.24 |
+| solar panels near me | commercial | solar_companies | published | 2026-05-23 | 480 | 0.44 |
+| solar energy companies | commercial | solar_companies | published | 2026-05-23 | 390 | 0.11 |
+| solar panel store near me | commercial | solar_companies | published | 2026-05-23 | 320 | 0.84 |
+| solar shop near me | commercial | solar_companies | published | 2026-05-23 | 320 | 0.47 |
 | solar panels | commercial | solar_companies | competitor_gap | 2026-05-23 | 33100 | 0.89 |
 | solar panel price | transactional | solar_companies | competitor_gap | 2026-05-23 | 5400 | 0.65 |
 | solar panels for home | transactional | solar_companies | competitor_gap | 2026-05-23 | 3600 | 0.72 |
@@ -90,42 +90,42 @@
 
 | Keyword | Intent | Cluster | Status | Date Added | Volume | KD |
 |---------|--------|---------|--------|------------|--------|----|
-| solar panel calculator | informational | solar_pricing_calculators | competitor_gap | 2026-07-07 | 1000 | 0.35 |
-| solar price | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 880 | 0.55 |
-| solar calculator | informational | solar_pricing_calculators | competitor_gap | 2026-07-07 | 720 | 0.42 |
-| how much are solar panels | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 720 | 0.40 |
-| 500w solar panel price philippines | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 590 | 0.35 |
-| solar panel price manila | local | solar_pricing_calculators | competitor_gap | 2026-07-07 | 390 | 0.40 |
-| solar panel price philippines 2021 | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 390 | 0.35 |
-| solar panel for home price | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 390 | 0.40 |
-| how much solar panels cost | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 320 | 0.35 |
-| solar power cost | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 260 | 0.38 |
-| how much is the solar panel in the philippines | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 260 | 0.35 |
-| solar panel installation cost in the philippines | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 260 | 0.35 |
-| solar panel installation cost philippines | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 260 | 0.35 |
-| solar panel installation price philippines | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 260 | 0.35 |
-| 5kw solar system price philippines | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 260 | 0.30 |
-| 3kw solar system price philippines | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 210 | 0.30 |
-| solar installation price | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 210 | 0.35 |
-| 5kw solar power system | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 170 | 0.30 |
-| solar power system philippines price | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 170 | 0.30 |
-| solar philippines price | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 170 | 0.35 |
-| solar panels for sale | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 170 | 0.35 |
-| solar power calculator kwh | informational | solar_pricing_calculators | competitor_gap | 2026-07-07 | 140 | 0.25 |
-| solar panel computation | informational | solar_pricing_calculators | competitor_gap | 2026-07-07 | 140 | 0.22 |
-| solar power price | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 140 | 0.30 |
-| solar power calculator | informational | solar_pricing_calculators | competitor_gap | 2026-07-07 | 110 | 0.25 |
-| solar panel installation price | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 110 | 0.30 |
-| solar panel system calculator | informational | solar_pricing_calculators | competitor_gap | 2026-07-07 | 90 | 0.22 |
-| solar setup calculator | informational | solar_pricing_calculators | competitor_gap | 2026-07-07 | 90 | 0.22 |
-| solar system calculator | informational | solar_pricing_calculators | competitor_gap | 2026-07-07 | 90 | 0.22 |
-| how much does a solar panel cost in the philippines | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 90 | 0.30 |
-| how much to install solar panels | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 90 | 0.30 |
-| solar system philippines price | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 90 | 0.30 |
-| solar panels kwh calculator | informational | solar_pricing_calculators | competitor_gap | 2026-07-07 | 50 | 0.20 |
-| solar power size calculator | informational | solar_pricing_calculators | competitor_gap | 2026-07-07 | 40 | 0.20 |
-| buy solar panel philippines | transactional | solar_pricing_calculators | competitor_gap | 2026-07-07 | 40 | 0.30 |
-| solar sizing calculator | informational | solar_pricing_calculators | competitor_gap | 2026-07-07 | 30 | 0.20 |
+| solar panel calculator | informational | solar_pricing_calculators | written | 2026-07-07 | 1000 | 0.35 |
+| solar price | transactional | solar_pricing_calculators | written | 2026-07-07 | 880 | 0.55 |
+| solar calculator | informational | solar_pricing_calculators | written | 2026-07-07 | 720 | 0.42 |
+| how much are solar panels | transactional | solar_pricing_calculators | written | 2026-07-07 | 720 | 0.40 |
+| 500w solar panel price philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 590 | 0.35 |
+| solar panel price manila | local | solar_pricing_calculators | researched | 2026-07-07 | 390 | 0.40 |
+| solar panel price philippines 2021 | transactional | solar_pricing_calculators | researched | 2026-07-07 | 390 | 0.35 |
+| solar panel for home price | transactional | solar_pricing_calculators | researched | 2026-07-07 | 390 | 0.40 |
+| how much solar panels cost | transactional | solar_pricing_calculators | researched | 2026-07-07 | 320 | 0.35 |
+| solar power cost | transactional | solar_pricing_calculators | written | 2026-07-07 | 260 | 0.38 |
+| how much is the solar panel in the philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 260 | 0.35 |
+| solar panel installation cost in the philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 260 | 0.35 |
+| solar panel installation cost philippines | transactional | solar_pricing_calculators | written | 2026-07-07 | 260 | 0.35 |
+| solar panel installation price philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 260 | 0.35 |
+| 5kw solar system price philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 260 | 0.30 |
+| 3kw solar system price philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 210 | 0.30 |
+| solar installation price | transactional | solar_pricing_calculators | researched | 2026-07-07 | 210 | 0.35 |
+| 5kw solar power system | transactional | solar_pricing_calculators | researched | 2026-07-07 | 170 | 0.30 |
+| solar power system philippines price | transactional | solar_pricing_calculators | researched | 2026-07-07 | 170 | 0.30 |
+| solar philippines price | transactional | solar_pricing_calculators | researched | 2026-07-07 | 170 | 0.35 |
+| solar panels for sale | transactional | solar_pricing_calculators | researched | 2026-07-07 | 170 | 0.35 |
+| solar power calculator kwh | informational | solar_pricing_calculators | researched | 2026-07-07 | 140 | 0.25 |
+| solar panel computation | informational | solar_pricing_calculators | researched | 2026-07-07 | 140 | 0.22 |
+| solar power price | transactional | solar_pricing_calculators | researched | 2026-07-07 | 140 | 0.30 |
+| solar power calculator | informational | solar_pricing_calculators | researched | 2026-07-07 | 110 | 0.25 |
+| solar panel installation price | transactional | solar_pricing_calculators | researched | 2026-07-07 | 110 | 0.30 |
+| solar panel system calculator | informational | solar_pricing_calculators | researched | 2026-07-07 | 90 | 0.22 |
+| solar setup calculator | informational | solar_pricing_calculators | researched | 2026-07-07 | 90 | 0.22 |
+| solar system calculator | informational | solar_pricing_calculators | researched | 2026-07-07 | 90 | 0.22 |
+| how much does a solar panel cost in the philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 90 | 0.30 |
+| how much to install solar panels | transactional | solar_pricing_calculators | researched | 2026-07-07 | 90 | 0.30 |
+| solar system philippines price | transactional | solar_pricing_calculators | researched | 2026-07-07 | 90 | 0.30 |
+| solar panels kwh calculator | informational | solar_pricing_calculators | researched | 2026-07-07 | 50 | 0.20 |
+| solar power size calculator | informational | solar_pricing_calculators | researched | 2026-07-07 | 40 | 0.20 |
+| buy solar panel philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 40 | 0.30 |
+| solar sizing calculator | informational | solar_pricing_calculators | researched | 2026-07-07 | 30 | 0.20 |
 
 ## Cluster: solar near me & local
 
