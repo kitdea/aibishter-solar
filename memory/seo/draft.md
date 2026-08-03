@@ -38,7 +38,7 @@ Filipino homeowners often ask **how much are solar panels**, expecting a single 
 
 ## Get an Accurate Estimate from Aibishter in Quezon & Calabarzon
 
-Aibishter Engineering Services serves homeowners and businesses across Lucena City, Quezon Province, Calabarzon, and Southern Luzon with free, on-site solar assessments that go beyond what any online calculator can offer. Our engineers measure your actual roof space, check your electrical panel capacity, and review your utility bills to size a system that matches your real usage — not a generic estimate. If you've already used a [residential solar](/services/residential) calculator online, bring that estimate to us and we'll show you exactly how it compares to a fully engineered quote for your property.
+Aibishter Engineering Services serves homeowners and businesses across Lucena City, Quezon Province, Calabarzon, and Southern Luzon with free, on-site solar assessments that go beyond what any online calculator can offer. Our engineers measure your actual roof space, check your electrical panel capacity, and review your utility bills to size a system that matches your real usage — not a generic estimate. The site visit also covers shading analysis, roof structural checks, and a walkthrough of net metering eligibility, so the final quote accounts for every factor a calculator can't see. If you've already used a [residential solar](/services/residential) calculator online, bring that estimate to us and we'll show you exactly how it compares to a fully engineered quote for your property.
 
 ## Frequently Asked Questions
 
@@ -55,6 +55,6 @@ Ready to turn a rough online estimate into an accurate, itemized quote? [Contact
 
 ---
 
-**Word count:** ~630 words
+**Word count:** ~616 words
 **Title length:** 48 characters
 **Meta description length:** 154 characters

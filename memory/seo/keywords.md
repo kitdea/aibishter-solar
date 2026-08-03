@@ -90,19 +90,19 @@
 
 | Keyword | Intent | Cluster | Status | Date Added | Volume | KD |
 |---------|--------|---------|--------|------------|--------|----|
-| solar panel calculator | informational | solar_pricing_calculators | written | 2026-07-07 | 1000 | 0.35 |
-| solar price | transactional | solar_pricing_calculators | written | 2026-07-07 | 880 | 0.55 |
-| solar calculator | informational | solar_pricing_calculators | written | 2026-07-07 | 720 | 0.42 |
-| how much are solar panels | transactional | solar_pricing_calculators | written | 2026-07-07 | 720 | 0.40 |
+| solar panel calculator | informational | solar_pricing_calculators | published | 2026-07-07 | 1000 | 0.35 |
+| solar price | transactional | solar_pricing_calculators | published | 2026-07-07 | 880 | 0.55 |
+| solar calculator | informational | solar_pricing_calculators | published | 2026-07-07 | 720 | 0.42 |
+| how much are solar panels | transactional | solar_pricing_calculators | published | 2026-07-07 | 720 | 0.40 |
 | 500w solar panel price philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 590 | 0.35 |
 | solar panel price manila | local | solar_pricing_calculators | researched | 2026-07-07 | 390 | 0.40 |
 | solar panel price philippines 2021 | transactional | solar_pricing_calculators | researched | 2026-07-07 | 390 | 0.35 |
 | solar panel for home price | transactional | solar_pricing_calculators | researched | 2026-07-07 | 390 | 0.40 |
 | how much solar panels cost | transactional | solar_pricing_calculators | researched | 2026-07-07 | 320 | 0.35 |
-| solar power cost | transactional | solar_pricing_calculators | written | 2026-07-07 | 260 | 0.38 |
+| solar power cost | transactional | solar_pricing_calculators | published | 2026-07-07 | 260 | 0.38 |
 | how much is the solar panel in the philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 260 | 0.35 |
 | solar panel installation cost in the philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 260 | 0.35 |
-| solar panel installation cost philippines | transactional | solar_pricing_calculators | written | 2026-07-07 | 260 | 0.35 |
+| solar panel installation cost philippines | transactional | solar_pricing_calculators | published | 2026-07-07 | 260 | 0.35 |
 | solar panel installation price philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 260 | 0.35 |
 | 5kw solar system price philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 260 | 0.30 |
 | 3kw solar system price philippines | transactional | solar_pricing_calculators | researched | 2026-07-07 | 210 | 0.30 |
