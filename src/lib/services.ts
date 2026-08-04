@@ -15,7 +15,7 @@ export interface ServiceMeta {
 
 export const SERVICES: ServiceMeta[] = [
   {
-    slug: "residential-solar",
+    slug: "residential",
     title: "Residential",
     tagline: "Clean, reliable solar power for your home.",
     description: "Custom solar installations for homes — from site survey to grid connection. We handle permits, design, and installation end-to-end.",
@@ -23,7 +23,7 @@ export const SERVICES: ServiceMeta[] = [
     icon: "Zap",
   },
   {
-    slug: "commercial-solar",
+    slug: "commercial",
     title: "Commercial",
     tagline: "High-yield solar systems for businesses.",
     description: "High-yield solar systems for businesses, warehouses, and commercial rooftops. Reduce operating costs and achieve energy independence.",
