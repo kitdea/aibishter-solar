@@ -15,11 +15,10 @@ const sections = [
     title: "Services",
     links: [
       { label: "All Services", href: "/services" },
-      { label: "Residential Solar Installation", href: "/services/residential-solar-installation" },
-      { label: "Commercial Solar Installation", href: "/services/commercial-solar-installation" },
-      { label: "Solar Battery Storage", href: "/services/solar-battery-storage" },
-      { label: "Electrical Design & Documentation", href: "/services/electrical-design-documentation" },
-      { label: "Solar Panel Maintenance", href: "/services/solar-panel-maintenance" },
+      { label: "Residential Solar Installation", href: "/services/residential" },
+      { label: "Commercial Solar Installation", href: "/services/commercial" },
+      { label: "Electrical Design & Documentation", href: "/services/electrical-design" },
+      { label: "Solar Panel Maintenance", href: "/services/general-maintenance" },
     ],
   },
   {
