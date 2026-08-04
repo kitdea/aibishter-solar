@@ -18,7 +18,7 @@ import DOEBadgeMarquee from "@/components/DOEBadgeMarquee";
 
 // ─── Philippines Solar Constants ──────────────────────────────────────────────
 const PH_PEAK_SUN_HOURS = 4.6; // avg peak sun hours / day (PAGASA data)
-const MERALCO_RATE = 16.67;    // PHP / kWh (Meralco residential average)
+const MERALCO_RATE = 15.48;    // PHP / kWh (Meralco residential average)
 const DEFAULT_PERF_RATIO = 80; // % – industry standard for PH climate
 
 // ─── System Size Calculator State ─────────────────────────────────────────────
@@ -489,7 +489,7 @@ function SavingsCalculator() {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 const quickStats = [
   { icon: <Sun size={20} />, label: "Avg. Peak Sun Hours", value: "4.6 hrs/day", note: "Philippines PAGASA" },
-  { icon: <Zap size={20} />, label: "Meralco Ref. Rate", value: "PHP 16.67/kWh", note: "Residential average" },
+  { icon: <Zap size={20} />, label: "Meralco Ref. Rate", value: "PHP 15.48/kWh", note: "Residential average" },
   { icon: <Leaf size={20} />, label: "System Performance", value: "75–85%", note: "PH climate-adjusted" },
   { icon: <ShieldCheck size={20} />, label: "Panel Warranty", value: "25 Years", note: "Manufacturer guarantee" },
 ];
