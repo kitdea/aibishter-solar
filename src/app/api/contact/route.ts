@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
+import { SERVICE_OPTIONS } from "@/lib/constants";
 
 const APPS_SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL ?? "";
 const NOTIFY_EMAIL = process.env.CONTACT_NOTIFY_EMAIL ?? "";
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[+]?[\d\s\-().]{7,20}$/;
-const VALID_SERVICES = new Set(["residential", "commercial", "electrical", "maintenance"]);
+// Mirrors SERVICE_OPTIONS in src/lib/constants.ts — these are form values, not service slugs.
+const VALID_SERVICES: ReadonlySet<string> = new Set(SERVICE_OPTIONS.map((o) => o.value));
 
 export async function POST(req: NextRequest) {
   if (!APPS_SCRIPT_URL) {
